@@ -1,0 +1,19 @@
+---
+image: debian:latest
+
+before_script:
+  - apt-get update -yqq
+  - apt-get install -yqq make binutils findutils mkdocs pip python3-venv python3-gi libcogl-pango20 zip
+
+pages:
+  stage: build
+  script:
+    - mkdir -p public
+    - make all
+    - cp -r ./tmp/docs public/
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+#  when: manual
