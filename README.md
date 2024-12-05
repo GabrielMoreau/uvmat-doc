@@ -23,9 +23,9 @@ The Matlab compiler is however useful to be able to dispatch computing processes
 
 - Installation - Procedure to install UVMAT under GNU/Linux, MacOSX and Windows 
 
-- Help - Online help and documentation 
+- [Help](https://legi.gricad-pages.univ-grenoble-alpes.fr/soft/uvmat-doc/help) - Online help and documentation 
 
-- Tutorial - Guideline on howto use UVMAT 
+- [Tutorial](https://gricad-gitlab.univ-grenoble-alpes.fr/legi/soft/uvmat-doc/tutorial) - Guideline on howto use UVMAT 
 
 The following documents provide general instructions for the use of PIV (Note that although the general principles remain valid, references to software are outdated, use UvmatHelp and Tutorial)
 
