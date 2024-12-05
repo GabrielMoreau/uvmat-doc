@@ -1,4 +1,4 @@
-# Tutorial / Image display
+# Tutorial 01 / Image display
 
 ## Opening an image
 Then type 'uvmat' in the Matlab command window, the GUI (Graphic User Interface) opens with the date of last modification.  If the command '>>uvmat' is not recognized, check the [wiki:Installation].

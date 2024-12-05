@@ -1,4 +1,4 @@
-# Tutorial / Correlation Image Velocimetry: a simple example
+# Tutorial 05 / Correlation Image Velocimetry: a simple example
 
 Open again the first example of image pair in UVMAT_DEMO01_pair (accessible on <http://servforge.legi.grenoble-inp.fr/pub/soft-uvmat/).>
 

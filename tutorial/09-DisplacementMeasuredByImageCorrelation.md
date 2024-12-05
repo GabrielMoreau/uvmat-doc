@@ -1,4 +1,4 @@
-# Tutorial 9/ Image Correlation for measuring displacement 
+# Tutorial 09 / Image Correlation for measuring displacement 
 
 This demo shows how to use image correlation to measure a displacement versus time (instead of velocity). Open the image UVMAT_DEMO05_displacement (accessible on <http://servforge.legi.grenoble-inp.fr/pub/soft-uvmat/).>
 

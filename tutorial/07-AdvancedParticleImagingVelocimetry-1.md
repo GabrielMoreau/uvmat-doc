@@ -1,4 +1,4 @@
-# Tutorial 7 / Correlation Image Velocimetry for a turbulent series
+# Tutorial 07 / Correlation Image Velocimetry for a turbulent series
 
 This example applies Particle Image Velocimetry (PIV) to a turbulent jet, see [TutorialParticleImageVelocimetry](https://servforge.legi.grenoble-inp.fr/projects/soft-uvmat/wiki/Tutorial/ParticleImageVelocimetry#TutorialParticleImageVelocimetry:) for a first introduction to PIV.
 

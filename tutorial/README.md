@@ -1,4 +1,4 @@
-# Tutorial
+# Tutorial for UVMAT
 
 A set of test examples are described in this tutorial, as listed in the table of content. Follow the links to get the instructions on-line.
 

@@ -1,4 +1,4 @@
-# [wiki:Tutorial] 6 / Correlation Image Velocimetry: optimisation of parameters
+# Tutorial 06 / Correlation Image Velocimetry: optimisation of parameters
 
 To improve the results from the previous tutorial, open again in the GUI *series, *and enter the file 'frame_1.png' in 'UVMAT_DEMO01_pair/images'. Select the *[ACTION]* function 'civ_series' which opens the new GUI *civ_input*. You may import existing processing  parameters by pushing the button *[Import]* at the top left of the GUI *civ_input*: open the parameter file 'images.civ/0_XML/frame_1.xml' in the browser, or fill the GUI by hand as follows.
 

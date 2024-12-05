@@ -1,12 +1,14 @@
-# Tutorial / Comparaison with a Numerical Solution
+# Tutorial 12 / Comparaison with a Numerical Solution
 
 ## Introduction
+
 Using synthetic images allows us to compare our PIV solution with the numerical one used to create the images. It is this way easy to determine the errors made during the PIC calculations.
 
 The first part in this tutorial shows how to analyse perfect noise-free images and compare them with the synthetic solution.
 The next part will be focusing on creating noise in these same synthetic images and analysing them.
 
 ## Synthetic Images
+
 In the folder 'UVMAT_DEMO08_deformation', select one of the images from the 'a3b' series. It shows a diagonal uniform flow running from the bottom left corner to the top right one. *[RUN]* a PIV on the images series only using *[CIV1]*, *[FIX1]* and *[PATCH1]* with the default parameters.
 Then *[Open]* one of the vector files (.civ) created. We need to substract the numerical solution to this image in order to keep only the errors between our calculation and the theorical one. Select the mall red square*[SubField]* under the *[Input]* table to open a second file in *uvmat*. Open the netcdf file of the synthetic solution 'a3b_sol_num.nc'. The GUI *get_field* pops up, select 'vectors' in the *[FieldOptions]* table and 'U' and 'V' in the right and left tables under *[Ordinate]*. The *[Coordinates]* should still remain as 'X' and 'Y'. Click on *[OK]*. An 'ERROR' window pops up, select *[OK]* and close the GUI *set_object]* which automatically popped up.
 
@@ -29,6 +31,7 @@ This is useful to determine and optimize some PIV parameters. The figure below s
 
 
 ## Adding Noise
+
 However as synthetic images do not exactly relate reality it is necessary to add noise to them in order to obtain a more realystic result. *[Open]* once again one of the 'a3b' images, then select the *[Tranform]* function 'ima_noise' (again if it does not appear on the list, click on 'more...' and select 'ima_noise.m' from the folder 'UVMAT/transform_field'). Some multiplicative noise is then added to the image.
 
 As it is not possible to keep the *[Transform]* function 'ima_noise' while running a PIV we need to create another image serie with noise. To do that *[RUN/field series]* and select the *[Action]* function 'merge_proj'. Do not add any projection object, make sure that the *[Field Transform]* function is set as 'ima_noise' and that the calculation will run for all the images (from indice i=1 to i=41) and *[RUN]*. A new folder '.mproj' is then created with all the _noisy_ images.
@@ -42,6 +45,7 @@ It is now possible to *[Run]* a *[PIV]* on this serie and by following all the s
 
 
 ## Adding an increment 'dt' in the PIV
+
 In the folder 'UVMAT_DEMO08_deformation', select one of the images from the 'a2b' series. It shows a Lamb-Oseen vortex flow. In this part we are going to using the *deformation* CIV2 function and observe its effect on the calculations. To beginning with *[RUN]* a PIV on the images series only using *[CIV2]*, *[FIX2]* and *[PATCH2]* with the default parameters.
 Then *[Open]* one of the vector files (.civ) created and substract it with the synthetic solution 'a2b_sol_num.nc' as in the first part of this tutorial. 
 

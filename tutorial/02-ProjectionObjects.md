@@ -1,4 +1,4 @@
-# Tutorial / Projection objects
+# Tutorial 02 / Projection objects
 
 Projection objects are used in various ways for image or field analysis, as shown in the following examples. Let us choose now a color image as input, UVMAT_DEMO02_color/images/frame1.jpg'.
 

@@ -1,0 +1,53 @@
+site_name: UVMAT - Tutorial guide
+site_url: https://legi.gricad-pages.univ-grenoble-alpes.fr/soft/uvmat-doc/
+docs_dir: ../tutorial
+site_dir: ./docs/tutorial
+site_author: RESINFO GT WAPT
+copyright: Copyright (C) Joel Sommeria, 2008-2024, LEGI UMR 5519 / CNRS UGA Grenoble-INP / Grenoble, France (document generated on__DATE__)
+
+nav:
+#  - ../README.md
+#  - README.md
+#  - ../tutorial/README.md
+  - README.md
+  - 01-ImageDisplay.md
+  - 02-ProjectionObjects.md
+  - 03-GeometricCalibration.md
+  - 04-ProcessingImageSeries.md
+  - 05-ParticleImageVelocimetry.md
+  - 06-CorrelationImageVelocimetryOptimisation.md
+  - 07-AdvancedParticleImagingVelocimetry-1.md
+  - 08-AdvancedParticleImagingVelocimetry-2.md
+  - 09-DisplacementMeasuredByImageCorrelation.md
+  - 10-ImageCorrelation.md
+  - 11-CorrelationImageVelocimetryComponents.md
+  - 12-ComparaisonNumSolution.md
+
+theme:
+  name: material
+  locale: fr
+  #features:
+  #  - navigation.instant
+  features:
+    - content.code.copy
+  palette:
+    primary: pink
+    accent: red
+
+plugins:
+  - macros
+  #- search
+  #- git-revision-date-localized
+  #- with-pdf:
+  #    cover_subtitle: (Version non finalisée compilé le __DATE__)
+  #    output_path: pdf/guide-resinfo-wapt.pdf
+
+markdown_extensions:
+  #- codehilite:
+  #    use_pygments: false
+  - admonition:
+  - pymdownx.emoji:
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - attr_list:

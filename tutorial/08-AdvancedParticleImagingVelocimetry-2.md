@@ -1,4 +1,4 @@
-# Tutorial / Advanced Particle Imaging Velocimetry
+# Tutorial 08 / Advanced Particle Imaging Velocimetry
 
 This is an example using more advanced tools than the simple example [wiki:Tutorial/ParticleImageVelocimetry Tutorial: Particle Image Velocimetry]. Image pre_processing and merging of multiple fields is used to optimise PIV in the case of a narrow parietal jet (produced by convection in a cavity). Open the example 'UVMAT_DEMO6_PIVconvection/Dalsa1' (accessible on <http://servforge.legi.grenoble-inp.fr/pub/soft-uvmat/).>
 
