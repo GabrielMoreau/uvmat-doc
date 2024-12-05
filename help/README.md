@@ -900,56 +900,58 @@ Several fields, corresponding to the successive operations 'civ1', 'fix1', 'patc
 
   Conventions 'uvmat/civdata'.
 
-|| *tag* || *        content* ||
-|| Conventions || sets the conventions ||
-|| Program || name of the processing program ||
-|| CivStage] || stage in the sequence civ1,fix1... ||
-|| Civ1(2)_ImageA || path and name of input image A ||
-|| Civ1(2)_ImageB || path and name of input  image B ||
-|| Civ1(2)_Time || mean time for the image pair ||
-|| Civ1(2)_Dt || time interval for image pair ||
-|| Civ1(2)_CorrBoxSize || size x,y of the correlation box ||
-|| Civ1_SearchBoxSize || size x,y of the search box ||
-|| Civ1_SearchBoxShift || (optional) shift of the search box ||
-|| Civ1(2)_CorrSmooth || smooth parameter for the image corr ||
-|| Civ1(2)_Dx,Civ1(2)_Dy || grid mesh along x, y ||
-|| Civ1(2)_CheckGrid ||# 1 if a grid file is used, default=0||
-|| Civ1(2)_CheckMask ||# 1 if a mask file is used, default=0||
-|| Civ1(2)_CheckThreshold ||# 0/1 image luminosity  threshold used||
-|| Civ1_ImageBitDepth || nbre of grey level bits ||
-|| Civ1_ImageWidth || nbre of pixels along x ||
-|| Civ1_ImageHeight || nbre of pixels along y ||
-|| Civ1(2)_FrameIndexA || frame index of image A in the series ||
-|| Civ1(2)_FrameIndexB || frame index of image B in the series ||
-|| Patch1(2)_Rho || smoothing parameter for thin plate shell ||
-|| Patch1(2)_Threshold || threshold for the elimination of aberrant vectors ||
-|| Patch1(2)_SubDomain || estimated nbre of vectors in a subdomain ||
-|| Civ2_CheckDecimal ||# 1 if decimal shift option is used (reduced peaklocking)||
-|| Civ2_CheckDeformation ||# 1 if image deformation option is used||
+ | *tag* | *        content* |
+ |:----- |:----------------- |
+ | Conventions | sets the conventions |
+ | Program | name of the processing program |
+ | CivStage] | stage in the sequence civ1,fix1... |
+ | Civ1(2)_ImageA | path and name of input image A |
+ | Civ1(2)_ImageB | path and name of input  image B |
+ | Civ1(2)_Time | mean time for the image pair |
+ | Civ1(2)_Dt | time interval for image pair |
+ | Civ1(2)_CorrBoxSize | size x,y of the correlation box |
+ | Civ1_SearchBoxSize | size x,y of the search box |
+ | Civ1_SearchBoxShift | (optional) shift of the search box |
+ | Civ1(2)_CorrSmooth | smooth parameter for the image corr |
+ | Civ1(2)_Dx,Civ1(2)_Dy | grid mesh along x, y |
+ | Civ1(2)_CheckGrid |# 1 if a grid file is used, default=0|
+ | Civ1(2)_CheckMask |# 1 if a mask file is used, default=0|
+ | Civ1(2)_CheckThreshold |# 0/1 image luminosity  threshold used|
+ | Civ1_ImageBitDepth | nbre of grey level bits |
+ | Civ1_ImageWidth | nbre of pixels along x |
+ | Civ1_ImageHeight | nbre of pixels along y |
+ | Civ1(2)_FrameIndexA | frame index of image A in the series |
+ | Civ1(2)_FrameIndexB | frame index of image B in the series |
+ | Patch1(2)_Rho | smoothing parameter for thin plate shell |
+ | Patch1(2)_Threshold | threshold for the elimination of aberrant vectors |
+ | Patch1(2)_SubDomain | estimated nbre of vectors in a subdomain |
+ | Civ2_CheckDecimal |# 1 if decimal shift option is used (reduced peaklocking)|
+ | Civ2_CheckDeformation |# 1 if image deformation option is used|
 
 * *List of variables:*
 
 Conventions 'uvmat/civdata'.
 
-|| *tag* || *dimensions* || *        content* ||
-|| Civ1_X || nb_vec_1 || x coordinates ||
-|| Civ1_Y || nb_vec_1 || y coordinates ||
-|| Civ1_Z || nb_vec_1 || z coordinates (for PIV in volume) ||
-|| Civ1_U || nb_vec_1 || x velocity component ||
-|| Civ1_V || nb_vec_1 || y velocity component ||
-|| Civ1_W || nb_vec_1 || z velocity component (if relevant) ||
-|| Civ1_F || nb_vec_1 || warning flag ||
-|| Civ1_C || nb_vec_1 || image correlation ||
-|| Civ1_FF || nb_vec_1 || error flag ||
-|| Civ1_U_smooth || nb_vec_1 || smoothed x velocity component ||
-|| Civ1_V_smooth || nb_vec_1 || smoothed y velocity component ||
-|| Civ1_W_smooth || nb_vec_1 || smoothed z velocity component ||
-|| Civ1_SubRange || (nb_coord,nb_bounds,nb_subdomain_1) || subdomain bounds ||
-|| Civ1_NbCentres || nb_subdomain_1 || nbre of tps centres (valid vectors) in each subdomain ||
-|| Civ1_Coord_tps || (nb_tps_1,nb_coord,nb_subdomain_1) || coordinates of tps centres for each subdomain ||
-|| Civ1_U_tps || (nb_tps_1,nb_subdomain_1) || tps weights for x vel component ||
-|| Civ1_V_tps || (nb_tps_1,nb_subdomain_1) || tps weights for y vel component ||
-|| Civ1_W_tps || (nb_tps_1,nb_subdomain_1) || tps weights for z vel component ||
+ | *tag* | *dimensions* | *        content* |
+ |:----- |:------------ |:----------------- |
+ | Civ1_X | nb_vec_1 | x coordinates |
+ | Civ1_Y | nb_vec_1 | y coordinates |
+ | Civ1_Z | nb_vec_1 | z coordinates (for PIV in volume) |
+ | Civ1_U | nb_vec_1 | x velocity component |
+ | Civ1_V | nb_vec_1 | y velocity component |
+ | Civ1_W | nb_vec_1 | z velocity component (if relevant) |
+ | Civ1_F | nb_vec_1 | warning flag |
+ | Civ1_C | nb_vec_1 | image correlation |
+ | Civ1_FF | nb_vec_1 | error flag |
+ | Civ1_U_smooth | nb_vec_1 | smoothed x velocity component |
+ | Civ1_V_smooth | nb_vec_1 | smoothed y velocity component |
+ | Civ1_W_smooth | nb_vec_1 | smoothed z velocity component |
+ | Civ1_SubRange | (nb_coord,nb_bounds,nb_subdomain_1) | subdomain bounds |
+ | Civ1_NbCentres | nb_subdomain_1 | nbre of tps centres (valid vectors) in each subdomain |
+ | Civ1_Coord_tps | (nb_tps_1,nb_coord,nb_subdomain_1) | coordinates of tps centres for each subdomain |
+ | Civ1_U_tps | (nb_tps_1,nb_subdomain_1) | tps weights for x vel component |
+ | Civ1_V_tps | (nb_tps_1,nb_subdomain_1) | tps weights for y vel component |
+ | Civ1_W_tps | (nb_tps_1,nb_subdomain_1) | tps weights for z vel component |
 
 *dimensions:*
 
@@ -988,21 +990,22 @@ The names of the fields (variables) resulting from each operation are given in t
 
 * *Names of field variables for civ1 and patch1*
 
-|| *   * || civ1 || *interp1* || *filter1 * ||
-|| dim. || nb_vectors || nb_vec_patch || nb_vec_patch ||
-|| x || vec_X || vec_patch_X || vec_patch_X ||
-|| y || vec_Y || vec_patch_Y || vec_patch_Y ||
-|| z || vec_Z || vec_patch_Z || vec_patch_Z ||
-|| u || vec_U || vec_patch0_U || vec_patch_U ||
-|| v || vec_V || vec_patch0_V || vec_patch_V ||
-|| w || vec_W || vec_patch0_W || vec_patch_W ||
-|| correlation || vec_C ||
-|| warning flag || vec_F ||
-|| false flag || vec_FixFlag ||
-|| du/dx |||| vec_patch0_DUDX || vec_patch_DUDX ||
-|| du/dy |||| vec_patch0_DUDY || vec_patch_DUDY ||
-|| dv/dx |||| vec_patch0_DVDX || vec_patch_DVDX ||
-|| dv/dy |||| vec_patch0_DVDY || vec_patch_DVDY ||
+ | *   * | civ1 | *interp1* | *filter1 * |
+ |:---- |:----------- |:--------- |:-------------- |
+ | dim. | nb_vectors | nb_vec_patch | nb_vec_patch |
+ | x | vec_X | vec_patch_X | vec_patch_X |
+ | y | vec_Y | vec_patch_Y | vec_patch_Y |
+ | z | vec_Z | vec_patch_Z | vec_patch_Z |
+ | u | vec_U | vec_patch0_U | vec_patch_U |
+ | v | vec_V | vec_patch0_V | vec_patch_V |
+ | w | vec_W | vec_patch0_W | vec_patch_W |
+ | correlation | vec_C |
+ | warning flag | vec_F |
+ | false flag | vec_FixFlag |
+ | du/dx || vec_patch0_DUDX | vec_patch_DUDX |
+ | du/dy || vec_patch0_DUDY | vec_patch_DUDY |
+ | dv/dx || vec_patch0_DVDX | vec_patch_DVDX |
+ | dv/dy || vec_patch0_DVDY | vec_patch_DVDY |
 
 * *Names of field variables for civ2 and patch2*
 
