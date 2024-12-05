@@ -10,7 +10,8 @@ pages:
   script:
     - mkdir -p public
     - make all
-    - cp -r ./tmp/docs/* public/
+    - cp -r ./tmp/docs/help public/
+    - cp -r ./tmp/docs/tutorial public/
   artifacts:
     paths:
       - public
