@@ -12,7 +12,8 @@ UVMAT also contains a graphic user interface and compiled binaries of the older 
 
 ## Prerequisit
 
-This toolbox requires Matlab, release R2009 or more recent. It can be run with any computer system on which Matlab is installed (in particular GNU/Linux, MacOSX and Windows).
+This toolbox requires Matlab, release R2009 or more recent.
+It can be run with any computer system on which Matlab is installed (in particular GNU/Linux, MacOSX and Windows).
 No additional toolbox from Matlab is requested.
 The Matlab compiler is however useful to be able to dispatch computing processes on a computer cluster, and the image processing toolbox provides some additional features.
 
@@ -22,7 +23,7 @@ The Matlab compiler is however useful to be able to dispatch computing processes
 
 - UvmatHelp - Online help and documentation 
 
--Tutorial - Guideline on howto use UVMAT 
+- Tutorial - Guideline on howto use UVMAT 
 
 The following documents provide general instructions for the use of PIV (Note that although the general principles remain valid, references to software are outdated, use UvmatHelp and Tutorial)
 

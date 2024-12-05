@@ -1,0 +1,7 @@
+.nextcloudsync.log
+.sync_*.db
+.sync_*.db-wal
+.sync_*.db-shm
+tmp
+.tmp.*
+.DS_Store
