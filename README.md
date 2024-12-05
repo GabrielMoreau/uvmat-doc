@@ -1,5 +1,7 @@
 # UVMAT
 
+![](img-uvmat.png)
+
 This free Matlab toolbox (GNU General Public License) provides a set of functions and graphic user interfaces for scanning images and data files (vectors and scalars in 2D and 3D), geometric calibrations, image processing and analysis of time series.
 It is designed to favor data management, relying on the standard **NetCDF** file format and **XML** documentation files.
 
