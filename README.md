@@ -23,7 +23,7 @@ The Matlab compiler is however useful to be able to dispatch computing processes
 
 - Installation - Procedure to install UVMAT under GNU/Linux, MacOSX and Windows 
 
-- UvmatHelp - Online help and documentation 
+- Help - Online help and documentation 
 
 - Tutorial - Guideline on howto use UVMAT 
 
