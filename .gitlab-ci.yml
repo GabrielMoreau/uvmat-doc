@@ -12,6 +12,7 @@ pages:
     - make all
     - cp -r ./tmp/docs/help public/
     - cp -r ./tmp/docs/tutorial public/
+    - ls -al public
   artifacts:
     paths:
       - public
