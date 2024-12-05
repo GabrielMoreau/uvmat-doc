@@ -151,7 +151,7 @@ Different kinds of file or image frame indexing are defined:
 
 The field indices can be incremented or decremented by the push buttons  *[runplus]* ( *+*) and  *[runmin]* (*-*) respectively.  This scanning is performed  over the first index (i) or the second one (j), depending on the selection of the check boxes *scan_i* or *scan_j* respectively. The step for increment is set by the edit box *[increment_scan]*. If this box is blank (or does not contain a number) the next available file is opened.
 
-![](3-4-Navigation among-fields-indices.png)
+![](3-4-Navigation-among-fields-indices.png)
 
 The current indices are displayed in the four edit boxes *[i1], [i2], [j1], [j2]*. The two first indices i1 and j1 are used for image series, while the second line i2, j2 is used to label the image pairs used for PIV data. The file indices can be directly set in these edit boxes, or equivalently in the edit box *[FileIndex]* at the top of the GUI.
 
@@ -538,7 +538,7 @@ A variable may have attributes, but an attribute cannot have attributes. Attribu
 
 This GUI *get_field.fig* is aimed at browsing a NetCDF file, showing all its variables, attributes and variable dimensions. Variables can be selected for input in *uvmat* or *series*. The GUI is opened by selecting the option *[get_field...]* in the menu *[FieldName]* of *uvmat* or *series*. This option is automatically selected when the input NetCDF file is not recognised as CIV data.
 
-![](7-2-The-GUI-get_field.png)
+![](7-2-The-GUI-get-field.png)
 
 When a NetCDF input file opened, its full name, including path, is displayed in the upper window *[inputfile]*. The names and value of the global attributes are listed in the left column *[attributes]*, the list of variables in the central column *[variables]*, and the list of dimension names and values in the right column *[dimensions]*. By selecting one of the variables in the central column, the corresponding variable attributes and dimensions are displayed in the left and right columns respectively. Note that the whole content of the NetCDF file can be obtained by the function _nc2struct.m_. Input fields can be selected according to three options, chosen by the menu *[FieldOption]*.
 
