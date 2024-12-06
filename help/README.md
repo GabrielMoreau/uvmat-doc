@@ -1529,7 +1529,7 @@ A displacement _z(x,y)_ can be obtained by comparing two stereoscopic views (at 
 This identifies corresponding points using image correlation, in the same way as _civ_.
 A transform of the image to physical coordinates is performed as a first step to minimize the image difference between the two views.
 The final result is expressed as a set of _(x,y,z)_ positions in physical coordinates (unlike PIV data which are expressed in image coordinates).
-See [3D View](3d_view.pdf) (pdf) for full algorithm description.
+See [3D View](3d-view.pdf) (pdf) for full algorithm description.
 
 ### 11.8 Description of the velocity files: #civdata
 
