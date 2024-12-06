@@ -25,15 +25,15 @@ The Matlab compiler is however useful to be able to dispatch computing processes
 
 - [Help](https://legi.gricad-pages.univ-grenoble-alpes.fr/soft/uvmat-doc/help) - Online help and documentation 
 
-- [Tutorial](https://gricad-gitlab.univ-grenoble-alpes.fr/legi/soft/uvmat-doc/tutorial) - Guideline on howto use UVMAT 
+- [Tutorial](https://legi.gricad-pages.univ-grenoble-alpes.fr/soft/uvmat-doc/tutorial) - Guideline on howto use UVMAT 
 
 The following documents provide general instructions for the use of PIV (Note that although the general principles remain valid, references to software are outdated, use UvmatHelp and Tutorial)
 
-- 2008 - Presentation for students at Hydralab workshop: hydralab_YP_joel.pdf​ 
+- 2013 - [Presentation for students at Hydralab workshop](2013-piv-at-hydralab.pdf) (pdf)
 
-- 2003 - PIV at the Coriolis facility: CIV_doc_lim.pdf​ 
+- 2003 - [PIV at the Coriolis facility](2003-civ-at-coriolis.pdf) (pdf)
 
-- 2000 - Presentation done at Meteo-France: MeteoFranceDecembre2000.pdf​ 
+- 2000 - [Presentation done at Meteo-France](2000-civ-at-meteofrance.pdf) (pdf)
 
 ## Follow us
 
