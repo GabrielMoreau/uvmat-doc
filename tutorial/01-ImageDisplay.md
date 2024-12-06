@@ -12,7 +12,7 @@ Activate the menu bar command *[!Open/Browse...]* at the upper left which displa
 Move through your computer folders (use '+/..' to move upward in the tree) to select the image file of the tutorial 'UVMAT_DEMO01_pair/images/frame_1.png'.
 The image should appear as in figure.
 
-![](01-uvmat_image.jpg)
+![](01-uvmat-image.jpg)
 
 Open the folder UVMAT_DEMO01_pair containing the demo files, either form the downloaded archive (accessible on <http://servforge.legi.grenoble-inp.fr/pub/soft-uvmat/),> either online in the OpenDAP address !<http://servdap.legi.grenoble-inp.fr/opendap/meige/18UVMAT_DEMO_SOURCES/UVMA_DEMO001_pair> (directly accessible in the menu *[Open/Browse...]*).
 Then select the folder 'Images' and the image' frame_1.png'.
