@@ -5,3 +5,9 @@
 tmp
 .tmp.*
 .DS_Store
+*.JPG
+*.PNG
+*.PDF
+*.JPEG
+*.jpeg
+*.ZIP
