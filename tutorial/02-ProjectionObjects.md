@@ -22,7 +22,7 @@ A line aligned with the x or y axis can be directly created by the menu bar comm
 
 This is obtained by creating a contour object, a polygon, a rectangle or an ellipse, using *[Projection object/polygon]*, *[Projection object/rectangle]* or *[Projection object/ellipse]*.
 Draw the contour with the mouse to plot the histogram of the image inside the contour.
-To get the histogram of the region outside the contour, select the check box  *edit* in the frame *[Objects]* of *uvmat*.
+To get the histogram of the region outside the contour, select the check box *edit* in the frame *[Objects]* of *uvmat*.
 Then in the GUI *set_object*, select 'outside' in the menu *[ProjMode]* and press the button *[REFRESH]*.
 
 ## Resampling the image

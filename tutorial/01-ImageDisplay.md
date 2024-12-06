@@ -48,8 +48,8 @@ To come back to the whole image, unselect the check box *fix* (*[CheckFixLimits]
 A zoomed region can be also extracted as a separate figure by selecting *zoom fig* (tag *[CheckZoomFig]*) and drawing the contour with the mouse (keeping the left hand mouse button pressed).
 The zoomed region can be moved with the keyboard arrows.
 
-Selecting the check box *fix*  maintains the bounds fixed when different images of fields are opened (useful for comparisons), while the opposite option allows the bounds to adjust to the extremal coordinates of the field.
-Finally the x/y scaling  can be set equal by selecting the box *fix x/y* (tag name *[CheckFixAspectRatio]*).
+Selecting the check box *fix* maintains the bounds fixed when different images of fields are opened (useful for comparisons), while the opposite option allows the bounds to adjust to the extremal coordinates of the field.
+Finally the x/y scaling can be set equal by selecting the box *fix x/y* (tag name *[CheckFixAspectRatio]*).
 Otherwise the image is deformed to fit in the plot window.
 
 Edit boxes in the GUI can be also zoomed by right hand mouse button selection: a new window appears with the tag name and content.
@@ -58,9 +58,9 @@ This is convenient when a text box content exceeds its frame limits (for instanc
 ## Extracting data
 
 The current mouse coordinates in the image, as well as the local image intensity ('A'), are displayed in the upper right text window.
-The local image matrix  indices 'i' and 'j' are also displayed.
+The local image matrix indices 'i' and 'j' are also displayed.
 By default the coordinates are expressed in pixel units, with origin (0,0) at the lower left of the image (the lower left pixel centre is at (0.5,0.5)).
-The x coordinate is equal to i-0.5 while the y coordinate is npy-(j-0.5), since the  image index j runs from top to bottom unlike the coordinate y.
+The x coordinate is equal to i-0.5 while the y coordinate is npy-(j-0.5), since the image index j runs from top to bottom unlike the coordinate y.
 In case of low screen resolution, it is possible to duplicate this display in a bigger window, by right mouse button selection inside the display area (after zoom has been desactivated).
 
 When the mouse is over an edit box or press button, its tag is displayed with a short explanation (tooltip).
@@ -68,5 +68,5 @@ The tag and box string can be also displayed by selection with the right hand mo
 
 The current image can be extracted for further processing with Matlab tools, for printing, saving, exporting *etc*.
 Use the menu bar command *[Export/in new figure]*.
-It can be also exported  in the Matlab Command window as a Matlab variable (a structure), using the menu bar command *[Export/as field in workspace]*.
+It can be also exported in the Matlab Command window as a Matlab variable (a structure), using the menu bar command *[Export/as field in workspace]*.
 The displayed field is represented by the sub-structure Data_uvmat.Field available in the workspace: the image matrix is Data_uvmat.Field.A while the X and Y coordinates of the first and last pixels are represented by Data_uvmat.Field.AX and .AY respectively.

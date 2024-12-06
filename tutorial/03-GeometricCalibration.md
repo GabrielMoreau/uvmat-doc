@@ -42,7 +42,7 @@ Set XMax=1, YMax=1, the radius of the circle, and the coordinates (1.69, 4.05) o
 Then press *[REFRESH]*.
 To optimise the visualisation, zoom in and increase the image contrast to MaxA=100.
 
-To shift the coordinates, activate in *geometry_calib* the menu bar command *[!Tools/Translate points]*, and fills  (x=-1.69, y=-4.05) in the edit box which pops up.
+To shift the coordinates, activate in *geometry_calib* the menu bar command *[!Tools/Translate points]*, and fills (x=-1.69, y=-4.05) in the edit box which pops up.
 The phys coordinates of the calibration points are then shifted, select *[APPLY]* in* 'geometry_calib' *: a new calibration put the cylindre centre at the origin (0,0).
 These new calibration data are saved in an .xml file in the same folder as the image.
 
@@ -95,7 +95,7 @@ Most precise and general calibration relies on the use of a target grid.
 As an example, open in uvmat the image img_10 in 'UVMAT_DEMO07_GeometryCalibration/multiple_planes/Dalsa1' (accessible on <http://servforge.legi.grenoble-inp.fr/pub/soft-uvmat/).> Open the menu bar *[Tools/geometric calibration]* and pick four corner points ABCD with the mouse define the periphery of the phys grid selected for calibration.
 The first point A will define the phys axis origin while AB defines the x axis and AD the y axis.
 AB and DC should be parallel on the phys grid (see fig).
-Then select* [!Tools/Detect grid]* on the upper menu bar of* geometry_calib*: you get a new GUI *detect_grid* in which you define (in phys units) the grid mesh and the positions of the  first and last points on each axis.
+Then select* [!Tools/Detect grid]* on the upper menu bar of* geometry_calib*: you get a new GUI *detect_grid* in which you define (in phys units) the grid mesh and the positions of the first and last points on each axis.
 Enter the value 0 for the *[first]* _x_ and _y_, the distance between two points on the grid is 10 cm so enter 10 for *[mesh]* _x_ and _y_.
 According to the number of meshes you selected with your 4 points ABCD enter the correct value of *[last]* _x_ and _y_.
 A _z_ position can be defiend as well, do not fill it in this example.
@@ -104,8 +104,8 @@ After validation by *[OK]*, the detected grid appears on *uvmat*.
 
 ![](03-detect-grid.png)
 
-If a  point is not correct, select the option *[CheckEnableMouse]* in *geometry_calib*.
-Then you can adjust the point marker by selecting it with the (left button) mouse and moving it while keeping the mouse pressed (when adjustement is finished, select the option  *[CheckEnableMouse]* to avoid spurious point creation with the mouse).
+If a point is not correct, select the option *[CheckEnableMouse]* in *geometry_calib*.
+Then you can adjust the point marker by selecting it with the (left button) mouse and moving it while keeping the mouse pressed (when adjustement is finished, select the option *[CheckEnableMouse]* to avoid spurious point creation with the mouse).
 
 If the grid image is of poor quality, it is alternatively possible to mark all the points by the mouse, using the *[!Tools/Create]* grid instead of *[!Tools/Detect grid]* in geometry_calib (not convenient in general).
 
@@ -118,11 +118,11 @@ This 3D calibration relies on the [pinhole camera model](https://servforge.legi.
 It involves intrinsic parameters which characterize the optical system (camera and objective lens) and extrinsic parameters which describe the translation and rotation of the camera with respect to the physical coordinates.
 The intrinsic parameters are shown in the frame *[Intrinsic Parameters]* in the GUI *geometry_calib*.
 These are the focal lenghts (in pixel size on the sensor) *[fx]* and *[fy]*, the quadratic radial distortion coefficient *[kc]* and the coordinates *[Cx]* and *[Cy]* of the optical centre for this distortion (expressed in pixels on the image).
-The extrinsic parameters are shown in the frame  *[Extrinsic Parameters].
-*It indicates in particular the translation T_z which represents the distance from the camera to the origin of the phys coordinates.
+The extrinsic parameters are shown in the frame *[Extrinsic Parameters]*.
+It indicates in particular the translation T_z which represents the distance from the camera to the origin of the phys coordinates.
 Note that the calibration grid has been assumed by default to be at z=0, but this can be changed by selecting *[!Tools/Translate points]* in *geometry_calib* and entering a translation in _z_ for the grid point coordinates.
 
-A last* *item needed to define calibration in a 3D context is the determination of the plane of the object in the phys coordinates.
+A last item needed to define calibration in a 3D context is the determination of the plane of the object in the phys coordinates.
 It is assumed by default to be the plane z=0, but this can be changed by the menu bar option *[!Tools/Set slice]* of *uvmat*.
 It is then possible to change the assumed _z_ position, keeping the same calibration.
 Observe the corresponding change in the grid scale, since the same grid is then assumed to be at a different distance.
@@ -140,8 +140,8 @@ To open it select *[Import.../Calibration points]*.
 Now that the calibration is made for the first image we need to do it for the other ones, you can open the different grids 'img.ref~.xml' to skip the calibration.
 Once a document is open, the grid is shown in *uvmat*, to save it in the *[Point Lists]* click on *[APPEND LIST]*, it will appear below the first saved document.
 
-*Note:* if the serie is missing some images (ie the increment from one image to another is not steady), *uvmat* will not allow you to use the arrow *[->]*  to move from an image to another if the increment is set.
-To avoid this  delete the number in *[increment]*, you will then be able to go from an  image to another.
+*Note:* if the serie is missing some images (ie the increment from one image to another is not steady), *uvmat* will not allow you to use the arrow *[->]* to move from an image to another if the increment is set.
+To avoid this delete the number in *[increment]*, you will then be able to go from an image to another.
 
 When all the grids are selected in *[Point Lists]*, select *[APPLY]*.
 The intrinsic parameters are then reevaluated according to the set of points in different planes, which provides a better estimate than with a single plane.
