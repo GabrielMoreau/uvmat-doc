@@ -1415,7 +1415,7 @@ This is useful in the presence of a known mean flow.
 The default value *[SearchBoxSize]*=(25,25) is generally good, use a larger size for images with few particles, use an elongated box, *e.g.* (11,41), to optimise the resolution in one direction (for instance in a boundary layer).
 
 A parameter *[num_CorrSmooth]* controls the smoothing of the image corelation curves used in civ, the default value 1 is generally used.
-Its value is set according to [Nobach & Honkanen work (2005)](https://servforge.legi.grenoble-inp.fr/projects/soft-uvmat/attachment/wiki/UvmatHelp/Nobach%26Honkanen%282005%29.pdf), *[num_CorrSmooth]*=1 means it will be a 2x3-point regression (3 points on the _x_ axis and 3 points on the _y_ axis) whereas *[num_CorrSmooth]*=2 means it will be a 9-point regression.
+Its value is set according to [Nobach & Honkanen work (2005)](nobach-honkanen-2005.pdf), *[num_CorrSmooth]*=1 means it will be a 2x3-point regression (3 points on the _x_ axis and 3 points on the _y_ axis) whereas *[num_CorrSmooth]*=2 means it will be a 9-point regression.
 
 The search parameters (*[SearchBoxSize]*, *[SearchBoxShift]*) can be estimated using the press button *[search range]*.
 First introduce the estimated minimum and maximum values of each velocity component u and v (expressed in pixel displacement).
