@@ -33,6 +33,6 @@ The image below shows the VMean figure:
 [[Image(Tutoriel7 - Turbo stat.png)]]
 
 ## time series in a single netcdf file
-For further data processing it can be convenient to merge all fields in a single netcdf file. This can be done by opening the previous results in series and applying the *[Action]* function 'time_series'. Select for instance the variables 'U' and 'V' as 'scalars'. No projection object is needed at this stage, so *[Projection Object] *must be unselected.
+For further data processing it can be convenient to merge all fields in a single netcdf file. This can be done by opening the previous results in series and applying the *[Action]* function 'time_series'. Select for instance the variables 'U' and 'V' as 'scalars'. No projection object is needed at this stage, so *[Projection Object]* must be unselected.
 
 The result is obtained as a single netcdf file 'images.civ.mproj.tseries/c_1-99.nc'. Opening this file by *uvmat*, we observe that the arrays U and V are now with 3 components, (time, y, x). A plane of cut (x,y) is displayed in uvmat, whose z coordinate (here the time) can be moved by the *[z slider]* in the GUI *set_object*.

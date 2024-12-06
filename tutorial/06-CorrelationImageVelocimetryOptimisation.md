@@ -22,7 +22,7 @@ The parameter *[num_CorrSmooth]* is used to fit the correlation data with a Gaus
 
 [[Image(Tutorial6 - Corr1vs2.png)]]
 
-The parameters *[num_Dx]* and *[num_Dy] *define the mesh of the measurement grid, in pixels. Reduce them to get more vectors, but keep in mind that the spatial resolution is anyway limited by the size of the correlation box, so that velocity vectors become redondant when the sub-images highly overlap those of the neighboring vector. Then the choice *Dx*=*Dy*=10, about half the correlation box, provides a good optimum.
+The parameters *[num_Dx]* and *[num_Dy]* define the mesh of the measurement grid, in pixels. Reduce them to get more vectors, but keep in mind that the spatial resolution is anyway limited by the size of the correlation box, so that velocity vectors become redondant when the sub-images highly overlap those of the neighboring vector. Then the choice *Dx*=*Dy*=10, about half the correlation box, provides a good optimum.
 
 Finally select the *[Mask]* check box like in the previous tutorial.
 
@@ -32,9 +32,9 @@ Select the *[FIX1]* operation, which eliminates some false vectors using several
 ## Patch1 parameters
 Select the ’*PATCH1*’ operation, to interpolate the vectors and calculate spatial derivatives. First choose the default parameters, press OK, run the caluclation and visualise with *uvmat*. We observe that a few erratic vectors have been flagged as false (painted in magenta).
 
-Two fields can be visualised, as selected by the menu *[VelType]* in the upper part of *uvmat*: the initial field 'civ1' and the smoothed one 'filter1', obtained by the spline interpolation/smoothing of *[PATCH1]*. Select the option 'blank' in the menu* [TransformName] *(on the left side of *uvmat*), to observe fields as displacement in pixel units (not physical coordinates), which is the appropriate option to analyse PIV features.
+Two fields can be visualised, as selected by the menu *[VelType]* in the upper part of *uvmat*: the initial field 'civ1' and the smoothed one 'filter1', obtained by the spline interpolation/smoothing of *[PATCH1]*. Select the option 'blank' in the menu* [TransformName]* (on the left side of *uvmat*), to observe fields as displacement in pixel units (not physical coordinates), which is the appropriate option to analyse PIV features.
 
-The difference between the two fields can be directly visualized by selecting *[CIV1]* in the menu  *[VelType]* and 'filter1' in the menu  *[VelType_1] *just below*.* Adjust the scale *[num_VecScale]* (value 10 for instance) to better see the difference.  This is rather small (0.1 px) and erratic, except in the strong shear close to the cylinder, where it reaches a value about 0.3, so the smoothing properly reduces the noise without excessive perturbation of the velocity field itself. You can also use the scalar representation, selecting the field 'U' for both 'civ1' and 'filter1'. Projection on a line (as described in tutorial 2) is also useful to get field values on a plot.
+The difference between the two fields can be directly visualized by selecting *[CIV1]* in the menu  *[VelType]* and 'filter1' in the menu  *[VelType_1]* just below*.* Adjust the scale *[num_VecScale]* (value 10 for instance) to better see the difference.  This is rather small (0.1 px) and erratic, except in the strong shear close to the cylinder, where it reaches a value about 0.3, so the smoothing properly reduces the noise without excessive perturbation of the velocity field itself. You can also use the scalar representation, selecting the field 'U' for both 'civ1' and 'filter1'. Projection on a line (as described in tutorial 2) is also useful to get field values on a plot.
 
 Repeat the operations by choosing the value 100 for *[FieldSmooth]* instead of the default value 10. Now the smoothing effect is quite clear, widening the shear region at the edge of the cylinder.
 
@@ -49,7 +49,7 @@ The last parameter for *[PATCH1]* is *[num_SubDomainSize]* which corresponds to 
 ## Civ2, Fix2 and Patch2
 The *[CIV2]* operation repeats the *[CIV1]*, but it uses the result of Patch1 as a prior estimate. Therefore while Civ1 is purely local, Civ2 restricts the research to a correlation maximum which is close to the values obtained for neighboring vectors.
 
-The parameter  *[num_SearchBoxShift] *therefore does not appear in the Civ2 panel, as it is given at each point by the result Patch1. The other parameters have the same meaning as for Civ1. The search box must be small enough to effectively reduce the research to the prior estimate. Take *[CorrBoxSize]* +13 in each direction (providing a margin of 3 pixels on each side of the correlation box). Since it is the final result, you can optimise the grid by taking *Dy*=5.
+The parameter  *[num_SearchBoxShift]* therefore does not appear in the Civ2 panel, as it is given at each point by the result Patch1. The other parameters have the same meaning as for Civ1. The search box must be small enough to effectively reduce the research to the prior estimate. Take *[CorrBoxSize]* +13 in each direction (providing a margin of 3 pixels on each side of the correlation box). Since it is the final result, you can optimise the grid by taking *Dy*=5.
 
 The parameter *[deformation]* (check box) improves the prior estimate by deforming the subimage taking into account the velocity gradients, so it can improve the processing in zones of strong shear or strong rotation, like vortex cores. It involves an interpolation of the sub-images to perform the deformation.
 
@@ -57,7 +57,7 @@ The parameter *[deformation]* (check box) improves the prior estimate by deformi
 
 The final vorticity field can be observed in the following figure, in which the  vorticity roll up in the wake of the cylinder is clearly visible. A zoom  near a vortex shows the vorticity superposed with velocity vectors.
 
-A cut of the velocity along a transverse line x=250, y from 0 to 300 (in pixel coordinates), provides a good representation of the strong velocity shear in the wake of the cylinder. This can be done by displaying the velocity field filter2, open a line (*[Projection object/line]*) and in *set_object* choose *[ProjMode]*=inter_tps, *Mesh*=2 to get the profile with spline interpolation from filter2. Then select hold on on the GUI view_field and repeat the same cut with the field 'civ2', *[ProjMode]*='projection'. We can then compare the civ2 measurement points to the interpolation, showing some fluctuations are smoothed out but without widening of the strong shear zone. The result has been exported in figure, using the menu bar tool *[Export/extract figure] *in *view_field*.  The typical precision can be estimated from the scattering of the points as +-0.1 px, with typically 5-10 pixels in spatial resolution.
+A cut of the velocity along a transverse line x=250, y from 0 to 300 (in pixel coordinates), provides a good representation of the strong velocity shear in the wake of the cylinder. This can be done by displaying the velocity field filter2, open a line (*[Projection object/line]*) and in *set_object* choose *[ProjMode]*=inter_tps, *Mesh*=2 to get the profile with spline interpolation from filter2. Then select hold on on the GUI view_field and repeat the same cut with the field 'civ2', *[ProjMode]*='projection'. We can then compare the civ2 measurement points to the interpolation, showing some fluctuations are smoothed out but without widening of the strong shear zone. The result has been exported in figure, using the menu bar tool *[Export/extract figure]* in *view_field*.  The typical precision can be estimated from the scattering of the points as +-0.1 px, with typically 5-10 pixels in spatial resolution.
 
 [[Image(RMS Patch1-Civ1.png)]]
 

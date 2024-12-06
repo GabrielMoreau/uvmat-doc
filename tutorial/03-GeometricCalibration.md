@@ -92,10 +92,10 @@ The previous xml file has been saved with a ~, ('Dalsa1.xml~') so it can be reve
 ## 3D calibration with a target grid
 
 Most precise and general calibration relies on the use of a target grid.
-As an example, open in uvmat the image img_10 in 'UVMAT_DEMO07_GeometryCalibration/multiple_planes/Dalsa1' (accessible on <http://servforge.legi.grenoble-inp.fr/pub/soft-uvmat/).> Open the menu bar *[Tools/geometric calibration] *and pick four corner points ABCD with the mouse define the periphery of the phys grid selected for calibration.
+As an example, open in uvmat the image img_10 in 'UVMAT_DEMO07_GeometryCalibration/multiple_planes/Dalsa1' (accessible on <http://servforge.legi.grenoble-inp.fr/pub/soft-uvmat/).> Open the menu bar *[Tools/geometric calibration]* and pick four corner points ABCD with the mouse define the periphery of the phys grid selected for calibration.
 The first point A will define the phys axis origin while AB defines the x axis and AD the y axis.
 AB and DC should be parallel on the phys grid (see fig).
-Then select* [!Tools/Detect grid] *on the upper menu bar of* geometry_calib*: you get a new GUI *detect_grid* in which you define (in phys units) the grid mesh and the positions of the  first and last points on each axis.
+Then select* [!Tools/Detect grid]* on the upper menu bar of* geometry_calib*: you get a new GUI *detect_grid* in which you define (in phys units) the grid mesh and the positions of the  first and last points on each axis.
 Enter the value 0 for the *[first]* _x_ and _y_, the distance between two points on the grid is 10 cm so enter 10 for *[mesh]* _x_ and _y_.
 According to the number of meshes you selected with your 4 points ABCD enter the correct value of *[last]* _x_ and _y_.
 A _z_ position can be defiend as well, do not fill it in this example.
@@ -116,14 +116,14 @@ The grid image now appears of good quality in phys coordinates.
 
 This 3D calibration relies on the [pinhole camera model](https://servforge.legi.grenoble-inp.fr/projects/soft-uvmat/search?q=attachment%3A3D_view.pdf) (see [UvmatHelp#GeometryCalib](https://servforge.legi.grenoble-inp.fr/projects/soft-uvmat/search?q=wiki%3AUvmatHelp%23GeometryCalib) section 8.1).
 It involves intrinsic parameters which characterize the optical system (camera and objective lens) and extrinsic parameters which describe the translation and rotation of the camera with respect to the physical coordinates.
-The intrinsic parameters are shown in the frame *[Intrinsic Parameters] *in the GUI *geometry_calib*.
+The intrinsic parameters are shown in the frame *[Intrinsic Parameters]* in the GUI *geometry_calib*.
 These are the focal lenghts (in pixel size on the sensor) *[fx]* and *[fy]*, the quadratic radial distortion coefficient *[kc]* and the coordinates *[Cx]* and *[Cy]* of the optical centre for this distortion (expressed in pixels on the image).
 The extrinsic parameters are shown in the frame  *[Extrinsic Parameters].
 *It indicates in particular the translation T_z which represents the distance from the camera to the origin of the phys coordinates.
 Note that the calibration grid has been assumed by default to be at z=0, but this can be changed by selecting *[!Tools/Translate points]* in *geometry_calib* and entering a translation in _z_ for the grid point coordinates.
 
 A last* *item needed to define calibration in a 3D context is the determination of the plane of the object in the phys coordinates.
-It is assumed by default to be the plane z=0, but this can be changed by the menu bar option *[!Tools/Set slice] *of *uvmat*.
+It is assumed by default to be the plane z=0, but this can be changed by the menu bar option *[!Tools/Set slice]* of *uvmat*.
 It is then possible to change the assumed _z_ position, keeping the same calibration.
 Observe the corresponding change in the grid scale, since the same grid is then assumed to be at a different distance.
 

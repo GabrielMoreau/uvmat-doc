@@ -24,11 +24,11 @@ A new GUI *civ_input* now appears.
 In the menu *[ListCompareMode]*, keep the default option 'PIV'.
 Keep the default option 'Di=0|1' for the image pair (menu tag *[ListPairCiv1]*) and the default parameters in the frame *CIV1*.
 Press *[OK]* so the GUI *civ_input* desappears.
-Then change *i_last* to 2 and press *[RUN] * in the GUI* series* to run the calculation.
+Then change *i_last* to 2 and press *[RUN]*  in the GUI* series* to run the calculation.
 The button *[RUN]* is then colored to yellow until the computation is finished.
 
 The operation produces a  file with format netcdf, named with extension '.nc', in a folder called 'Images.civ'.
-This can be viewed by pressing *[STATUS] *in the GUI *series*, which displays the result file 'frame_1-2.nc'.
+This can be viewed by pressing *[STATUS]* in the GUI *series*, which displays the result file 'frame_1-2.nc'.
 The index string '_1-2' indicates that it results from images 1 and 2.
 Select the file name and press *[OPEN]* to open it directly with *uvmat*, or use the browser of *uvmat*.
 
@@ -63,19 +63,19 @@ The transverse and longitudinal velocity components along this line are then plo
 
 ## Various vector color representations
 
-Vector color can also  represent another quantity, as chosen in the menu *[ColorScalar] * in the frame *[Vectors]*.
+Vector color can also  represent another quantity, as chosen in the menu *[ColorScalar]*  in the frame *[Vectors]*.
 For instance the vector length 'norm(U,V)' can be used.
 Then a color continuous 64 color code is appropriate, as set in the menu *[ColorCode]*.
-The color code extrema are set by *[num_MinVec] * and *[num_MaxVec]*, choose for instance 0 and 5 respectively.
+The color code extrema are set by *[num_MinVec]*  and *[num_MaxVec]*, choose for instance 0 and 5 respectively.
 
 ## Scalar maps
 
 Other field representations are available, selected in the menu *[Field]* at the top of the GUI.
 For instance the option 'U' provides a (false) color map of the x wise velocity component.
-The color code can be adjusted by the edit box *[num_MinA] * (saturated blue color below this value) and *[num_MaxA]* (saturated red color beyond this value).
+The color code can be adjusted by the edit box *[num_MinA]*  (saturated blue color below this value) and *[num_MaxA]* (saturated red color beyond this value).
 Choose for instance -1 and 5 respectively.
 
-A contour plot can be obtained instead of a color map by selecting the option 'contour' in the menu *[ListContour]* in the frame* [Scalar] *.
+A contour plot can be obtained instead of a color map by selecting the option 'contour' in the menu *[ListContour]* in the frame* [Scalar]* .
 Then select the contour interval, for instance 0.5.
 The result is shown in the following figure.
 
@@ -83,7 +83,7 @@ The result is shown in the following figure.
 
 ## Spatial derivatives
 To get the vorticity field, 'curl', and other spatial derivatives, you need to come back to the GUI* series* with images in *[Input Files]* and *[Action]* as 'civ_series'.
-In* civ_input*, select the check boxes *[FIX1] * and  *[PATCH1] *, validate the input with *[OK]*, then press *[RUN]* in the GUI *series*.
+In* civ_input*, select the check boxes *[FIX1]*  and  *[PATCH1]* , validate the input with *[OK]*, then press *[RUN]* in the GUI *series*.
 A question box appears to warn about the existence of the result file, answer *[OK]* to refresh it with the new data.
 Otherwise the results are stored in a new subdirectory with extension '.civ1', so the previous results are not erased (you can modify this extension by editing the boxe *[OutputDirExt]* in the GUI *series*.
 
@@ -92,7 +92,7 @@ After this operation vorticity can be visualized in the GUI  *uvmat*, selecting 
 
 ## Superposing image and vectors
 It can be useful to visually superpose the images to the velocity field.
-This is done  by selecting the option 'vec(U,V)'  in the popup menu *[FieldName] *and  'image' in the popup menu *[FieldName_1]*, located just below* * in the upper frame *[Input]*.
+This is done  by selecting the option 'vec(U,V)'  in the popup menu *[FieldName]* and  'image' in the popup menu *[FieldName_1]*, located just below* * in the upper frame *[Input]*.
 To remove the image, select the blank option in *[FieldName_1]*.
 
 ![](05-image-vectors.png)
