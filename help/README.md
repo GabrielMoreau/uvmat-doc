@@ -31,7 +31,7 @@ The package also contains the following set of GUI.
 * *view_field.fig:* is a GUI complementing UVMAT for plotting projected data.
 
 Functions in the package are used to generate file names, to read files and plot data, and to perform various ancillary tasks.
-The full set of functions is listed in [#overview overview of the package].
+The full set of functions is listed in [overview of the package](#14-appendix-overview-of-the-package-functions).
 
 ### 1.3 Documentation and help
 
@@ -97,7 +97,7 @@ The menu bar at the top of the GUI contains the following buttons:
 * *[Open campaign]* : scan the data organised as a project/campaign, see [#a3.7Dataorganisationinaproject section 3.7].
 * Previously opened campaigns are memorised in the menu where they can be selected again.
 * *[Export]* : used to export the currently displayed data, either as array structure in the Matlab workspace, either as a figure or a movie (for a succession of views), or plotted on an existing figure (axes) for comparison with previous data.
-* *[Projection object]* : used to create projection objects (points, lines, patches, gridded planes) for data analysis and interpolation, see [#ProjObject section 6].
+* *[Projection object]* : used to create projection objects (points, lines, patches, gridded planes) for data analysis and interpolation, see [section 6](#6-projection-objects).
 * *[Tools]*:
 * *[Geometric calibration]* for geometric calibration of images.
 * *[LIF calibration]*: calibration of images for Laser Induced Fluorescence.
@@ -262,7 +262,7 @@ The maximum value detected for each index is indicated by the boxes *[last_i]* a
 -*Keyboard short cuts:* the activation of the push buttons *[runplus]* and *[runmin]* can be performed by typing the key board letters 'p' and 'm' respectively, after the UVMAT figure has been selected by the mouse.
 Similarly the command of the push button *[run0]* can be performed by typing the 'return carriage' key.
 
-### 3.5 Image documentation files (.xml) #ImaDoc
+### 3.5 Image documentation files
 
 Image series in UVMAT are documented by a file providing image timing, geometric calibration, camera type and illumination.
 This file is in the format _XML_, a hierarchically organised text file.
@@ -288,7 +288,7 @@ The XML file <ImaDoc> can contain the following sections, as prescribed by the s
 * *<Illumination>* describes the illumination system used, including the position of the laser source.
 * *<Tracor>* describes the properties of the flow tracor (particle, dye...).
 
-### 3.6 Ancillary input files #MaskGrid
+### 3.6 Ancillary input files
 
 * *Mask:* Masks are used to avoid PIV computations in specified areas.
   The file is a B&W 8 bit png image, with the same size as the image it has to mask.
@@ -404,7 +404,7 @@ Then the image may appear dark if a single point is very bright, in that case a 
 Greyscale images can be displayed with false colors, from blue to red, by unselecting the check box *B/W* (*[CheckBW]*).
 
 Note that greyscale images with low resolution are linearly interpolated on a finer mesh for nicer display.
-This interpolation can be also done as image processing by defining a grid on a projection object 'plane', see [#ProjObject section 6].
+This interpolation can be also done as image processing by defining a grid on a projection object 'plane', see [section 6](#6-projection-objects).
 
 Two images can be visually compared by switching back and forth between them as a short movie.
 This is quite useful to get a visual feeling of the image correlation for PIV.
@@ -505,7 +505,7 @@ This transform can possibly combine two input fields, for instance to substract 
 The processing function is chosen by the popup menu *[transform_fct]* on the left, and its path is displayed in the box *[path_transform]*.
 Select the option 'more...' to browse new functions.
 The same functions can be called in data processsing using the GUI *series.fig*.
-A few functions are provided in the folder /transform_fct, see the list in [#overview the function overview].
+A few functions are provided in the folder /transform_fct, see the list in the [function overview](#14-appendix-overview-of-the-package-functions).
 
 These functions can transform fields into polar coordinates, do image filtering, Fourier transform, signal analysis for a 1D input field...
 Other functions can be easily written using those as templates.
@@ -523,7 +523,7 @@ The following succession of operations is performed by *uvmat.fig*:
 - *Transform:* by default the 'phys' option transforms each of the input fields from pixel to physical coordinates.
   This operation can also combine two input field structures into a single field structure.
 - *Histogram:* This is obtained from the input field in transformed coordinates, or if applicable from the fields resulting from the two input fields.
-- *Projection:* on the projection object selected in the menu *[ListObject_1]*, see [#ProjObject section 6].
+- *Projection:* on the projection object selected in the menu *[ListObject_1]*, see [section 6](#6-projection-objects).
   A second projection, on the object selected by *[ListObject]*, can be plotted in the ancillary figure *view_field.fig*.
   Projection is performed by the function _proj_field.m_.
 - *Field calculation:* a scalar can be calculated after projection, as selected by the menu *[Fields]*.
@@ -534,11 +534,11 @@ The following succession of operations is performed by *uvmat.fig*:
 
 ## 5 - Field structures
 
-### 5.1 Griding of data #tps
+### 5.1 Griding of data
 
 Physical fields can be defined either on regular grids, either scattered on an unstructured set of positions.
 Some measurements techniques, like PIV or particle tracking, provided unstructured data, while most methods of analysis require data on a regular grid.
-This can be done by interpolation, defining a projection on a plane (with *[ProjMode]* ='interp...', see [#ProjObject next section]).
+This can be done by interpolation, defining a projection on a plane (with *[ProjMode]* ='interp...', see [section 6](#6-projection-objects)).
 The three possibilities of griding are defined as follows:
 
 * *Regular grid:*
@@ -619,7 +619,7 @@ Any other element can be added, but will not be taken into account if they are n
 * *Global attributes active in UVMAT*: those are used for plot settings or data processing.
 * 'Conventions':
 * ='uvmat': indicate that the conventions described here are followed.
-* ='uvmat/civdata': indicate that the variables are named according to [#civdata #civdata].
+* ='uvmat/civdata': indicate that the variables are named according to [section 11.8](#118-description-of-the-velocity-files).
 * 'CoordMesh': typical mesh for coordinates, used to define default projection grids and mouse selection action.
   Calculated automatically from the data if not specified.
 * 'CoordUnit': character string representing the unit for space coordinates.
@@ -687,7 +687,7 @@ The following conventions are used:
 * 'nb_subdomain' denotes the dimension for the subdomain index for tps coefficients.
 
 
-## 6 - Projection objects #ProjObject
+## 6 - Projection objects
 
 ### 6.1 Definition and editing with the UVMAT interface
 
@@ -828,7 +828,7 @@ The object can be similarly translated by selecting a defining line.
 
 ## 7 - NetCDF files and the GUI get_field
 
-### 7.1 The NetCDF format #netcdf
+### 7.1 The NetCDF format
 
 NetCDF (Network Common Data Form) is a machine-independent format for representing scientific data, suitable for large arrays (http://www.unidata.ucar.edu/software/netcdf/).
 Each piece of data can be directly accessed by its tag name without reading the whole file.
@@ -915,7 +915,7 @@ This can be moved then with the slider on the interface set_object (see section 
 The default cuts are made at constant z coordiante, but any of the three initial coordinates can be used as z coordinate, using the menu coord_z.
 
 
-## 8 - Geometric calibration #GeometryCalib
+## 8 - Geometric calibration
 
 ### 8.1 Generalities
 
@@ -950,7 +950,7 @@ The option 3D_extrinsic allows the user to do only the second step from known in
 Those depend only on the camera with its objective lens and focus adjustement.
 Note that these 3D options require a calibration grid, with a sufficient number of calibration points covering the whole image.
 
-The transform coefficients for each image series are stored in the corresponding XML documentation file <ImaDoc>, described in [#ImaDoc section 3.5], under the tag <GeometryCalib>.
+The transform coefficients for each image series are stored in the corresponding XML documentation file <ImaDoc>, described in [section 3.5](#35-image-documentation-files), under the tag <GeometryCalib>.
 Calibration creates an xml file, or updates an existing xml file <ImaDoc>, with the name of the DataSeries folder containing the images currently opened by uvmat, followed by the file extension .xml.
 If a new data series is produced in a folder named with an extension, for instance DataSeries.civ for PIV, the xml file DataSeries.xml is still used, except if a new xml file DataSeries.civ.xml also exists.
 
@@ -1106,7 +1106,7 @@ The parameters defining the slice positions are in the XML element <ImaDoc/Slice
 ### 9.1 Masks
 
 Mask files are used to restrict the domain of CIV processing, to take into account fluid boundaries or invalid image zones.
-They must be stored as .png images with 8 bits, as described in [#MaskGrids section 3.6].
+They must be stored as .png images with 8 bits, as described in [section 3.6](#36-ancillary-input-files).
 Mask files are automatically recognised by *uvmat.fig* and *civ.fig* if they are named [filebase '_xxmask_' 'filenumber' '.png'], where xx is the number of masks (nbslices) used when the series of fields corresponds physically to a set of nbslices positions.
 The mask filenumber used is the image field number modulo nbslices.
 Use xx=1 in the default case of a fixed position and a single mask.
@@ -1129,7 +1129,7 @@ A new image can be then entered.
 
 ### 9.2 Grids
 
-Grid files, see [#MaskGrids section 3.6], are used to impose a set of positions for PIV vectors.
+Grid files, see [section 3.6](#36-ancillary-input-files), are used to impose a set of positions for PIV vectors.
 To create a grid for PIV, activate the menu bar !Tools/Make grid on the GUI *uvmat*.
 Introduce a minimum value, mesh, and maximum value for coordinate _x_ in the edit boxes *[XMin], [DX], [XMax]* respectively.
 Do the same for the _y_ coordinate.
@@ -1140,7 +1140,7 @@ Press save to save the corresponding grid file (s).
 A dialog box appears to edit the name of the output grid file, and a second one in case of two images.
 
 
-## 10 - Processing field series #Series
+## 10 - Processing field series
 
 ### 10.1 The GUI series.fig
 
@@ -1176,7 +1176,7 @@ The menu bar at the top of the GUI contains the following buttons:
 
 * *[Open]*: Open or browse input files.
   It operates like for the GUI UVMAT, except that there are now two possibilities: *[browse...]* or *[browse_append...]* The latter appends a new input line to the table *[InputTable]* while the former refreshes the table.
-* *[Open campaign]*: does the same as *[Open]* but scans the data organised as a project/campaign, see [section 3.7](https://servforge.legi.grenoble-inp.fr/#a3.7Dataorganisationinaproject).
+* *[Open campaign]*: does the same as *[Open]* but scans the data organised as a project/campaign, see [section 3.7](#37-data-organisation-in-a-project).
 * *[Display Config]*: exports on the Matlab work space all the data stored in the GUI, in the form of a Matlab structure.
 * *[Inport Config]*: reads the XML configuration file of a previous computation (placed in a subfolder /0_XML), and fills the GUI with its content, so the calculation can be repeated.
 * *[Help]*: displays this help file using the Matlab browser.
@@ -1231,7 +1231,7 @@ This is a good first test before starting a processing operation since all actio
 The option _aver_stat_ calculates a global average on the successive fields, while _time_series_ provides a time series.
 The option _merge_proj_ is used to project a whole series on a given grid, or to create a file series by concatenation of different fields.
 These processing functions are described with more details in next sub-sections.
-The option _civ_series_ gives access to the PIV processsing, see section [#Civ: section 11].
+The option _civ_series_ gives access to the PIV processsing, see section [section 11](#11-piv-particle-imaging-velocimetry).
 Finally any additional function can be called and included in the menu by selecting the option _more_...
 The corresponding path is displayed in *[ActionPath]*.
 
@@ -1283,7 +1283,7 @@ A few functions are provided by default in the menu *[ActionName]*:
   In this case, it is generally useful to interpolate the fields on a single grid.
   For that purpose select a projection object of type 'plane' with projection mode 'interp_lin', or 'interp_tps' to get spatial derivative.
   Since the different views have their own calibration, it is important to use the option 'phys' (menu menu_coord), and to create the grid in phys coordinates.
-* _civ_series_: does PIV processing, see section [#Civ: section 11].
+* _civ_series_: does PIV processing, see section [section 11](#11-piv-particle-imaging-velocimetry).
 
 ### 10.8 Other functions Action
 
@@ -1330,18 +1330,18 @@ This appears in red.
 Then an estimate of the peaklocking error is obtained by comparing the initial histogram to the smooth one.
 
 
-## 11 - PIV: Particle Imaging Velocimetry #Civ
+## 11 - PIV: Particle Imaging Velocimetry
 
 ### 11.1 Overview
 
 Particle Image Velocimetry (PIV) measures the displacement of features in a pair of images by maximising the correlation.
 
 * Usual PIV provides the 2D velocity components in a illuminated plane.
-* The 3 velocity components in a plane can be obtained by combining two views of this plane by two differents cameras: this is the stereoscopic 3C PIV described in [#sec11.6 section 11.6].
+* The 3 velocity components in a plane can be obtained by combining two views of this plane by two differents cameras: this is the stereoscopic 3C PIV described in [section 11.6](#116-stereoscopic-3c-piv).
 * PIV can be performed in a volume by scanning the illuminated plane, see below.
 * The same image correlation technique can be used to measure 2D displacement from a single reference image (see mode 'displacement' below).
 * Image correlation can be used also to get the shape of a 3D surface by comparing the images of two stereoscopic views of the surface marked by some visual patterns.
-Then image correlation is used to identify the common points on the two images, see [#sec11.7 section 11.7].
+Then image correlation is used to identify the common points on the two images, see [section 11.7](#117-topography-measurement-by-image-correlation-from-stereoscopic-views).
 
 Usual PIV and 2D displacement measurements can be performed by selecting the Matlab function _civ_series_ as *[ActionName]* in the GUI *series.fig*: then the *GUI civ_input* appears to enter the processing parameters.
 An image file series must be entered as input of *series.fig*.
@@ -1351,10 +1351,10 @@ An alternative obsolete possibility (not advised) is to use the older Fortran pr
 This can be called directly on the Matlab prompt, by typing _>>civ_, or from UVMAT by the menu bar command *[RUN/PIV (old civ)]*.
 
 - *Timing and calibration*: PIV requires information of time intervals between images.
-  uvmat can read the time in the input file for usual movie formats, but for other image types, the timing needs to be described in an ancillary file with the format xml, see [#ImaDoc section 3.5].
+  uvmat can read the time in the input file for usual movie formats, but for other image types, the timing needs to be described in an ancillary file with the format xml, see [section 3.5](#35-image-documentation-files).
   Examples of such XML files are provided in /XML_SCHEMAS/ImaDoc_templates.
   In the absence of information, the time is taken by default as the index i in seconds and index j in ms.
-  Actual velocity measurements also require geometric calibration, see [#GeometryCalib section 8].
+  Actual velocity measurements also require geometric calibration, see [section 8](#8-geometric-calibration).
   This is also documented in the same xml file ImaDoc, but it can be performed after the PIV process as the PIV results are stored in image (pixel) coordinates.
 
 - *Image pre-processing*: it may be useful to prepare the images series by a pre-processing operation before performing PIV.
@@ -1466,7 +1466,7 @@ The FIX operation is used after civ to mark false vectors, using different crite
 ### 11.4 PATCH
 
 *PATCH1: * interpolates the velocity values on a regular grid with a smoothing effect controlled by the parameter *[num_FieldSmooth]*.
-The interpolation relies on the thin plate spline method, see [#tps section 5.1].
+The interpolation relies on the thin plate spline method, see [section 5.1](#51-griding-of-data).
 This also provides the spatial derivatives (vorticity, divergence) needed for the refined processing civ2 (with option 'deformation').
 
 The vectors which are too far from the smoothed field (erratic vectors) are eliminated (marked by an error flag), using a threshold set by *[num_MaxDiff]* (expressed in pixel displacement).
@@ -1506,13 +1506,13 @@ Further iterations: improvements can be obtained by further iterations of the ci
 Open again the interface, and consider the previous civ2 result as the prior guess civ1, and select the option civ3 in the checkbox which now appears in the panel civ2.
 The result will be put in a new NetCDF file, but still labelled as Civ2 field.
 
-### 11.6 Stereoscopic 3C PIV #sec11.6
+### 11.6 Stereoscopic 3C PIV
 
 To obtain the three velocity components in a plane with stereoscopic PIV, use the following procedure:
 
 * Install two cameras viewing a common field with angle about 45 ° on each side.
   A system of titled objective lenses (Sheimpflug) allows to optimize the focus in the whole image.
-* Make a careful geometric calibration, by taking the images of a grid positioned in the plane of the laser sheet used for particle illumination, as described in section [#GeometryCalib section 6].
+* Make a careful geometric calibration, by taking the images of a grid positioned in the plane of the laser sheet used for particle illumination, as described in section [section 8](#8-geometric-calibration).
   This calibration model is valid in air or with an interface air-water perpendicular to the line of sight for each camera.
   Otherwise, the calibration problem is more complex.
 * Perform usual PIV for each image series.
@@ -1523,7 +1523,7 @@ To obtain the three velocity components in a plane with stereoscopic PIV, use th
   A transverse _z_ displacement can be taken into account, introduced then in the third input line of the GUI _series_.
   This _z_ displacement can be obtained by stereo comparison of the two images (at the same time).
 
-### 11.7 Topography measurement by image correlation from stereoscopic views #sec11.7
+### 11.7 Topography measurement by image correlation from stereoscopic views
 
 A displacement _z(x,y)_ can be obtained by comparing two stereoscopic views (at the same time), using the function _stereo_civ_ activated by the GUI *series*.
 This identifies corresponding points using image correlation, in the same way as _civ_.
@@ -1531,9 +1531,9 @@ A transform of the image to physical coordinates is performed as a first step to
 The final result is expressed as a set of _(x,y,z)_ positions in physical coordinates (unlike PIV data which are expressed in image coordinates).
 See [3D View](3d-view.pdf) (pdf) for full algorithm description.
 
-### 11.8 Description of the velocity files: #civdata
+### 11.8 Description of the velocity files
 
-The velocity fields obtained by PIV, as well as their spatial derivatives, are stored in the machine independent binary format [#netcdf NetCDF].
+The velocity fields obtained by PIV, as well as their spatial derivatives, are stored in the machine independent binary format [NetCDF](#71-the-netcdf-format).
 The file contains constants ('global attributes') and fields ('variables') whose values can be directly accessed by their name.
 
 Several fields, corresponding to the successive operations 'civ1', 'fix1', 'patch1', 'civ2', 'fix2', 'patch2' are stored in the same .nc file.
@@ -1701,7 +1701,7 @@ Select the element and use the lower edit box.
 This edit box transforms in a menu when a preselected list of allowed input values has been set by the schema.
 
 
-## 14 - Appendix: overview of the package functions #overview
+## 14 - Appendix: overview of the package functions
 
 Note:these functions are listed in the function _check_files.m_ launched when the GUI *uvmat* is opened.
 
