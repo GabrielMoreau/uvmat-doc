@@ -1,4 +1,4 @@
-# Tutorial 04 / Processing image series
+# Tutorial 04 / Processing Image Series
 
 Open an image in UVMAT_DEMO03_PIVchallenge_2005C, representing a jet seeded by particles (accessible on <http://servforge.legi.grenoble-inp.fr/pub/soft-uvmat/).>
 

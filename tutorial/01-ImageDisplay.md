@@ -1,4 +1,4 @@
-# Tutorial 01 / Image display
+# Tutorial 01 / Image Display
 
 ## Opening an image
 

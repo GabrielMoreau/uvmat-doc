@@ -125,9 +125,9 @@ The label 'xml' should appear in the upper right box *[TimeName]* and time value
 
 Now repeat the PIV operation to include the time information in the result (in the absence of time information the file index is taken as default value).
 
-To introduce the geometric calibration, use the method described in [geometric calibration](https://servforge.legi.grenoble-inp.fr/projects/soft-uvmat/search?q=wiki%3ATutorial%2FGeometricCalibration), section 'Simple scaling'.
+To introduce the geometric calibration, use the method described in [Tutorial 03 Geometric Calibration](../03-GeometricCalibration/#simple-scaling), section 'Simple scaling'.
 The velocity field is then displayed in terms of physical velocity.
-To come back to the image coordinates, use the box* [TransformName]* on the left : select to blank instead of ’phys’.
+To come back to the image coordinates, use the box *[TransformName]* on the left : select to blank instead of ’phys’.
 
 Note that the netcdf file has not been by changed by calibration, whose rescaling is introduced after reading the file.
 This means that calibration can be provided, and possibly updated, after the PIV processing.
@@ -155,4 +155,4 @@ Vectors under the mask are not calculated in the resulting velocity data.
 
 ![](05-civ-with-mask.png)
 
-Further improvments of the results are discussed in Tutorial/CorrelationImageVelocimetryOptimisation.
+Further improvments of the results are discussed in [Tutorial 06 Correlation Image Velocimetry Optimisation](../06-CorrelationImageVelocimetryOptimisation).
