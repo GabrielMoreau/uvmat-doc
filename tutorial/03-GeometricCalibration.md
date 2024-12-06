@@ -114,7 +114,7 @@ We observe that the simple option 'rescale' is not appropriate in this case: a p
 Therefore select the option '3D_quadr' which applies a 3D projection and quadratic correction.
 The grid image now appears of good quality in phys coordinates.
 
-This 3D calibration relies on the [pinhole camera model](https://servforge.legi.grenoble-inp.fr/projects/soft-uvmat/search?q=attachment%3A3D_view.pdf) (see [UvmatHelp#GeometryCalib](https://servforge.legi.grenoble-inp.fr/projects/soft-uvmat/search?q=wiki%3AUvmatHelp%23GeometryCalib) section 8.1).
+This 3D calibration relies on the [pinhole camera model](3d-view-2015.pdf) (see [UvmatHelp#GeometryCalib](https://servforge.legi.grenoble-inp.fr/projects/soft-uvmat/search?q=wiki%3AUvmatHelp%23GeometryCalib) section 8.1).
 It involves intrinsic parameters which characterize the optical system (camera and objective lens) and extrinsic parameters which describe the translation and rotation of the camera with respect to the physical coordinates.
 The intrinsic parameters are shown in the frame *[Intrinsic Parameters]* in the GUI *geometry_calib*.
 These are the focal lenghts (in pixel size on the sensor) *[fx]* and *[fy]*, the quadratic radial distortion coefficient *[kc]* and the coordinates *[Cx]* and *[Cy]* of the optical centre for this distortion (expressed in pixels on the image).
