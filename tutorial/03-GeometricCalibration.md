@@ -29,7 +29,7 @@ The image is now displayed in phys coordinates.
 A xml file 'images.xml', containing the calibration parameters and reference point coordinates, has been created in the folder 'UVMAT_DEMO01_pair' (it should be identical with the file 'images.ref.xml' put for reference).
 Note that the xml file name reproduces the name of the folder containing the images, so that images from different cameras should not be put in the same folder.
 
-![](03-Calib.jpg)
+![](03-calib.jpg)
 
 ## Translating the coordinates
 
@@ -102,7 +102,7 @@ A _z_ position can be defiend as well, do not fill it in this example.
 The option white markers is selected (by default) indicating that the grid is white (the opposite option would be needed for a grid made of black crosses on a white background).
 After validation by *[OK]*, the detected grid appears on *uvmat*.
 
-![](03-Detect-Grid.png)
+![](03-detect-grid.png)
 
 If a  point is not correct, select the option *[CheckEnableMouse]* in *geometry_calib*.
 Then you can adjust the point marker by selecting it with the (left button) mouse and moving it while keeping the mouse pressed (when adjustement is finished, select the option  *[CheckEnableMouse]* to avoid spurious point creation with the mouse).
