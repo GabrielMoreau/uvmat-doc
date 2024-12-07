@@ -7,9 +7,9 @@ Cubic spline is an optimum general method to interpolate a 1D data series $f_{i}
 It can be shown that this spline function minimizes the global curvature $\int_{x_{1}}^{x_{N}}f_(x)^{2}dx$ .
 The name 'spline' refers to a flexible wooden strip used in ship design to draw a smooth curved line pinned on a set of reference points.
 Its equilibrium shape indeed minimizes the elastic energy.
-This is proportional to the integral of $f_^{2}$  if it represents a small transverse displacement from the absissa line.
+This is proportional to the integral of $f_{2}$ if it represents a small transverse displacement from the absissa line.
 
-To deal with noisy data, smoothing spline do not go strictly through the measurement values, but minimises a linear combination of distance to these values and curvature $E=\sum_{i=1}^{N}(f_{i}-f(x_{i}))^{2}+\rho\int_{x_{1}}^{x_{N}}f_(x)_^_{2}\,\mathrm{d}x$, where $\rho$  is a smoothing parameter.
+To deal with noisy data, smoothing spline do not go strictly through the measurement values, but minimises a linear combination of distance to these values and curvature $E=\sum_{i=1}^{N}(f_{i}-f(x_{i}))^{2}+\rho\int_{x_{1}}^{x_{N}}f_(x)_{2}\,\mathrm{d}x$, where $\rho$  is a smoothing parameter.
 In the limit of small $\rho$ , the weight of the distance constraint becomes very strong so the optimum approaches the pure interpolation spline, with $f(x_{i})=f_{i}$.
 In the opposite limit of large $\rho$ , the curvature constraint becomes very strong, so the optimum tends to be linear $(f_=0 )$ and approaches the least square linear fit by the minimisation of the distance term contribution.
 
@@ -24,7 +24,7 @@ We use here a more recent algorithm proposed by Wahba, 1990 ('Spline models for 
 
 We consider a set of measurement points ${\bf r_i}, i = 1,2, \ldots,N$, and the corresponding set of measurements values for a quantity $f$ (a velocity component for PIV data).
 
-$$f({\bf r_i})=f_i, i = 1,2, \ldots,N} \; [equ. 1]$$
+$$f({\bf r_i})=f_i, i = 1,2, \ldots,N \; [equ. 1]$$
 
 A pure interpolation function $f({\bf r})$ must exactly reach these values $f_i$ at the measurement points, while a smoothing function should approach these values within a range smaller than the estimated error bar.
 
