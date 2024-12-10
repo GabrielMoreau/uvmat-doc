@@ -1,7 +1,7 @@
-site_name: UVMAT - Best practice guide
+site_name: UVMAT - Help with documentation and tutorials
 site_url: https://legi.gricad-pages.univ-grenoble-alpes.fr/soft/uvmat-doc/
-docs_dir: ../tutorial
-site_dir: ../tmp/docs
+docs_dir: ./src
+site_dir: ./docs
 site_author: Joel Sommeria / LEGI
 copyright: Copyright (C) Joel Sommeria, 2008-2024, LEGI UMR 5519 / CNRS UGA Grenoble-INP / Grenoble, France (document generated on __DATE__)
 
@@ -10,18 +10,20 @@ nav:
 #  - README.md
 #  - ../tutorial/README.md
   - README.md
-  - 01-ImageDisplay.md
-  - 02-ProjectionObjects.md
-  - 03-GeometricCalibration.md
-  - 04-ProcessingImageSeries.md
-  - 05-ParticleImageVelocimetry.md
-  - 06-CorrelationImageVelocimetryOptimisation.md
-  - 07-AdvancedParticleImagingVelocimetry-1.md
-  - 08-AdvancedParticleImagingVelocimetry-2.md
-  - 09-DisplacementMeasuredByImageCorrelation.md
-  - 10-ImageCorrelation.md
-  - 11-CorrelationImageVelocimetryComponents.md
-  - 12-ComparaisonNumSolution.md
+  - help/README.md
+  - tutorial/01-ImageDisplay.md
+  - tutorial/02-ProjectionObjects.md
+  - tutorial/03-GeometricCalibration.md
+  - tutorial/04-ProcessingImageSeries.md
+  - tutorial/05-ParticleImageVelocimetry.md
+  - tutorial/06-CorrelationImageVelocimetryOptimisation.md
+  - tutorial/07-AdvancedParticleImagingVelocimetry-1.md
+  - tutorial/08-AdvancedParticleImagingVelocimetry-2.md
+  - tutorial/09-DisplacementMeasuredByImageCorrelation.md
+  - tutorial/10-ImageCorrelation.md
+  - tutorial/11-CorrelationImageVelocimetryComponents.md
+  - tutorial/12-ComparaisonNumSolution.md
+  - help/ThinPlateShell.md
 
 theme:
   name: material
@@ -31,8 +33,8 @@ theme:
   features:
     - content.code.copy
   palette:
-    primary: pink
-    accent: red
+    primary: blue
+    accent: darkblue
 
 plugins:
   - macros
@@ -51,3 +53,9 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
   - attr_list:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js

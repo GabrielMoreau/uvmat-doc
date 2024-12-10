@@ -1,4 +1,4 @@
-# Thin Plate Shell Interpolation
+# Annex 01 / Thin Plate Shell Interpolation
 
 Interpolation/smoothing is an important aspect of PIV.
 Linear interpolation is the simplest option but it cannot smooth noise, and for 2D (or 3D) fields it does not extrapolate data beyond the convex hull of the initial data set.

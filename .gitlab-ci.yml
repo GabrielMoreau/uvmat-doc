@@ -3,16 +3,14 @@ image: debian:latest
 
 before_script:
   - apt-get update -yqq
-  - apt-get install -yqq make binutils findutils mkdocs pip python3-venv python3-gi libcogl-pango20 zip
+  - apt-get install -yqq make binutils findutils mkdocs pip python3-venv python3-gi libcogl-pango20 zip rsync
 
 pages:
   stage: build
   script:
     - mkdir -p public
     - make all
-    - cp -r ./tmp/docs/help public/
-    - cp -r ./tmp/docs/tutorial public/
-    - ls -al public public/help public/tutorial
+    - rsync -av ./tmp/docs/ public/
   artifacts:
     paths:
       - public
