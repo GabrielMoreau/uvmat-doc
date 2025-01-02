@@ -15,32 +15,32 @@ Procedure to install UVMAT is described on [wiki:Installation] webpage.
 
 ### 1.2 The package
 
-The master piece is a Matlab GUI, made of a Matlab figure *uvmat.fig* and an associated set of sub-functions in the file _uvmat.m_.
-The menu bar at the top of the GUI, push buttons and editing box in *uvmat.fig* activate the Matlab sub-functions (_callback_ functions) in _uvmat.m_.
+The master piece is a Matlab GUI, made of a Matlab figure **uvmat.fig** and an associated set of sub-functions in the file `uvmat.m`.
+The menu bar at the top of the GUI, push buttons and editing box in **uvmat.fig** activate the Matlab sub-functions (_callback_ functions) in `uvmat.m`.
 The package also contains the following set of GUI.
 
-- *browse_data.fig*: scans the data directory of a project.
-- *editxml.fig*: displays and edits XML files according to an XML schema.
+- **browse_data.fig**: scans the data directory of a project.
+- **editxml.fig**: displays and edits XML files according to an XML schema.
    XML reading and editing is performed by the toolbox [xmltree](http://www.artefact.tk/software/matlab/xml/), integrated in the package _UVMAT_ as a subdirectory /@xmltree.
-- *geometry_calib.fig*: determines geometric calibration parameters for relating image to physical coordinates.
+- **geometry_calib.fig**: determines geometric calibration parameters for relating image to physical coordinates.
   The toolbox <http://www.vision.caltech.edu/bouguetj/calib_doc/> is used, integrated in the package _UVMAT_ as a subdirectory /toolbox_calib.
-- *get_field.fig*: selects coordinates and field in a general NetCDF file.
-- *series.fig*: applies various processing functions to series of fields.
+- **get_field.fig**: selects coordinates and field in a general NetCDF file.
+- **series.fig**: applies various processing functions to series of fields.
   A set of functions is integrated in the package as a subdirectory /series, but new functions can be introduced by the user.
-- *set_object.fig*: creates and edits geometric objects used to project data: points, lines, planes...
-- *view_field.fig*: is a GUI complementing UVMAT for plotting projected data.
+- **set_object.fig**: creates and edits geometric objects used to project data: points, lines, planes...
+- **view_field.fig**: is a GUI complementing UVMAT for plotting projected data.
 
 Functions in the package are used to generate file names, to read files and plot data, and to perform various ancillary tasks.
 The full set of functions is listed in [overview of the package](#14-appendix-overview-of-the-package-functions).
 
 ### 1.3 Documentation and help
 
-The present on-line document is the reference document for the version currently available on the svn server.
+The present on-line document is the reference document for the version currently available on the Git server.
 Features not yet implemented or tested (in particular 3D features) are marked by `**`.
 The document is accessible within Matlab by help buttons in the GUIs.
 
-A short comment about each GUI element, called _uicontrol_ (push buttons, edit boxes, menus..), as well as the _tag name_ of this _uicontrol_, is provided as a tool tip window by moving the mouse over it.
-In the present help document, a GUI element is quoted as *GUI*, its tags as *[tag]*, a file name in the package is enhanced as _fct name.m_, and commands on the Matlab workspace as `>> command`.
+A short comment about each GUI element, called _uicontrol_ (push buttons, edit boxes, menus...), as well as the _tag name_ of this _uicontrol_, is provided as a tool tip window by moving the mouse over it.
+In the present help document, a GUI element is quoted as **GUI**, its tags as *[tag]*, a file name in the package is enhanced as `fct name.m`, and commands on the Matlab workspace as `>> command`.
 The tag name can be also obtained by pressing the right hand mouse button on the element.
 
 Information is also provided as comments in each function.
@@ -63,10 +63,10 @@ See the GNU General Public License (file {COPYING.txt}) for more details.
 ### 2.1 Opening the GUI
 
 Type `>> uvmat` in the Matlab prompt to display the GUI.
-If the function is unknown by Matlab, add the appropriate path to the folder *UVMAT* where the toolbox has been installed (see the Matlab command `>> help path`).
+If the function is unknown by Matlab, add the appropriate path to the folder **uvmat** where the toolbox has been installed (see the Matlab command `>> help path`).
 When the GUI is opening, the date of last modfication is displayed in the central window.
-During opening, the program checks the Matlab path to all the functions of the package (using the function _check_functions.m_).
-If a function is missing, or if it is overridden by a function with the same name at another path location, a message is displayed in the central window at the opening of the GUI *uvmat*.
+During opening, the program checks the Matlab path to all the functions of the package (using the function `check_functions.m`).
+If a function is missing, or if it is overridden by a function with the same name at another path location, a message is displayed in the central window at the opening of the GUI **uvmat**.
 Finally, if the svn server is accessible by line-command, the latest version number of the UVMAT package is indicated.
 
 The GUI contains an upper menu bar, a central graphic display window, a lower left window for histogram, a top right text display window, columns of edit boxes and command buttons on both side.
@@ -105,9 +105,9 @@ The menu bar at the top of the GUI contains the following buttons:
 - *[Make grid]:*: for making measurement grids for PIV.
 - *[ruler]*: displays a ruler to measure lengths and angles of any line.
 - *[Run]* :
-- *[field series]*: gives access to the GUI [_series_](#10-processing-field-series) for processing field series.
-- *[PIV]*: gives access to the PIV program under Matlab (using the GUI *series*).
-- *[CivX(Fortran)]*: gives access to the GUI [_civ_](#11-piv-particle-imaging-velocimetry) for Particle Imaging Velocimetry (CivX version in Fortran, not maintained anymore).
+- *[field series]*: gives access to the GUI **[series](#10-processing-field-series)** for processing field series.
+- *[PIV]*: gives access to the PIV program under Matlab (using the GUI **series**).
+- *[CivX(Fortran)]*: gives access to the GUI **[civ](#11-piv-particle-imaging-velocimetry)** for Particle Imaging Velocimetry (CivX version in Fortran, not maintained anymore).
 - *[Help]* : displays this help file using the Matlab browser.
 
 ### 2.3 Displaying the input file name
@@ -149,14 +149,14 @@ A corruption of this file _uvmat_perso.mat_ may lead to problems for opening UVM
   Plots can be also exported on an existing figure for data comparison, using the option *[Export/export on axis]*.
   A movie can be produced using the command *[Export/make movie avi]*.
 - *Extracting data* as Matlab arrays.
-  Information stored in the GUI UVMAT (as _UserData_ in the figure) can be extracted in the Matlab work space by the menu bar command *[Export/field in workspace]* (or by pressing the right mouse button on the GUI).
+  Information stored in the GUI **uvmat** (as _UserData_ in the figure) can be extracted in the Matlab work space by the menu bar command *[Export/field in workspace]* (or by pressing the right mouse button on the GUI).
   Type `>> Data_uvmat.Field` to get the current input field as a Matlab structure.
   An image or scalar matrix is for instance obtained as Data_uvmat.Field.A.
 - *Extracting a movie*.
   You can create a movie reproducing the effect of the button ++> of uvmat: the content of each successive view is reproduced in an ancilary figure whose content is eventually saved as a movie with format .avi (no compression).
   Display in uvmat the field chosen as the first frame of the movie, and adjust the settings: it is advised to fix the scale of the scalar or vector fields to keep it constant during the movie.
   Then use the upper bar menu option *[Export/make movie]*.
-  The figure used for the movie appears as well as an ancillary GUI *[set_movie]* used to set the frame rate,the image resolution and the total number of frames.
+  The figure used for the movie appears as well as an ancillary GUI **set_movie** used to set the frame rate, the image resolution and the total number of frames.
   It is possible to edit the titles in the figure using the tools of Matlab.
   When everything is ready, press *[START]* in *[set_movie]*.
 
@@ -165,10 +165,10 @@ A corruption of this file _uvmat_perso.mat_ may lead to problems for opening UVM
 
 ### 3.1 Input data formats
 
-The package _UVMAT_ can read any image format recognised by the Matlab image reading function _imread.m_.
+The package _UVMAT_ can read any image format recognised by the Matlab image reading function `imread.m`.
 Images can be in true color or B&W, with 8 bit or 16 bit grey levels.
 Image files containing multiple frames are handled.
-Movie files can be also opened, using the Matlab function _VideoReader.m_, or _mmreader.m_ for older versions of Matlab.
+Movie files can be also opened, using the Matlab function `VideoReader.m`, or `mmreader.m` for older versions of Matlab.
 _UVMAT_ can also read the proprietary image formats from the companies Lavision (.im7), cameras Phantom (.cine), and the company Rdvision.
 
 Images produced by the software are in the format png (portable network graphics).
@@ -181,7 +181,7 @@ _UVMAT_ can also read data in the binary format NetCDF, as described in [section
 Velocity fields obtained by PIV and results of data processing are stored in this format.
 For 3D PIV, 'volume' images are also stored in this format.
 
-The input file type is recognized in _UVMAT_ by the function _get_file_type.m_ and the file is opened by the function _read_field.m_ according to this file type.
+The input file type is recognized in _UVMAT_ by the function `get_file_type.m` and the file is opened by the function `read_field.m` according to this file type.
 It is possible to include new input file types by a modification of these two functions.
 
 ### 3.2 Selecting fields from CIV
@@ -203,7 +203,7 @@ If a scalar depending on spatial derivatives, like vort, is selected, the field 
 
 The choice of fields, velocity, vorticity, divergence... is done by the popup menu *[Fields]*.
 The option 'image' gives access to an image file corresponding to the velocity field.
-The option 'get_field...' allows the user to display all the variables of the NetCDF file in the GUI *get_field*.
+The option 'get_field...' allows the user to display all the variables of the NetCDF file in the GUI **get_field**.
 This is the only available option when the input file is not from CIV.
 
 ### 3.3 File naming and indexing
@@ -227,9 +227,9 @@ Different kinds of file or image frame indexing are defined:
   The second index j can be also represented as a letter suffix, for instance '01a'.
   For a field series in a single file, like a movie, the nomenclature type is defined as '*'.
   The functions _fullfile_uvmat.m_ generates a file name from a root name, four numerical indices i1,i2,j1,j2 and the _nomenclature type_.
-  The reverse operation, splitting a name into a root and indices while detecting the _nomenclature type_, is performed by the function _fileparts_uvmat.m_.
-  The function _find_file_series.m_ is also needed to scan the whole file series, leading to a possible adjustement of the nomenclature type (for instance distinguishing '_001' from '_1' when the file with index 1000 has been opened).
-  Once the nomenclature type has been detected by the browser of the GUI *uvmat*, it is displayed in the edit box *[NomType]* and used to generate all the file names when the series is scanned.
+  The reverse operation, splitting a name into a root and indices while detecting the _nomenclature type_, is performed by the function `fileparts_uvmat.m`.
+  The function `find_file_series.m` is also needed to scan the whole file series, leading to a possible adjustement of the nomenclature type (for instance distinguishing '_001' from '_1' when the file with index 1000 has been opened).
+  Once the nomenclature type has been detected by the browser of the GUI **uvmat**, it is displayed in the edit box *[NomType]* and used to generate all the file names when the series is scanned.
 
 ### 3.4 Navigation among field indices
 
@@ -267,15 +267,15 @@ Similarly the command of the push button *[run0]* can be performed by typing the
 Image series in UVMAT are documented by a file providing image timing, geometric calibration, camera type and illumination.
 This file is in the format _XML_, a hierarchically organised text file.
 The content is labelled by tags, represented by brackets <.>, whose names and organisation are specified by a schema file (.xsd).
-A general introduction to the XML language and schemas is provided for instance in <http://www.w3schools.com/xml.> The schema used for image documentation is _ImaDoc.xsd_, available in the UVMAT package in a sub-directory _/Schemas_.
+A general introduction to the XML language and schemas is provided for instance in <http://www.w3schools.com/xml.> The schema used for image documentation is _ImaDoc.xsd_, available in the UVMAT package in a sub-directory `/Schemas`.
 Simple templates of XML files are also provided there.
 
-When a new file series is opened in UVMAT, the XML documentation file is automatically sought (by the function _find_imadoc.m_) in the folder containing the data series folder: the documentation of the file series RootPath/SubDir/RootFile... is sought in the file RootPath/RootFile.xml.
+When a new file series is opened in UVMAT, the XML documentation file is automatically sought (by the function `find_imadoc.m`) in the folder containing the data series folder: the documentation of the file series `RootPath/SubDir/RootFile...` is sought in the file `RootPath/RootFile.xml`.
 As a second choice (corresponding to an earlier convention), the XML file will be sought inside the data series folder, as RootPath/SubDir/RootFile.xml (if this file does not exist, a text file with the same root name but extension .civ is sought as an obsolete option).
-The detection of the image documentation file is indicated by the visibility of the pushbutton *[view_xml]* on the upper right of the GUI *uvmat*.
+The detection of the image documentation file is indicated by the visibility of the pushbutton *[view_xml]* on the upper right of the GUI **uvmat**.
 Press this button to see the content through an XML editor *editxml* (described in [section 10](#10-processing-field-series)).
 The XML file can be also opened directly by the UVMAT browser, or by any text editor.
-In UVMAT, it is read by the function _imadoc2struct.m_.
+In UVMAT, it is read by the function `imadoc2struct.m`.
 
 The XML file <ImaDoc> can contain the following sections, as prescribed by the schema file _ImaDoc.xsd_.:
 
@@ -295,8 +295,8 @@ The XML file <ImaDoc> can contain the following sections, as prescribed by the s
   The grayscale code used is :
 - Intensity < 20: ('black mask') the vector in this place will be set to zero.
 - 20 < Intensity < 200:('gray mask') the vector in this place will be absent.
-- Intensity>200 the vector will be computed The mask corresponding to an image or velocity field can be displayed in the GUI *uvmat* by selecting the check box *view_mask* (*[CheckMask]*) on the upper left.
-  Images with appropriate name can be automatically recognised by *uvmat* and civ functions, see [section 9.1](#91-masks).
+- Intensity>200 the vector will be computed The mask corresponding to an image or velocity field can be displayed in the GUI **uvmat** by selecting the check box *view_mask* (*[CheckMask]*) on the upper left.
+  Images with appropriate name can be automatically recognised by **uvmat** and *civ* functions, see [section 9.1](#91-masks).
   Otherwise file selection by a browser is proposed when *[view_mask]* is selected.
 - *Grid*: List of numbers (in ASCII text) specifying the set of points where the PIV processing is performed.
   It specifies the number of points n and a corresponding list of x and y coordinates expressed in image pixels, as follows
@@ -308,16 +308,16 @@ n X1 Y1 X2 Y2  ......  Xn Yn
 The coordinates correspond to the center of the correlation box on the first image of the pair (the actual vector position will be shifted by half the displacement found between the two images).
 A tool to create grids is described in [section 9.2](#92-grids).
 
-- *.fig* Matlab figures represent plots but also Graphic User Interfaces (GUI).
+- `.fig` Matlab figures represent plots but also Graphic User Interfaces (GUI).
   In that case Matlab functions (callbacks) are attached to the graphic objects in the figure and can be activated by the mouse.
-  Matlab figures can be directly opened by the browser of the GUI *uvmat*.
-- *.civ* (obsolete) ASCII text file containing the list of image times and the scaling in pixels/cm.
+  Matlab figures can be directly opened by the browser of the GUI **uvmat**.
+- `.civ` (obsolete) ASCII text file containing the list of image times and the scaling in pixels/cm.
   This is an obsolete version of the XML image documentation file.
   It is stored in the same directory as the corresponding series of images, with name _root .civ_.
-  It is automatically sought by *uvmat* and *series*, in the absence of an xml file <ImaDoc> (it is read by the function _read_imatext.m_).
-  The following example is from an experience with 19 bursts of 4 images, named aa001a,aa001b,aa001c,aa001d,aa002a,aa002b,...,aa019c,aa019d, with an extension .png.
-  The corresponding .civ file is named aa.civ.
-  Comments (not included in the file) are indicated with %...
+  It is automatically sought by `uvmat` and `series`, in the absence of an XML file `ImaDoc` (it is read by the function `read_imatext.m`).
+  The following example is from an experience with 19 bursts of 4 images, named `aa001a`, `aa001b`, `aa001c`, `aa001d`, `aa002a`, `aa002b`, ..., `aa019c`, `aa019d`, with an extension `.png`.
+  The corresponding `.civ` file is named `aa.civ`.
+  Comments (not included in the file) are indicated with `%...`.
 
 ~~~
 19                              % number of bursts 
@@ -335,14 +335,14 @@ A tool to create grids is described in [section 9.2](#92-grids).
 19 450.000824 30 60 30 1           
 ~~~
 
-- *.cmx* ASCII text files containing the parameters sent by the GUI *civ_input* to the CIV fortran programmes.
-  Each velocity field named *.nc results from a parameter file `*.cmx`.
-  It can be opened by the browser of the GUI *uvmat*.
+- `.cmx` ASCII text files containing the parameters sent by the GUI **civ_input** to the CIV fortran programmes.
+  Each velocity field named `*.nc` results from a parameter file `*.cmx`.
+  It can be opened by the browser of the GUI **uvmat**.
   In a later version of *CIVx*, the .cmx file is replaced by a .xml ’CivDoc’ file.
-- *.log* ASCII text files, containing information about processing in batch mode.
+- `.log` ASCII text files, containing information about processing in batch mode.
   Each velocity field named *.nc is associated with a file `log`.
   A file `*_patch.log` is similarly produced by the ’patch’ program.
-  These files can be opened by the browser of the GUI *uvmat*.
+  These files can be opened by the browser of the GUI **uvmat**.
 
 ### 3.7 Data organisation in a project
 
@@ -364,11 +364,11 @@ The raw data from a project should be organised as:
 
 *Mirror data trees* can be created to process a source data set in 'read only' mode, to preserve the safety of the data source, and to allow several users to work in parallel without interference.
 
-The data organisation can be controlled and managed by the GUI *browse_data*.
+The data organisation can be controlled and managed by the GUI **browse_data**.
 This is called by the menu bar option *[Open/browse campaign]* in UVMAT: with this browser select the path of the folder considered as 'Campaign' (instead of the data file itself).
-Then the GUI *browse_data* appears with a list of 'Experiments' and a list of 'DataSeries'.
-Select your choice to open the corresponding file series in *uvmat*.
-The selected campaign path is then recorded for future opening under *[Open/browse campaign]* in the menu bar of the *uvmat*.
+Then the GUI **browse_data** appears with a list of 'Experiments' and a list of 'DataSeries'.
+Select your choice to open the corresponding file series in **uvmat**.
+The selected campaign path is then recorded for future opening under *[Open/browse campaign]* in the menu bar of the **uvmat**.
 
 Instead of directly opening a file series with *browse_data*, you can create a 'mirror data tree' by pressing 'create_mirror', then selecting the path chosen for the new mirror folder 'Campaign'.
 Inside this mirror folder, a set of folders is then created for each experiment.
@@ -386,7 +386,7 @@ The UVMAT interface primarily reads and visualises two-dimensional fields, which
 
 ### 4.1 Images and scalars:
 
-Images are matrices of integers, visualised by the Matlab function _imagesc.m_.
+Images are matrices of integers, visualised by the Matlab function `imagesc.m`.
 The number of pixels in x and y is indicated in the boxes *[num_Npx]* and *[num_Npy]* respectively.
 Note that while the x coordinate of the image ranges from 1/2 to npx-1/2, the pixel index in y ranges from the maximum ordinate npy-1/2 to the smallest one 1/2.
 
@@ -504,7 +504,7 @@ A transform can be systematically applied after reading the input field, for ins
 This transform can possibly combine two input fields, for instance to substract a background from an image.
 The processing function is chosen by the popup menu *[transform_fct]* on the left, and its path is displayed in the box *[path_transform]*.
 Select the option 'more...' to browse new functions.
-The same functions can be called in data processsing using the GUI *series.fig*.
+The same functions can be called in data processsing using the GUI **series.fig**.
 A few functions are provided in the folder /transform_fct, see the list in the [function overview](#14-appendix-overview-of-the-package-functions).
 
 These functions can transform fields into polar coordinates, do image filtering, Fourier transform, signal analysis for a 1D input field...
@@ -514,22 +514,22 @@ XmlData contains in particular the element [GeometryCalib] containing the calibr
 
 ### 4.7 Succession of operations
 
-The following succession of operations is performed by *uvmat.fig*:
+The following succession of operations is performed by **uvmat.fig**:
 
-- *File identification*: the nomenclature type and file type (for instance image, movie, or NetCDF file) are identified from the opened file (using the function _find_file_series.m_).
-- *File Reading*: the input field is first read from the input file by the Matlab function _read_field.m_.
+- *File identification*: the nomenclature type and file type (for instance image, movie, or NetCDF file) are identified from the opened file (using the function `find_file_series.m`).
+- *File Reading*: the input field is first read from the input file by the Matlab function `read_field.m`.
 - *Second file reading*: The second input field is similarly read if selected.
   Note that it is kept in memory, so it is not read again if the file is unchanged (this is useful in the case of substraction of a fixed background for instance).
 - *Transform*: by default the 'phys' option transforms each of the input fields from pixel to physical coordinates.
   This operation can also combine two input field structures into a single field structure.
 - *Histogram*: This is obtained from the input field in transformed coordinates, or if applicable from the fields resulting from the two input fields.
 - *Projection*: on the projection object selected in the menu *[ListObject_1]*, see [section 6](#6-projection-objects).
-  A second projection, on the object selected by *[ListObject]*, can be plotted in the ancillary figure *view_field.fig*.
-  Projection is performed by the function _proj_field.m_.
+  A second projection, on the object selected by *[ListObject]*, can be plotted in the ancillary figure **view_field.fig**.
+  Projection is performed by the function `proj_field.m`.
 - *Field calculation*: a scalar can be calculated after projection, as selected by the menu *[Fields]*.
 - *Field comparison*: when two fields of the same nature are introduced, the difference is taken.
   This is skipped if the transform function has already led to a single field.
-- *Plotting*: plot the results of projection, using the function _plot_field.m_.
+- *Plotting*: plot the results of projection, using the function `plot_field.m`.
 
 
 ## 5 - Field structures
@@ -582,7 +582,7 @@ The UVMAT package represents data as _Matlab structures_, a set of data elements
 The value can be any Matlab object: number, array, character string or cell, or a structure itself, providing a data organisation as hierarchical tree.
 Each element is denoted in the form _Data.tag=value_.
 
-Data are kept in memory in the GUI UVMAT as a Matlab structure, stored as _UserData_ in the GUI figure.
+Data are kept in memory in the GUI **uvmat** as a Matlab structure, stored as _UserData_ in the GUI figure.
 This structure can be extracted by the menu bar command *[Export/field in work space]*, then typing the Matlab command `>> Data_uvmat`.
 It contains the current input field as a substructure _Data_uvmat.Field_.
 
@@ -669,7 +669,7 @@ Any other element can be added, but will not be taken into account if they are n
 
 The variables of field structures can be grouped into _field cells_ representing data sharing the same coordinates.
 Differerent types of field cells are identified for processing and plotting.
-This identification is performed by the function _find_field_cells.m_ which first groups the variables into cells sharing common array dimensions, determines their spatial dimension, and idendify the following types of field cells, corresponding to the different kinds of data griding described in [section 5.1](#51-griding-of-data).
+This identification is performed by the function `find_field_cells.m` which first groups the variables into cells sharing common array dimensions, determines their spatial dimension, and idendify the following types of field cells, corresponding to the different kinds of data griding described in [section 5.1](#51-griding-of-data).
 
 - *Dimension variables*: these are unique unidimensional variable arrays corresponding to a given dimension, leading to a cell with a single variable, dimension 1.
   This is interpreted as the set of coordinate values associated with this dimension.
@@ -696,28 +696,28 @@ The following conventions are used:
 ### 6.1 Definition and editing with the UVMAT interface
 
 These are geometrical objects used to define cuts along lines or planes, to interpolate fields on a regular grid, to restrict the analysis or visualisation to field subregions.
-The projection of fields on objects is performed by the function _proj_field.m_, which can be used as well in data processing outside the GUI *UVMAT*, using for instance 	`series.fig` (see [section 10](#10-processing-field-series)).
+The projection of fields on objects is performed by the function `proj_field.m`, which can be used as well in data processing outside the GUI **uvmat**, using for instance 	**series.fig** (see [section 10](#10-processing-field-series)).
 
-When a 2D or 3D field is opened by *uvmat.fig*, a default projection object called 'plane' is created, so that all field plots (in 2D and 3D) are considered as the result of a projection.
-New objects are created by the menu bar command *[Projection object]* in the GUI *uvmat*.
+When a 2D or 3D field is opened by **uvmat.fig**, a default projection object called 'plane' is created, so that all field plots (in 2D and 3D) are considered as the result of a projection.
+New objects are created by the menu bar command *[Projection object]* in the GUI **uvmat**.
 The creation of a new object (*points*, *line*....) can be initiated by selecting the corresponding item in the menu.
-In each case an auxiliary GUI *set_object.fig* describing the object properties appears, see next [sub-section](#62-object-properties) for their definitions.
+In each case an auxiliary GUI **set_object.fig** describing the object properties appears, see next [sub-section](#62-object-properties) for their definitions.
 This GUI can be directly edited and object coordinates can be set by mouse drawing on the plot, see [section 6.4](#64-object-representation).
-To validate edition on the GUI *set_object.fig*, refresh the plots by pressing *[REFRESH]*.
-Objects can be saved as xml files with the (upper right) button *[SAVE]* of *set_object.fig*.
-The object can be later opened by the menu option *[browse...]* in the menu bar command *[Projection object]* of the GUI *uvmat*.
+To validate edition on the GUI **set_object.fig**, refresh the plots by pressing *[REFRESH]*.
+Objects can be saved as xml files with the (upper right) button *[SAVE]* of **set_object.fig**.
+The object can be later opened by the menu option *[browse...]* in the menu bar command *[Projection object]* of the GUI **uvmat**.
 
 The names of the created objects are listed in the menu *[ListObject]*.
 The properties of the object selected in this menu can be viewed by activating the check box *[CheckViewObject]*.
-Check *[CheckEditObject]* to allow object editing with *set_object.fig*.
+Check *[CheckEditObject]* to allow object editing with **set_object.fig**.
 The selected object is plotted in magenta, while the inactive ones are in blue.
-The field plot resulting from projection can be viewed in the GUI *view_field* by activating *[CheckViewField]*.
+The field plot resulting from projection can be viewed in the GUI **view_field** by activating *[CheckViewField]*.
 This option is automatically selected when a new object is created.
 Then the projection object used for the main plotting window in UVMAT can be selected by the menu *[ListObject_1]* which reproduces the list of available objects.
 The active objects are plotted in magenta, while the inactive ones are in blue.
 The object can be deleted by pressing *[DeleteObject]*.
 
-The properties of the projection objects can be extracted as a Matlab structure using the menu bar command *[Export/field in workspace]* of *uvmat.fig*.
+The properties of the projection objects can be extracted as a Matlab structure using the menu bar command *[Export/field in workspace]* of **uvmat.fig**.
 Those are contained in the cell of structures _Data_uvmat.ProjObject_.
 
 ### 6.2 Object properties
@@ -819,10 +819,10 @@ Field variables to be substracted are initially marqued by an attribute 'CheckSu
   When the projection is limited to a sub-domain, by [RangeX] or [RangeY], the bounds are indicated by dashed lines.
 - 'volume' are shown like 'plane', except that they are painted in magenta (or blue).
 
-Object can be interactively drawn with the mouse on the GUI *uvmat.fig*.
-First activate the creation mode by selecting the appropriate item in the menu bar Tools, and possibly adjust parameters on the GUI *set_object.fig*.
+Object can be interactively drawn with the mouse on the GUI **uvmat.fig**.
+First activate the creation mode by selecting the appropriate item in the menu bar Tools, and possibly adjust parameters on the GUI **set_object.fig**.
 Then mark the set of point coordinates by pressing (then release) the left mouse button.
-Those appear in the table *[Coord]* of *set_object.fig*.
+Those appear in the table *[Coord]* of **set_object.fig**.
 For 'polyline' or 'polygon', press the right hand mouse button to end the line.
 'Plane' and 'volume' cannot be created or modified with the mouse.
 
@@ -882,9 +882,9 @@ More generally, if data require ancillary data to describe them, are multidimens
 
 ### 7.2 The GUI get_field
 
-This GUI *get_field.fig* is aimed at browsing a NetCDF file, showing all its variables, attributes and variable dimensions.
-Variables can be selected for input in *uvmat* or *series*.
-The GUI is opened by selecting the option *[get_field...]* in the menu *[FieldName]* of *uvmat* or *series*.
+This GUI **get_field.fig** is aimed at browsing a NetCDF file, showing all its variables, attributes and variable dimensions.
+Variables can be selected for input in **uvmat** or **series**.
+The GUI is opened by selecting the option *[get_field...]* in the menu *[FieldName]* of **uvmat** or **series**.
 This option is automatically selected when the input NetCDF file is not recognised as CIV data.
 
 ![](7-2-the-gui-get-field.png)
@@ -892,13 +892,13 @@ This option is automatically selected when the input NetCDF file is not recognis
 When a NetCDF input file opened, its full name, including path, is displayed in the upper window *[inputfile]*.
 The names and value of the global attributes are listed in the left column *[attributes]*, the list of variables in the central column *[variables]*, and the list of dimension names and values in the right column *[dimensions]*.
 By selecting one of the variables in the central column, the corresponding variable attributes and dimensions are displayed in the left and right columns respectively.
-Note that the whole content of the NetCDF file can be obtained by the function _nc2struct.m_.
+Note that the whole content of the NetCDF file can be obtained by the function `nc2struct.m`.
 Input fields can be selected according to three options, chosen by the menu *[FieldOption]*.
 
 - *1D plot*: to plot a simple graph, ordinate versus abscissa.
   Select by the menu *[ordinate]* the variable(s) to plot as ordinate (use the key *Ctrl* for multiple selection).
   Then select the corresponding abscissa in the column *[abscissa]*.
-  If the variable is indexed with more than one dimension, each component is plotted versus the first index (like with the plot Matlab function _plot.m_).
+  If the variable is indexed with more than one dimension, each component is plotted versus the first index (like with the plot Matlab function `plot.m`).
   If the option *[matrix index]* (*[CheckDimensionX]*) is selected, the ordinate variable is plotted versus its index.
 - *scalar*: to plot scalar fields as images.
   The variable representing the scalar is selected in the first column *[scalar]*, with coordinates respectively selected in *[Coord_x]* and *[Coord_y]*.
@@ -958,36 +958,36 @@ The transform coefficients for each image series are stored in the corresponding
 Calibration creates an xml file, or updates an existing xml file <ImaDoc>, with the name of the DataSeries folder containing the images currently opened by uvmat, followed by the file extension .xml.
 If a new data series is produced in a folder named with an extension, for instance DataSeries.civ for PIV, the xml file DataSeries.xml is still used, except if a new xml file DataSeries.civ.xml also exists.
 
-Calibration coefficients can be displayed with the GUI *geometry_calib.fig* described below.
-Field transform from pixel to physical parameters is performed by the function _phys.m_ in UVMAT/transform_field, which calls the pointwise transform functions _phys_XYZ.m_ (from image to physical coordinates) and _px_XYZ.m_ (from physical to image coordinates), as well as _phys_ima.m_ which transforms images.
-When an image or PIV velocity field is opened by uvmat, the transform function 'phys' is automatically loaded as described in [section 4.6](#46-field-transforms).
+Calibration coefficients can be displayed with the GUI **geometry_calib.fig** described below.
+Field transform from pixel to physical parameters is performed by the function `phys.m` in UVMAT/transform_field, which calls the pointwise transform functions `phys_XYZ.m` (from image to physical coordinates) and `px_XYZ.m` (from physical to image coordinates), as well as `phys_ima.m` which transforms images.
+When an image or PIV velocity field is opened by **uvmat**, the transform function 'phys' is automatically loaded as described in [section 4.6](#46-field-transforms).
 
 ### 8.2 The GUI geometry_calib.fig
 
 ![](geometry-calib.jpg)
 
-- *Opening the GUI*: it is made visible from the GUI *uvmat.fig* by the menu bar command *[!Tools/Geometric calibration]*.
+- *Opening the GUI*: it is made visible from the GUI **uvmat.fig** by the menu bar command *[!Tools/Geometric calibration]*.
   If calibration data already exist in the current file <ImaDoc>, the corresponding parameters and the list of reference points are displayed in the table *[ListCoord]*.
   The three first columns indicate the physical coordinates and the two last ones the corresponding image coordinates (in pixels).
   The physical unit is imposed as centimeter by the menu *[CoordUnit]* to avoid mistakes.
-  Calibration points can be alternatively introduced by opening any XML file <ImaDoc> with the menu bar command *[Import]* of *geometry_calib.fig*.
+  Calibration points can be alternatively introduced by opening any XML file <ImaDoc> with the menu bar command *[Import]* of **geometry_calib.fig**.
   It is possible to import the whole information, option 'All', the calibration point coordinates only, or the calibration parameters only.
 
 - *Plotting calibration points*: press the button *[PLOT PTS]* to visualise the current list of calibration points.
-  The physical or image coordinates will be used in the list *[ListCoord]*, depending on the option blank or 'phys' in the menu *transform_fct* of *uvmat.fig* .
+  The physical or image coordinates will be used in the list *[ListCoord]*, depending on the option blank or 'phys' in the menu *transform_fct* of **uvmat.fig** .
 
 - *Simple scaling*: a simple scaling, in pixels/cm, can be introduced by the menu bar command *[!Tools/Set scale]*, which displays a set of four reference points in the table *[ListCoord]*.
-  The tool 'ruler', from the menu bar command *[Tools/ruler]* of *uvmat.fig*, can be useful to get the scaling.
+  The tool 'ruler', from the menu bar command *[Tools/ruler]* of **uvmat.fig**, can be useful to get the scaling.
   The origin of the physical coordinates is set by default to the lower left image corner.
   Use the tool 'translate points', described below, to change the origin.
 
-- *Appending calibration points with the mouse*: Calibration points can be manually picked out by the mouse on the current image displayed by *UVMAT* (left button click).
+- *Appending calibration points with the mouse*: Calibration points can be manually picked out by the mouse on the current image displayed by **uvmat** (left button click).
   This requires the activation of the check box *enable mouse*.
   The image coordinates (in pixels) are picked by the mouse (the option 'blank' in the popup menu *[transform_fct]* is automatically selected when the mouse button is pressed).
   Zoom can be used to improve the precision, but must be desactivated for mouse selection (then move across the image by the key board directional arrows).
   Points can be accumulated from several images, using the key board short cuts 'p' and 'm' to move in the image series without the mouse.
   A calibration point can be adjusted by selecting it with the mouse and moving it while pressing the left mouse button.
-  The coordinates in pixel of the selected points get listed in the table *[ListCoord]* of *geometry_calib.fig*.
+  The coordinates in pixel of the selected points get listed in the table *[ListCoord]* of **geometry_calib.fig**.
 
 - *Editing the coordinate table*: After mouse selection, the physical coordinates must be introduced by editing the table.
   To make this task easier it is possible to export the table content on the Matlab command window by pressing *[EXPORT PTS]*, and copy-paste a column on the table *[ListCoord]* (the column below the introduction cell is filled).
@@ -1030,7 +1030,7 @@ When an image or PIV velocity field is opened by uvmat, the transform function '
   If the same optics is used in a new experiment, it is possible to skip the multiplane detection, importing the intrinsic parameters from a previous <ImaDoc> file by the menu bar tool *[Import.../Intrinsic parameters]*, then applying the calibration with the option '3D_extrinsic' with the reference grid image only.
 
 - *Import features*: by the menu bar tool *[Import...]*, you can choose to import different data from a previous <ImaDoc> file.
-- *Calibration points*: imports the calibration poins of a previous grid saved as a <ImaDoc> file, the points and their coordinates will then appear in *uvmat* and *geometry_calib*.
+- *Calibration points*: imports the calibration poins of a previous grid saved as a <ImaDoc> file, the points and their coordinates will then appear in **uvmat** and *geometry_calib*.
 - *Intrinsic parameters*: as explained above it imports the intrinsic parameters from a previous grid saved as a <ImaDoc> file.
   The parameters will appear in *geometry_calib*.
 - *All*: imports the calibration points and the intrinsic parameters from a <ImaDoc> file.
@@ -1040,15 +1040,15 @@ When an image or PIV velocity field is opened by uvmat, the transform function '
   Calibration coefficients are recorded in the XML file <ImaDoc> associated with the image currently opened by UVMAT.
   If previous calibration data already exist, the previous XML file is updated, but the original one is preserved with the extension .xml~.
   If no XML file already exists, it is created
-  The image transformation to phys coordinates can be directly seen on the *uvmat.fig* interface after completion of the command *'[APPLY]'*.
+  The image transformation to phys coordinates can be directly seen on the **uvmat.fig** interface after completion of the command *'[APPLY]'*.
 
-To reproduce the same calibration for another image series, open one of the image in the series, and apply again the calibration with the same points, keeping the GUI geometry_calib opened.
+To reproduce the same calibration for another image series, open one of the image in the series, and apply again the calibration with the same points, keeping the GUI **geometry_calib** opened.
 
 To calibrate at once a series of experiments, a better alternative is to select the check box *[REPLICATE]*.
-It opens the GUI *data_browser.fig*, also described in [section 3.7](#37-data-organisation-in-a-project).
+It opens the GUI **data_browser.fig**, also described in [section 3.7](#37-data-organisation-in-a-project).
 A three-column display appears, with the list of *Experiments* on the left, the list *Devices* (camera) at the middle, and the list of corresponding *[DataSeries]* on the right, see screen shot below.
 Select the list of experiments to calibrate, and a single camera name in *Devices* and an image series in *[DataSeries]* ( do not select the xml files).
-Then validate by pressing *[APPLY]* on the GUI geometry_calib.
+Then validate by pressing *[APPLY]* on the GUI **geometry_calib**.
 At the end of the process, the updated xml files are listed in the Matlab window.
 
 ![](browse-data-small.2.jpg)
@@ -1059,14 +1059,14 @@ At the end of the process, the updated xml files are listed in the Matlab window
 ![](set-slice.png)
 
 Deducing the physical coordinates from image coordinates requires information on the illumination plane.
-The default assumption is that the objects in the image are in the plane used for calibration (assumed horizontal with x,y coordinates), but *uvmat* can handle volume scanning by a laser plane.
+The default assumption is that the objects in the image are in the plane used for calibration (assumed horizontal with x,y coordinates), but **uvmat** can handle volume scanning by a laser plane.
 A set of section planes can be defined by their origin positions and rotation angle vectors.
 Theses planes are labelled by a _z index_, assumed to be the frame index j (case of volume scan), or the index i modulo the number of slices NbSlice (case of 'multilevel' scan).
-These settings are stored in the xml file <ImaDoc> as part of the section <Slice> and can be edited from *uvmat.fig* with the menu bar command *[Tools/set slice]*.
+These settings are stored in the xml file <ImaDoc> as part of the section <Slice> and can be edited from **uvmat.fig** with the menu bar command *[Tools/set slice]*.
 A dialog box *set_slices* appears for entering the first and last section plane positions _z_, as well as the number of slices and the option 'volume_scan' ('multilevel' otherwise).
 In the absence of 3D scan put twice the same value for first and last z.
 Finally a tilt angle of the laser sheet, around the _x_ and _y_ axis, can be introduced, with a possible angular scanning from first to last section planes.
-After introduction of the plane position information, the z-index is displayed in the frame *[FileIndices]* of *uvmat.fig*.
+After introduction of the plane position information, the z-index is displayed in the frame *[FileIndices]* of **uvmat.fig**.
 The local _z_ position of the mouse pointer, assumed to lay on the current section plane, is then displayed in *[text_display]*.
 
 - *Refraction effect*: refraction effect can be accounted for if calibration was done in air by selecting the check box refraction, and introducing the water height (assumed at _z_=cte) and refraction index.
@@ -1085,8 +1085,8 @@ The coefficients defining the calibration are recorded in the XML element <ImaDo
   For the option <CalibrationType]>= 'rescale', [[BR]] R (i=1)= [pxcmx 0 0] R (i=2)= [0 pxcmy 0] R (i=3)= [0 0 1], [[BR]]where pxcmx and pxcmy are the scaling factors along _x_ and _y_.
 - <omc>: 3 components of the rotation vector (this is for diagnostic use, it is redondant with the matrix R used for actual coordinate transforms).
   The physical coordinate axis are transformed to the image coordinate axis by a composition of the translation T and the rotation.
-- <ErrorRms>: rms difference (in X and Y direction) between the image coordinates measured for the calibration points and the coordinates transformed from their physical coordinates (using the function _px_XYZ.m in UVMAT_).
-- <ErrorMax>: maximum difference (in X and Y direction) between the image coordinates measured for the calibration points and the coordinates transformed from their physical coordinates (using the function _px_XYZ.m_ in UVMAT).
+- <ErrorRms>: rms difference (in X and Y direction) between the image coordinates measured for the calibration points and the coordinates transformed from their physical coordinates (using the function `px_XYZ.m` in UVMAT).
+- <ErrorMax>: maximum difference (in X and Y direction) between the image coordinates measured for the calibration points and the coordinates transformed from their physical coordinates (using the function `px_XYZ.m` in UVMAT).
 - <SourceCalib>: set of the point coordinates used for calibration.
 - <PointCoord>: [x y z X Y] , where x,y,z are the physical coordinates of each point, X Y its image coordinates.
 
@@ -1111,10 +1111,10 @@ The parameters defining the slice positions are in the XML element <ImaDoc/Slice
 
 Mask files are used to restrict the domain of CIV processing, to take into account fluid boundaries or invalid image zones.
 They must be stored as .png images with 8 bits, as described in [section 3.6](#36-ancillary-input-files).
-Mask files are automatically recognised by *uvmat.fig* and *civ.fig* if they are named [filebase '_xxmask_' 'filenumber' '.png'], where xx is the number of masks (nbslices) used when the series of fields corresponds physically to a set of nbslices positions.
+Mask files are automatically recognised by **uvmat.fig** and *civ.fig* if they are named [filebase '_xxmask_' 'filenumber' '.png'], where xx is the number of masks (nbslices) used when the series of fields corresponds physically to a set of nbslices positions.
 The mask filenumber used is the image field number modulo nbslices.
 Use xx=1 in the default case of a fixed position and a single mask.
-Masks can be made by pressing the menu bar *[Tools/make mask]* on the GUI UVMAT.
+Masks can be made by pressing the menu bar *[Tools/make mask]* on the GUI **uvmat**.
 The mask is created interactively with the mouse on the current image.
 
 First open an input image file name with the browser, or the edit box and carriage return.
@@ -1134,7 +1134,7 @@ A new image can be then entered.
 ### 9.2 Grids
 
 Grid files, see [section 3.6](#36-ancillary-input-files), are used to impose a set of positions for PIV vectors.
-To create a grid for PIV, activate the menu bar !Tools/Make grid on the GUI *uvmat*.
+To create a grid for PIV, activate the menu bar !Tools/Make grid on the GUI **uvmat**.
 Introduce a minimum value, mesh, and maximum value for coordinate _x_ in the edit boxes *[XMin], [DX], [XMax]* respectively.
 Do the same for the _y_ coordinate.
 This must be expressed in physical coordinates.
@@ -1148,10 +1148,10 @@ A dialog box appears to edit the name of the output grid file, and a second one 
 
 ### 10.1 The GUI series.fig
 
-Operations on field series are controled by the GUI *series.fig*, which allows the user to set the root name(s) and file indices over which a processing function operates.
-The GUI can be opened from *uvmat* through its menu bar option *[Run/series]*.
-It then duplicates the settings of *uvmat*.
-The GUI series can be alternatively opened directly by typing the Matlab command _>>series_, then selecting the input file series by the menu bar command *[Open]*.
+Operations on field series are controled by the GUI **series.fig**, which allows the user to set the root name(s) and file indices over which a processing function operates.
+The GUI can be opened from **uvmat** through its menu bar option *[Run/series]*.
+It then duplicates the settings of **uvmat**.
+The GUI **series** can be alternatively opened directly by typing the Matlab command `>> series`, then selecting the input file series by the menu bar command *[Open]*.
 
 The root path, subdirectory, root file name and extension are introduced in the different columns of the table *[InputTable]*.
 The nomenclature for file indexing is represented in the column *[NomType]*, the index extension for the first file in the series.
@@ -1167,7 +1167,7 @@ The files resulting from the processing are put in a folder with the same path R
 The name of this output folder is defined in *[OuputSubdir]*: the default name is the input folder _SubDir_, followed by an extension depending on the processing function.
 
 The same action can be performed either on the local Matlab session, either as background process on the same computer, either as jobs sent on a cluster.
-In all cases the GUI series exports its content in a XML configuration file put in a subfolder /0_XML of the result folder *[OuputSubdir]*.
+In all cases the GUI **series** exports its content in a XML configuration file put in a subfolder `/0_XML` of the result folder *[OuputSubdir]*.
 
 Other panels can specifiy the input fields to process, the use of transform function, projection objects or masks.
 They are made visible only if necessary.
@@ -1179,10 +1179,11 @@ They are made visible only if necessary.
 The menu bar at the top of the GUI contains the following buttons:
 
 - *[Open]*: Open or browse input files.
-  It operates like for the GUI UVMAT, except that there are now two possibilities: *[browse...]* or *[browse_append...]* The latter appends a new input line to the table *[InputTable]* while the former refreshes the table.
+  It operates like for the GUI **uvmat**, except that there are now two possibilities: *[browse...]* or *[browse_append...]*.
+  The latter appends a new input line to the table *[InputTable]* while the former refreshes the table.
 - *[Open campaign]*: does the same as *[Open]* but scans the data organised as a project/campaign, see [section 3.7](#37-data-organisation-in-a-project).
 - *[Display Config]*: exports on the Matlab work space all the data stored in the GUI, in the form of a Matlab structure.
-- *[Inport Config]*: reads the XML configuration file of a previous computation (placed in a subfolder /0_XML), and fills the GUI with its content, so the calculation can be repeated.
+- *[Inport Config]*: reads the XML configuration file of a previous computation (placed in a subfolder `/0_XML`), and fills the GUI with its content, so the calculation can be repeated.
 - *[Help]*: displays this help file using the Matlab browser.
 
 ### 10.3 The frame [IndexRange]
@@ -1210,17 +1211,17 @@ It is transfered to the corresponding line in the table *[PairString]*.
 
 The velocity type and field are automatioally chosen by default, but can be specified by the menus *[VelType]* and *[FieldName]*.
 In case of multiple input file series, these menus only refer to the first line.
-Then the menus *[VelType_1]* and *[FieldName_1]* refer to the second line, consistently with the input for the GUI *UVMAT*.
+Then the menus *[VelType_1]* and *[FieldName_1]* refer to the second line, consistently with the input for the GUI **uvmat**.
 
 ### 10.5 Field transform, projection object and mask
 
 A transform function can be introduced by the menu *[TransformName]* in the frame *[FieldTransform]*.
 New transform functions can be introduced by the option 'more....'.
-Its path is then recorded and displayed in *[TransformPath].
-Transform *functions act field by field to modify the input (for instance transforming image to physical coordinates), like in the GUI UVMAT, while the *[Action]* functions act on the whole series.
+Its path is then recorded and displayed in *[TransformPath]*.
+Transform functions act field by field to modify the input (for instance transforming image to physical coordinates), like in the GUI **uvmat**, while the *[Action]* functions act on the whole series.
 
 A projection object can be introduced by selecting the check box *[CheckObject]*.
-If a projection object has been already created the opened interface *set_object.fig* will be used.
+If a projection object has been already created the opened interface **set_object.fig** will be used.
 Otherwise a browser appears to open an object file (XML).
 It is possible to view the current projection object by pressing *[view]*, edit it by selecting *[edit]*, or delete it by pressing *[delete]*.
 
@@ -1240,24 +1241,24 @@ Finally any additional function can be called and included in the menu by select
 The corresponding path is displayed in *[ActionPath]*.
 
 The action function is first activated when it is selected in the menu *[ActionName]*.
-This first activation checks input data and sets the visibility of input GUI uicontrols.
+This first activation checks input data and sets the visibility of input GUI **uicontrols**.
 
 The actual start of the processing is triggered by pressing the button *[RUN]*.
 It can be run in local mode, *i.e.* on the current Matlab session, or as _background_, by selecting this option in *[RunMode]*.
 In mode _background_, calculation is performed in a new Matlab session (without graphics) so that the current Matlab session is free for new operations.
 If a cluster system has been detected, a third option 'cluster' appears in the menu, allowing to dispatch parallel computations on a computer cluster.
 
-When *[RUN]* is activated the information from the GUI *series* is transcripted to a file .xml in a subfolder '0_XML' of the folder containing the result files.
-Therefore the operation parameters are preserved, and can be retrieved in the GUI* series* by the menu bar command *[Open config]*.
+When *[RUN]* is activated the information from the GUI **series** is transcripted to a file .xml in a subfolder '0_XML' of the folder containing the result files.
+Therefore the operation parameters are preserved, and can be retrieved in the GUI **series** by the menu bar command *[Open config]*.
 In the modes 'background' or 'cluster', input information for the calculation is transmitted by this xml file.
 In the mode 'cluster', the calculation is split into sub-calculations, with an xml file for each.
 A sub-folder */0_LOG* then contains the messages sent by the computation as a replacement of the work window display of the usual interactive Matlab mode.
 
 For the option 'cluster', a compiled version of the action function is useful, to avoid installing Matlab on each node of the cluster.
 This is achieved by selecting the option _.sh_ in the menu *[ActionExt]*.
-If the compiled version is not yet available, or outdated, the GUI proposes a new compilation of the selected function (launching the function _compile.m_ requiring the Matlab compilator toolbox).
+If the compiled version is not yet available, or outdated, the GUI proposes a new compilation of the selected function (launching the function `compile.m` requiring the Matlab compilator toolbox).
 The use of compiled function on the cluster requires a file 'RunTime' whose address needs to be specified in the parameter file PARAM.xml of the package UVMAT.
-The commands in *series* are set for the system 'oar', but adding the equivalent commands for another cluster system is straightforward (this must be done in the sub-function _RUN_Callback_ of _series.m_).
+The commands in **series** are set for the system 'oar', but adding the equivalent commands for another cluster system is straightforward (this must be done in the sub-function `RUN_Callback` of _series.m_).
 
 ### 10.7 Action functions of general use
 
@@ -1279,7 +1280,7 @@ A few functions are provided by default in the menu *[ActionName]*:
   Thus projection on 'points' lead to time series of the projected variable(s) for each point, projection by interpolation on a line will (x,time) field, while projection on a plane gives a 3D matrix, whose first index corresponds to time.
   Note that for a vector field, projection on a tilted line or plane yields the vector components longitudinal and normal to the object.
   To preserve the original _x_ and _y_ components, introduce them as _scalar_, not _vectors_.
-  In the case of two input files series, the field difference will be perfomed like with the interface *uvmat.fig*.
+  In the case of two input files series, the field difference will be perfomed like with the interface **uvmat.fig**.
   It is not possible to use more than two input series for this funtion.
 - _merge_proj_: this option allows to merge several field series in a single one.
   This is useful to merge fields obtained with different cameras.
@@ -1302,16 +1303,16 @@ A few more examples (less reliable) are in the subfolder '/series/usr_fct', a go
 - `turb_stat.m`: produces turbulent statistics (Reynolds stress tensor).
 
 These can be used as template to create other functions.
-The general input of these functions in Matlab structure 'Param' which contains all the input parameters as given by the GUI *series* (see comments in the function for details).
+The general input of these functions in Matlab structure 'Param' which contains all the input parameters as given by the GUI **series** (see comments in the function for details).
 For batch operations, as needed for the cluster, this input is replaced by the name of an XML file which contains these parameters (this is the file produced in the folder `*/0_XML*` under the result directrory Output Subdir).
 The first part of the function must give some options for the requested input information and may interactively introduce specific parameters needed for the function.
 The second part of the function, where the processing itself takes place, is then free from any input (so the operation can be easily dispatched to a remote computer).
 
-The first part of the function is activated when the function is selected in the menu *[ActionName]* of the GUI *series*, which yields the input Param.Action.RUN=0.
+The first part of the function is activated when the function is selected in the menu *[ActionName]* of the GUI **series**, which yields the input Param.Action.RUN=0.
 It is aimed at setting the GUI configuration appropriate for the specific function, and to provide all the needed input parameters.
 The second part is activated by the action *[RUN]* and should not contain any interactive input to allow for batch mode outside the current Matlab session.
 
-The settings of the GUI *series* are controlled by the following parameters (fields of the Matlab structure 'Param'):
+The settings of the GUI **series** are controlled by the following parameters (fields of the Matlab structure 'Param'):
 
  | *Name* | *Values* | *Default* | *Role* |
  |:------ |:--------- |:---------- |:-------- |
@@ -1347,11 +1348,11 @@ Particle Image Velocimetry (PIV) measures the displacement of features in a pair
 - Image correlation can be used also to get the shape of a 3D surface by comparing the images of two stereoscopic views of the surface marked by some visual patterns.
 Then image correlation is used to identify the common points on the two images, see [section 11.7](#117-topography-measurement-by-image-correlation-from-stereoscopic-views).
 
-Usual PIV and 2D displacement measurements can be performed by selecting the Matlab function _civ_series_ as *[ActionName]* in the GUI *series.fig*: then the *GUI civ_input* appears to enter the processing parameters.
-An image file series must be entered as input of *series.fig*.
-Any standard image format can be used, as well as the proprietary format from the companies Lavision (.im7), cameras Phantom (.cine), and the company Rdvision.
+Usual PIV and 2D displacement measurements can be performed by selecting the Matlab function `civ_series` as *[ActionName]* in the GUI **series.fig**: then the GUI **civ_input** appears to enter the processing parameters.
+An image file series must be entered as input of **series.fig**.
+Any standard image format can be used, as well as the proprietary format from the companies Lavision (`.im7`), cameras Phantom (`.cine`), and the company Rdvision.
 
-An alternative obsolete possibility (not advised) is to use the older Fortran program _CivX_ from the GUI *civ.fig*.
+An alternative obsolete possibility (not advised) is to use the older Fortran program _CivX_ from the GUI **civ.fig**.
 This can be called directly on the Matlab prompt, by typing _>>civ_, or from UVMAT by the menu bar command *[RUN/PIV (old civ)]*.
 
 - *Timing and calibration*: PIV requires information of time intervals between images.
@@ -1387,7 +1388,7 @@ This can be called directly on the Matlab prompt, by typing _>>civ_, or from UVM
   The second index j is assumed to represent a position in a volume laser scan, while i represents time.
   Therefore PIV volume requires the selection *series (Di)* for *[ListPairMode]*.
 
-With all the options for pair comparisons, the set of reference frames is given by the master GUI *series.fig*.
+With all the options for pair comparisons, the set of reference frames is given by the master GUI **series.fig**.
 
 ![](11-1-overview-piv.2.png)
 
@@ -1401,9 +1402,9 @@ The CIV process involves a succession of iterative operations which can be used 
 - `civ2`: advanced image correlation algorithm using the result of `civ1` as a first approximation.
 - `fix2` and `patch2`: similar as `fix1` and `patch1`, but applied to the `civ2` results.
 
-This series of operations is chosen by selecting the corresponding check boxes on the left of the GUI *civ_series*, which give access to the corresponding parameter input panels.
+This series of operations is chosen by selecting the corresponding check boxes on the left of the GUI **civ_series**, which give access to the corresponding parameter input panels.
 Note that the result of each of these operations is stored in the output NetCDF file, so the process can be split in several runs.
-When an existing NetCDF velocity file has been initially opened, the GUI `civ.fig` is automaticaly configured to perform the next operation (`fix1`, `patch1`, `civ2`...) needed in the process.
+When an existing NetCDF velocity file has been initially opened, the GUI **civ.fig** is automaticaly configured to perform the next operation (`fix1`, `patch1`, `civ2`...) needed in the process.
 
 At the end of the process, it is advised to interpolate the velocity data on a regular grid in physical coordinates, using the function `merge_proj.m`, see [section 10.7](#107-action-functions-of-general-use).
 This function can be used to merge together the view fields from several cameras on a common grid in physical coordinates.
@@ -1521,18 +1522,18 @@ To obtain the three velocity components in a plane with stereoscopic PIV, use th
   Otherwise, the calibration problem is more complex.
 - Perform usual PIV for each image series.
   For PIV near a straight wall, it may be useful to create a grid for each image series, corresponding to a common array of physical positions.
-  This can be done by the upper menu bar option *[!Tools/Make Grid]* in the GUI *uvmat* (see [section 9.2](#92-grids)).
-- To get the 3 velocity components in phys coordinates, combine the two PIV data series with the function 'civ2vel_3C' activated by the GUI _series_.
-  The data are assumed by default in a plane _x,y_ (defined by a laser sheet).
-  A transverse _z_ displacement can be taken into account, introduced then in the third input line of the GUI _series_.
-  This _z_ displacement can be obtained by stereo comparison of the two images (at the same time).
+  This can be done by the upper menu bar option *[!Tools/Make Grid]* in the GUI **uvmat** (see [section 9.2](#92-grids)).
+- To get the 3 velocity components in phys coordinates, combine the two PIV data series with the function 'civ2vel_3C' activated by the GUI **series**.
+  The data are assumed by default in a plane $x,y$ (defined by a laser sheet).
+  A transverse $z$ displacement can be taken into account, introduced then in the third input line of the GUI **series**.
+  This $z$ displacement can be obtained by stereo comparison of the two images (at the same time).
 
 ### 11.7 Topography measurement by image correlation from stereoscopic views
 
-A displacement _z(x,y)_ can be obtained by comparing two stereoscopic views (at the same time), using the function _stereo_civ_ activated by the GUI *series*.
-This identifies corresponding points using image correlation, in the same way as _civ_.
+A displacement $z(x,y)$ can be obtained by comparing two stereoscopic views (at the same time), using the function `stereo_civ` activated by the GUI **series**.
+This identifies corresponding points using image correlation, in the same way as `civ`.
 A transform of the image to physical coordinates is performed as a first step to minimize the image difference between the two views.
-The final result is expressed as a set of _(x,y,z)_ positions in physical coordinates (unlike PIV data which are expressed in image coordinates).
+The final result is expressed as a set of $(x,y,z)$ positions in physical coordinates (unlike PIV data which are expressed in image coordinates).
 See [3D View](3d-view.pdf) (pdf) for full algorithm description.
 
 ### 11.8 Description of the velocity files
@@ -1540,8 +1541,8 @@ See [3D View](3d-view.pdf) (pdf) for full algorithm description.
 The velocity fields obtained by PIV, as well as their spatial derivatives, are stored in the machine independent binary format [NetCDF](#71-the-netcdf-format).
 The file contains constants ('global attributes') and fields ('variables') whose values can be directly accessed by their name.
 
-Several fields, corresponding to the successive operations 'civ1', 'fix1', 'patch1', 'civ2', 'fix2', 'patch2' are stored in the same .nc file.
-When a third or higher order civ iteration is performed, a new .nc file is created, containing the two last iterations as civ1 and civ2.
+Several fields, corresponding to the successive operations `civ1`, `fix1`, `patch1`, `civ2`, `fix2`, `patch2` are stored in the same `.nc` file.
+When a third or higher order civ iteration is performed, a new `.nc` file is created, containing the two last iterations as `civ1` and `civ2`.
 
 - *List of constants (global attributes):*,
 
@@ -1679,7 +1680,7 @@ Then the current plane index is indicated by the text box z_index and the total 
 
 ### 12.3 3D3C PIV
 
-This is performed by the GUI *civ_3D.fig*.
+This is performed by the GUI **civ_3D.fig**.
 The program requires input volume images *vol*.
 These are images in the PNG format, where npz slices are concatenated along the y direction, forming a composite image of dimension (npy x npz, npx) from the images (npy x npx).
 These volume images can be created by the function {ima2vol.m} in {/series}.
@@ -1687,8 +1688,8 @@ These volume images can be created by the function {ima2vol.m} in {/series}.
 
 ## 13 - Editing XML files with the GUI editxml
 
-This GUI *editxml.fig* visualises and edits XML files.
-It is automatically called by the browser of *uvmat.fig* when a file with extension .xml is opened.
+This GUI **editxml.fig** visualises and edits XML files.
+It is automatically called by the browser of **uvmat.fig** when a file with extension .xml is opened.
 
 When an input file is opened, editxml detects the title key, *e.g.* <ImaDoc>, and looks for the corresponding XML schema (*e.g.* {ImaDoc.xsd} ).
 This schema is sought in the directory defined by <SchemaPath> in the installation file {PARAM.xml} of UVMAT.
@@ -1708,131 +1709,131 @@ This edit box transforms in a menu when a preselected list of allowed input valu
 
 ## 14 - Appendix: overview of the package functions
 
-Note:these functions are listed in the function _check_files.m_ launched when the GUI *uvmat* is opened.
+Note:these functions are listed in the function `check_files.m` launched when the GUI **uvmat** is opened.
 
 ### Master GUI
 
-- 'uvmat';...% master function for file scanning and visualisation of 2D fields.
+- **uvmat**: master function for file scanning and visualisation of 2D fields.
 
 ### Other GUIs(function .m and associated figure .fig)
 
-- 'browse_data';...% function, associated with the GUI 'browse_data.fig' for scanning directories in a project/campaign
-- 'civ';... %function associated with the interface 'civ.fig' for the Fortran package CivX (obsolete, replaced by 'civ_series').
-- 'create_grid';...% called by the GUI geometry_calib to create a physical grid.
-- 'dataview';...% function for scanning directories in a campaign.
-- 'editxml';...%display and edit XML files using a xls schema.
-- 'geometry_calib';...%performs geometric calibration from a set of reference points.
-- 'get_field';...% choose and plot a field from a NetCDF file.
-- 'msgbox_uvmat';... associated with GUI msgbox_uvmat.fig to display message boxes, for error, warning or input calls.
-- 'rotate_points';...%'rotate_points': associated with GUI rotate_points.fig to introduce (2D) rotation parameters.
-- 'series';...% master function for analysis field series, with interface 'series.fig'.
-- 'set_grid';...% creates a grid for PIV.
-- 'set_object';...% edit a projection object.
-- 'translate_points';...% associated with GUI translate_points.fig to display translation parameters.
-- 'view_field';...% function for visualisation of projected fields'.
+- **browse_data**: function, associated with the GUI **browse_data.fig** for scanning directories in a project/campaign
+- **civ**: function associated with the interface 'civ.fig' for the Fortran package CivX (obsolete, replaced by 'civ_series').
+- **create_grid**: called by the GUI **geometry_calib** to create a physical grid.
+- **dataview**: function for scanning directories in a campaign.
+- **editxml**: display and edit XML files using a xls schema.
+- **geometry_calib**: performs geometric calibration from a set of reference points.
+- **get_field**: choose and plot a field from a NetCDF file.
+- **msgbox_uvmat**: associated with GUI **msgbox_uvmat.fig** to display message boxes, for error, warning or input calls.
+- **rotate_points**: 'rotate_points': associated with GUI **rotate_points.fig** to introduce (2D) rotation parameters.
+- **series**: master function for analysis field series, with interface **series.fig**.
+- **set_grid**: creates a grid for PIV.
+- **set_object**: edit a projection object.
+- **translate_points**: associated with GUI **translate_points.fig** to display translation parameters.
+- **view_field**: function for visualisation of projected fields.
 
 ### Functions activated by mouse and keybord in GUI
 
-- 'keyboard_callback';... % function activated when a key is pressed on the keyboard.
-- 'mouse_down';% function activated when the mouse button is pressed on a figure (callback for 'WindowButtonDownFcn').
-- 'mouse_motion';...% permanently called by mouse motion over a figure (callback for 'WindowButtonMotionFcn').
-- 'mouse_up';... % function to be activated when the mouse button is released (callback for 'WindowButtonUpFcn').
+- `keyboard_callback`: function activated when a key is pressed on the keyboard.
+- `mouse_down`: function activated when the mouse button is pressed on a figure (callback for `WindowButtonDownFcn`).
+- `mouse_motion`: permanently called by mouse motion over a figure (callback for `WindowButtonMotionFcn`).
+- `mouse_up`:  function to be activated when the mouse button is released (callback for `WindowButtonUpFcn`).
 
 ### Main functions used
 
-- 'plot_field';...% plots a field: vectors, scalar or images, or usual (x,y) plot, depending on the nature of the input field.
-- 'plot_object';...%draws a projection object (points, line, plane...).
-- 'proj_field';...%project a field on a projection object (plane, line,...).
+- `plot_field`: plots a field: vectors, scalar or images, or usual (x,y) plot, depending on the nature of the input field.
+- `plot_object`: draws a projection object (points, line, plane...).
+- `proj_field`: project a field on a projection object (plane, line...).
 
 ### Convert and I/O functions
 
-- 'cell2tab';... % transform a Matlab cell in a character array suitable for display in a table.
-- 'fill_GUI';... % fill a GUI with handles 'handles' from input data Param.
-- 'imadoc2struct';...% convert the image documentation file <ImaDoc> into a Matlab structure.
-- 'nomtype2pair';... creates nomenclature for index pairs knowing the image nomenclature, used by series fct.
-- 'nc2struct';...% transform a NetCDF file in a corresponding Matlab structure.
-- 'num2stra';...% transform number to the corresponding character string depending on the nomenclature.
-- 'read_field':...% read the fields from files in different formats (NetCDF files, images, video).
-- 'read_GUI'::...% read a GUI and provide the data as a Matlab structure.
-- 'read_image';... read images or video objects.
-- 'read_multimadoc';... %read a set of Imadoc files and compare their timing of different file series 'read_xls';...%read excel files containing the list of the experiments.
-- 'stra2num';...% transform letters (a, b, A, B,) or numerical strings ('1','2'..) to the corresponding numbers.
-- 'struct2nc';...% write fields in NetCDF files.
-- 'struct2xml';... transform a Matlab structure to a XML tree.
-- 'xml2struct'...% read an XML file as a Matlab structure, converts numeric character strings into numbers.
+- `cell2tab`:  transform a Matlab cell in a character array suitable for display in a table.
+- `fill_GUI`:  fill a GUI with handles 'handles' from input data Param.
+- `imadoc2struct`: convert the image documentation file <ImaDoc> into a Matlab structure.
+- `nomtype2pair`: creates nomenclature for index pairs knowing the image nomenclature, used by series fct.
+- `nc2struct`: transform a NetCDF file in a corresponding Matlab structure.
+- `num2stra`: transform number to the corresponding character string depending on the nomenclature.
+- `read_field`: read the fields from files in different formats (NetCDF files, images, video).
+- `read_GUI`: read a GUI and provide the data as a Matlab structure.
+- `read_image`: read images or video objects.
+- `read_multimadoc`: read a set of Imadoc files and compare their timing of different file series `read_xls`: read excel files containing the list of the experiments.
+- `stra2num`: transform letters (a, b, A, B,) or numerical strings ('1', '2'...) to the corresponding numbers.
+- `struct2nc`: write fields in NetCDF files.
+- `struct2xml`: transform a Matlab structure to a XML tree.
+- `xml2struct`: read an XML file as a Matlab structure, converts numeric character strings into numbers.
 
 ### Ancillary functions
 
-- 'activate';...% emulate the mouse selection of a GUI element, for demo.
-- 'calc_field_interp': defines fields (velocity, vort, div...) from civ data and calculate them for projection with linear interpolation.
-- 'calc_field_tps': defines fields (velocity, vort, div...) from civ data and calculate them with tps interpolation.
-- calc_tps': calculate the thin plate spline (tps) coefficients for interpolation.
-- 'check_files';...% check the path, modification date and svn version for all the function in the toolbox UVMAT.
-- 'close_fig';...% function activated when a figure is closed.
-- 'compile';...% compile a Matlab function, create a binary in a subdirectory /bin.
-- 'copyfields';...% copy fields between two Matlab structures.
-- 'delete_object';...%delete a projection object, defined by its index in the Uvmat list or by its graphic handle.
-- 'displ_uvmat';...% display a message using msgbox_uvmat or on the log file in batch mode.
-- 'fileparts_uvmat': splits a file name in root and indices and recognize file naming convention.
-- 'filter_tps';...% find the thin plate spline coefficients for interpolation-smoothing.
-- 'find_field_cells';...% group the variables of a nc-formated Matlab structure into 'fields' with common dimensions.
-- find_field_cells': test field structure for input in proj_field and plot_field, group the variables into 'fields' with common dimensions.
-- 'find_file_series';...%check the content of an input file and find the corresponding file series.
-- 'find_imadoc';...% find the <ImaDoc> XML file associated with a given input file.
-- 'fullfile_uvmat';...%creates a file name from a root name and indices.
-- 'get_file_series';...% determine the list of file names and file indices for functions called by 'series'.
-- 'get_file_type': determine info about a file (image, multimage, civdata,...).
-- 'griddata_uvmat';...%make 2D linear interpolation using griddata, with input appropriate for both Matlab 6.5 and 7.
-- 'hist_update';...% update of a current global histogram by inclusion of a new field.
-- 'imadoc2struct';...%convert the image documentation file <ImaDoc> into a Matlab structure.
-- 'interp2_uvmat';...% linearly interpolate an image or scalar defined on a regular grid.
-- 'ListDir';... scan the structure of the directory tree (for dataview.m).
-- 'mask_proj';...% restrict input fields to a mask region, set to 0 outside.
-- 'peaklock';...%
-- 'phys_XYZ';...% transform coordinates from pixels to phys.
-- 'px_XYZ';...% transform coordinates from phys to pixels.
-- 'read_civxdata';...reads CIVx data from NetCDF files.
-- 'read_civdata';... reads new civ data from NetCDF files.
-- 'read_geometry_calib';... read data on the GUI geometry_calib.
-- 'read_imatext';...%read .civ files (obsolete, but can be adapted to other text documentation files).
-- 'read_xls';...%read excel files containing the list of the experiments.
-- 'reinit';...% suppress the personal parameter file 'uvmat_perso.mat'.
-- 'set_col_vec';...% sets the color code for vectors depending on a scalar and input parameters (used for plot_field).
-- 'set_subdomains';...% sort a set of points defined by scattered coordinates in subdomains, as needed for tps interpolation.
-- 'tps_coeff';...% calculate the thin plate spline (tps) coefficients.
-- 'tps_coeff_field';...% calculate the thin plate spline (tps) coefficients with subdomains for a field structure.
-- 'tps_eval';... %calculate the thin plate spline (tps) interpolation at a set of points
-- 'tps_eval_dxy';...% calculate the derivatives of thin plate spline (tps) interpolation at a set of points (limited to the 2D case).
-- 'uigetfile_uvmat';... browser, and display of directories, faster than the Matlab fct uigetfile.
-- 'update_imadoc';... %update the XML file <ImaDoc>.
-- 'update_waitbar';... update the waitbar display, used for ACTION functions in the GUI 'series'.
+- `activate`: emulate the mouse selection of a GUI element, for demo.
+- `calc_field_interp`: defines fields (velocity, vort, div...) from civ data and calculate them for projection with linear interpolation.
+- `calc_field_tps`: defines fields (velocity, vort, div...) from civ data and calculate them with tps interpolation.
+- calc_tps`: calculate the thin plate spline (tps) coefficients for interpolation.
+- `check_files`: check the path, modification date and svn version for all the function in the toolbox UVMAT.
+- `close_fig`: function activated when a figure is closed.
+- `compile`: compile a Matlab function, create a binary in a subdirectory `/bin`.
+- `copyfields`: copy fields between two Matlab structures.
+- `delete_object`: delete a projection object, defined by its index in the Uvmat list or by its graphic handle.
+- `displ_uvmat`: display a message using msgbox_uvmat or on the log file in batch mode.
+- `fileparts_uvmat`: splits a file name in root and indices and recognize file naming convention.
+- `filter_tps`: find the thin plate spline coefficients for interpolation-smoothing.
+- `find_field_cells`: group the variables of a nc-formated Matlab structure into 'fields' with common dimensions.
+- `find_field_cells`: test field structure for input in proj_field and plot_field, group the variables into 'fields' with common dimensions.
+- `find_file_series`: check the content of an input file and find the corresponding file series.
+- `find_imadoc`: find the <ImaDoc> XML file associated with a given input file.
+- `fullfile_uvmat`: creates a file name from a root name and indices.
+- `get_file_series`: determine the list of file names and file indices for functions called by **series**.
+- `get_file_type`: determine info about a file (image, multimage, civdata...).
+- `griddata_uvmat`: make 2D linear interpolation using griddata, with input appropriate for both Matlab 6.5 and 7.
+- `hist_update`: update of a current global histogram by inclusion of a new field.
+- `imadoc2struct`: convert the image documentation file <ImaDoc> into a Matlab structure.
+- `interp2_uvmat`: linearly interpolate an image or scalar defined on a regular grid.
+- `ListDir`: scan the structure of the directory tree (for `dataview.m`).
+- `mask_proj`: restrict input fields to a mask region, set to 0 outside.
+- `peaklock':
+- `phys_XYZ`: transform coordinates from pixels to phys.
+- `px_XYZ`: transform coordinates from phys to pixels.
+- `read_civxdata`: reads CIVx data from NetCDF files.
+- `read_civdata`: reads new civ data from NetCDF files.
+- `read_geometry_calib`: read data on the GUI **geometry_calib**.
+- `read_imatext`: read .civ files (obsolete, but can be adapted to other text documentation files).
+- `read_xls`: read excel files containing the list of the experiments.
+- `reinit`: suppress the personal parameter file `uvmat_perso.mat`.
+- `set_col_vec`: sets the color code for vectors depending on a scalar and input parameters (used for plot_field).
+- `set_subdomains`: sort a set of points defined by scattered coordinates in subdomains, as needed for tps interpolation.
+- `tps_coeff`: calculate the thin plate spline (tps) coefficients.
+- `tps_coeff_field`: calculate the thin plate spline (tps) coefficients with subdomains for a field structure.
+- `tps_eval`: calculate the thin plate spline (tps) interpolation at a set of points
+- `tps_eval_dxy`: calculate the derivatives of thin plate spline (tps) interpolation at a set of points (limited to the 2D case).
+- `uigetfile_uvmat`: browser, and display of directories, faster than the Matlab fct `uigetfile`.
+- `update_imadoc`: update the XML file <ImaDoc>.
+- `update_waitbar`: update the waitbar display, used for ACTION functions in the GUI **series**.
 
 ### Series functions
 
-- 'aver_stat': calculate field average over a time series.
-- 'avi2png': copy an avi movie to a series of B/W .png images (take the average of green and blue color components)
-- 'check_data_files': check the existence, type and status of the files selected by series.fig.
-- 'civ2vel_3C': combine velocity fields from two cameras to get three velocity components
-- 'ima_levels': rescale the image intensity to reduce strong luminosity peaks (their blinking
-- 'civ_input': function associated with the GUI 'civ_input.fig' to set the input parameters for civ_series.
-- 'civ_series': PIV function activated by the general GUI series (replaces civ).
-- 'merge_proj': concatene several fields from series, can project them on a regular grid in phys coordinates.
-- 'stereo_civ': determination of topography by image correlation of two stereo views
-- 'stereo_input': function associated with the GUI 'stereo_input.fig' to set the input parameters for stereo_civ
-- 'sub_background': subtract a sliding background to an image series.
-- 'time_series': extract a time series after projection on an object (points , line..).
+- `aver_stat`: calculate field average over a time series.
+- `avi2png`: copy an avi movie to a series of B/W `.png` images (take the average of green and blue color components).
+- `check_data_files`: check the existence, type and status of the files selected by **series.fig**.
+- `civ2vel_3C`: combine velocity fields from two cameras to get three velocity components.
+- `ima_levels`: rescale the image intensity to reduce strong luminosity peaks (their blinking.
+- `civ_input`: function associated with the GUI **civ_input.fig** to set the input parameters for **civ_series**.
+- `civ_series`: PIV function activated by the general GUI **series** (replaces **civ**).
+- `merge_proj`: concatene several fields from series, can project them on a regular grid in phys coordinates.
+- `stereo_civ`: determination of topography by image correlation of two stereo views.
+- `stereo_input`: function associated with the GUI **stereo_input.fig** to set the input parameters for **stereo_civ**.
+- `sub_background`: subtract a sliding background to an image series.
+- `time_series`: extract a time series after projection on an object (points, line...).
 
 ### Transform functions
 
-- 'diff_vel': calculate the difference of two input velocity fields.
-- 'ima_color2BW': transform a color image to grey scale image
-- 'ima_filter': low-pass filter of an image (builtin filtering parameter).
-- 'ima_ratio': take the ratio of two input images with same size
-- 'ima_remove_background': removes backgound from an image (using the local minimum).
-- 'ima_remove_particles': removes particles from an image (keeping the local minimum).
-- 'FFT2_detrend': calculate the 2D spectrum of the input scalar after removing the linear trend (requires the Matlab image processing toolbox).
-- 'phys': transforms image (Unit='pixel') to real world (phys) coordinates using geometric calibration parameters.
+- `diff_vel`: calculate the difference of two input velocity fields.
+- `ima_color2BW`: transform a color image to grey scale image.
+- `ima_filter`: low-pass filter of an image (builtin filtering parameter).
+- `ima_ratio`: take the ratio of two input images with same size.
+- `ima_remove_background`: removes backgound from an image (using the local minimum).
+- `ima_remove_particles`: removes particles from an image (keeping the local minimum).
+- `FFT2_detrend`: calculate the 2D spectrum of the input scalar after removing the linear trend (requires the Matlab image processing toolbox).
+- `phys`: transforms image (unit='pixel') to real world (phys) coordinates using geometric calibration parameters.
   It acts if the input field contains the tag 'CoordUnit' with value 'pixel'.
-- 'phys_polar': this transforms the fields to polar coordinates, radius in abscissa (same unit as x, y) and azimuth in ordinate (unit =degree).
-- 'signal_spectrum': calculate and display power spectrum of the current field
-- 'sub_field': combines two input fields, taking the difference if of the same nature.
+- `phys_polar`: this transforms the fields to polar coordinates, radius in abscissa (same unit as x, y) and azimuth in ordinate (unit='degree').
+- `signal_spectrum`: calculate and display power spectrum of the current field.
+- `sub_field`: combines two input fields, taking the difference if of the same nature.
