@@ -1,4 +1,4 @@
-# Liminary about UVMAT
+# Liminary
 
 ![](img-uvmat.png)
 

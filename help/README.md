@@ -1,4 +1,4 @@
-# Help for UVMAT
+# Help
 
 ## 1 - Generalities
 

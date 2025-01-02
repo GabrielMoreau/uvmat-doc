@@ -1,3 +1,4 @@
+DATE:=$(shell date '+%Y-%m-%d')
 
 .PHONY: all clean docs env view
 
