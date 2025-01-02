@@ -4,7 +4,7 @@
 
 ### 1.1 Aim
 
-The package UVMAT can be used to visualise, scan and analyse a wide variety of input data: all image and movie formats recognised by Matlab (see [#a3.1Inputdataformats section 3.1]) and NetCDF binary files (see [#a7.1TheNetCDFformat section 7]).
+The package UVMAT can be used to visualise, scan and analyse a wide variety of input data: all image and movie formats recognised by Matlab (see [section 3.1](#31-input-data-formats)) and NetCDF binary files (see [section 7](#7-netcdf-files-and-the-gui-get-field)).
 It is however particularly designed for laboratory data obtained from imaging systems: the package includes a Particle Image Velocimetry software, as well as tools for geometric calibration, masks, grid generation and image pre-processing (*e.g.* background removal), and editing documentation files in the format XML.
 Stereoscopic PIV, PIV-LIF and 3D PIV in a volume (still under development) are handled.
 
@@ -549,7 +549,7 @@ Because of the grid regularity, the set of positions is fully defined by the coo
 - *Structured orthogonal grid*:
 
 Each field is again a multi-dimensional array V whose dimensions match the space dimensions, but the coordinates may not be regularly spaced, so they are represented as a monotonic 1D array variable with the same length as the corresponding dimension of V.
-This is called a _coordinate variable_ (see [#a7.1TheNetCDFformat section 7.1]).
+This is called a _coordinate variable_ (see [section 7.1](#71-the-netcdf-format)).
 
 - *Unstructured coordinates*:
 
@@ -586,7 +586,7 @@ Data are kept in memory in the GUI UVMAT as a Matlab structure, stored as _UserD
 This structure can be extracted by the menu bar command *[Export/field in work space]*, then typing the Matlab command `>> Data_uvmat`.
 It contains the current input field as a substructure _Data_uvmat.Field_.
 
-This field has a specific organisation, mirroring the structure of NetCDF files (see [#a7-Netcdffilesandget_field section 7]).
+This field has a specific organisation, mirroring the structure of NetCDF files (see [section 7](#7-netcdf-files-and-the-gui-get-field)).
 The field is described by a set of (single or multidimensional) data arrays, called the _variables_.
 The _dimensions_ of these arrays have names, in order to identify correspondance between different arrays.
 For instance the arrays representing the velocity components U and V must have the same dimensions.
@@ -641,21 +641,21 @@ Any other element can be added, but will not be taken into account if they are n
 - ObjectStyle: ='points', 'line', 'plane', denotes the style of geometric object on which the data have been 'projected'.
   For instance a profiler project a physical field along a line.
 - ObjectCoord: Coordinates defining a geometric object on which the data have been projected.
-- ObjectRangeX, ObjectRangeY, ObjectRangeZ : range of action of a projection object along each coordinate, see [section 6](#6-projection-objects}.
-- 'long_name':(convention from [unidata-><http://www.unidata.ucar.edu:>]) a long descriptive name, could be used for labeling plots, for example.
+- ObjectRangeX, ObjectRangeY, ObjectRangeZ : range of action of a projection object along each coordinate, see [section 6](#6-projection-objects).
+- 'long_name':(convention from [unidata](http://www.unidata.ucar.edu)) a long descriptive name, could be used for labeling plots, for example.
   If a variable has no long_name attribute assigned, the variable name should be used as a default.
 - *Attributes of variables*:
 - Mesh: suggested step value to discretize the values of the variable, used to define the bins for histograms.
 - Role: it specifies the role of the variable arrays for plotting or processing programs, see below.
   If Role is not defined variables are considered by default as 'scalar'.
-- Unit or 'units' (convention from [unidata-><http://www.unidata.ucar.edu:>]) : char string giving the unit of a variable, used in plot axis labels (overset by global attributes 'CoordUnit' and 'TimeUnit' if defined).
+- Unit or 'units' (convention from [unidata](http://www.unidata.ucar.edu)) : char string giving the unit of a variable, used in plot axis labels (overset by global attributes 'CoordUnit' and 'TimeUnit' if defined).
 - *The attribute 'Role'*: the following options are used for the attribute 'Role':
 - 'ancillary': information of secondary use, indicating for instance an error estimate of field variables within a field cell (omitted in plotting).
 - 'coord_x', 'coord_y', 'coord_z': represents a  sets of unstructured coordinates x, y and z for the field variables sharing the same dimension name.
 - 'coord_tps': coordinates of thin plate shell (tps) centres used for spline interpolation.
 - 'discrete': field with discrete values (no spatial interpolation), repesented with dots (no line) in 1D plots.
 - 'errorflag': provides an error flag marking the field variables as false or true within a field cell , default=0, no error.
-  Different non zero values can mark different criteria of elimination, see [section 10.3->#sec10.3] for PIV data.
+  Different non zero values can mark different criteria of elimination, see [section 10.3](#103-the-frame-indexrange) for PIV data.
   Such flagging is reversible, since the data themselves are not lost.
 - 'grad_x', 'grad_y', 'grad_z' :represents the x, y or z component of a contravariant vector** (like gradients).
 - 'image_rgb': represents a color image.
@@ -1668,19 +1668,20 @@ The next successive lines indicate the variable names for the position and veloc
 same as previous, replacing 'vec' by 'vec2'.
 
 
-## 12 - Tridimensional features:(to update **)
+## 12 - Tridimensional features: (to update)
 
-### 12-1 Multilevel image scanning
+### 12.1 Multilevel image scanning
 
 Or multiplane scanning: it also describes the set of laser planes.
 Then the current plane index is indicated by the text box z_index and the total number of planes by the text box nb_slice.
 
-### 12-2 Volume image scanning
+### 12.2 Volume image scanning
 
-### 12-3 3D3C PIV **
+### 12.3 3D3C PIV
 
 This is performed by the GUI *civ_3D.fig*.
-The program requires input volume images *vol* These are images in the PNG format, where npz slices are concatenated along the y direction, forming a composite image of dimension (npy x npz, npx) from the images (npy x npx).
+The program requires input volume images *vol*.
+These are images in the PNG format, where npz slices are concatenated along the y direction, forming a composite image of dimension (npy x npz, npx) from the images (npy x npx).
 These volume images can be created by the function {ima2vol.m} in {/series}.
 
 
