@@ -26,33 +26,45 @@ We use here a more recent algorithm proposed by Wahba, 1990 ('Spline models for 
 
 We consider a set of measurement points ${\bf r_i}, i = 1,2, \ldots,N$, and the corresponding set of measurements values for a quantity $f$ (a velocity component for PIV data).
 
-$$f({\bf r_i})=f_i, i = 1,2, \ldots,N \; [equ. 1]$$
+$$
+f({\bf r_i})=f_i, i = 1,2, \ldots,N \; [equ. 1]
+$$
 
 A pure interpolation function $f({\bf r})$ must exactly reach these values $f_i$ at the measurement points, while a smoothing function should approach these values within a range smaller than the estimated error bar.
 
 Considering first the case of a pure interpolation, the function $f({\bf r})$ must minimise the 'elastic energy' or mean squared curvature 
 
-$$E = \int\left[\left(\frac{\partial^2 f}{\partial x^2}\right)^2 + 2\left(\frac{\partial^2 f}{\partial xy}\right)^2 + \left(\frac{\partial^2 f}{\partial y^2}\right)^2 \right] \textrm{d} x \, \textrm{d}y  \;\textrm{[equ. 2]}$$
+$$
+E = \int\left[\left(\frac{\partial^2 f}{\partial x^2}\right)^2 + 2\left(\frac{\partial^2 f}{\partial xy}\right)^2 + \left(\frac{\partial^2 f}{\partial y^2}\right)^2 \right] \textrm{d} x \, \textrm{d}y  \;\textrm{[equ. 2]}
+$$
 
 with the constraints [->equ. 1].
 These constraints can be also written as a domain integral with Dirac functions at measurement points: 
 
-$${\int f \delta({\bf r-r_i}) \textrm{d} x \, \textrm{d}y=f_i , i = 1,2, \ldots,N} \;\textrm{[equ. 3]}$$
+$$
+{\int f \delta({\bf r-r_i}) \textrm{d} x \, \textrm{d}y=f_i , i = 1,2, \ldots,N} \;\textrm{[equ. 3]}
+$$
 
 This variational problem is solved by introducing a Lagrange parameter $8\pi S_i$ for each constraint (the factor $8\pi$ is put for further convenience).
 The variation of the energy can be rewritten by a double integration by part, leading to $\int \Delta^2 f \delta f dx dy$.
 The optimum function $f$ is thus solution of the  double Laplacian equation with pointwise source terms at locations $r_i$,
 
-$$\Delta^2 f= \sum 8\pi S_i \delta ({\bf r-r_i})\;\textrm{[equ. 4]}$$
+$$
+\Delta^2 f= \sum 8\pi S_i \delta ({\bf r-r_i})\;\textrm{[equ. 4]}
+$$
 
 The solution $\phi$ for a single source point is such that $\Delta^2 \phi=0$ everywhere outside the source.
 Using the axisymmetric form of the Laplacian $\Delta \phi=\frac{1}{r}\frac{d}{dr}(r\frac{d\phi}{dr})$, we can show that the general axisymmetric solution is 
 
-$$\phi=C_0 \log(r)+C_1 r^2 + C_2 r^2 \log (r)+C_3 \;\textrm{[equ. 5]}$$
+$$
+\phi=C_0 \log(r)+C_1 r^2 + C_2 r^2 \log (r)+C_3 \;\textrm{[equ. 5]}
+$$
 
 whose Laplacian writes 
 
-$$\Delta\phi=\frac{1}{r}\frac{d}{dr}(r\frac{d\phi}{dr})=4 C_1+ 4 C_2 (1+\log(r))\;\textrm{[equ. 6]}$$
+$$
+\Delta\phi=\frac{1}{r}\frac{d}{dr}(r\frac{d\phi}{dr})=4 C_1+ 4 C_2 (1+\log(r))\;\textrm{[equ. 6]}
+$$
 
 The coefficient $C_0$ must be zero to avoid divergence of $\phi$ at the origin.
 The constant $C_3$ can be included in a global constant $a_0$.
@@ -69,11 +81,15 @@ $$\label{sol_gene} f({\bf r})=\sum S_i \phi({\bf|r-r_i}|)+a_0+a_1x+a_2y\;\textrm
 with $\phi(r)=r^2\log (r)$.
 The  values at the measurement points ${\bf r_j}$ are 
 
-$$f({\bf r_j})=\sum S_i \phi({\bf|r_j-r_i}|)+a_0+a_1x_j+a_2y_j;\;\textrm{[equ. 8]}$$
+$$
+f({\bf r_j})=\sum S_i \phi({\bf|r_j-r_i}|)+a_0+a_1x_j+a_2y_j;\;\textrm{[equ. 8]}
+$$
 
 In other words, defining the vector $F=f({\bf r_j}) \{ j=1,...N \}, a_0, a_1,a_2$ and the matrix 
 
-$$M=\left[  \begin{array}{cc}^\phi(|r_j-r_i|) , 1,\;  x_j,\;  y_j \\ ... \;\;\;\;\;\;\;\;\;\;\;\;\; ... \;\;\; ... \;\;\; ...\\... \;\;\;\;\;\; \;\;\;\;\;\;\; 1,\;   x_j,\;  y_j\\ \end{array}\;\right] \;[equ. 9]$$
+$$
+M=\left[  \begin{array}{cc}^\phi(|r_j-r_i|) , 1,\;  x_j,\;  y_j \\ ... \;\;\;\;\;\;\;\;\;\;\;\;\; ... \;\;\; ... \;\;\; ...\\... \;\;\;\;\;\; \;\;\;\;\;\;\; 1,\;   x_j,\;  y_j\\ \end{array}\;\right] \;[equ. 9]
+$$
 
 the sources $S_i$ are obtained by solving the matrix equation $ F=S*M$.
 
@@ -83,15 +99,21 @@ the sources $S_i$ are obtained by solving the matrix equation $ F=S*M$.
 To account for measurement noise, interpolation should involve smoothing, so that the interpolated data can deviate from the measurement at the measurement sites $r_i$.
 This can be performed by minimising a linear combination of the elastic energy and the quadratic deviation to the measurement values  
 
-$$E = \sum(|f({\bf  r_i})-f_i|^2)+ \rho\int\left[\left(\frac{\partial^2 f}{\partial x^2}\right)^2 + 2\left(\frac{\partial^2 f}{\partial xy}\right)^2 + \left(\frac{\partial^2 f}{\partial y^2}\right)^2 \right] \textrm{d} x \, \textrm{d}y$$
+$$
+E = \sum(|f({\bf  r_i})-f_i|^2)+ \rho\int\left[\left(\frac{\partial^2 f}{\partial x^2}\right)^2 + 2\left(\frac{\partial^2 f}{\partial xy}\right)^2 + \left(\frac{\partial^2 f}{\partial y^2}\right)^2 \right] \textrm{d} x \, \textrm{d}y
+$$
 
 The variational problem then leads to the equation
 
-$$\rho\Delta^2 f= \sum  (f_i-f) \delta ({\bf r-r_i})$$
+$$
+\rho\Delta^2 f= \sum  (f_i-f) \delta ({\bf r-r_i})
+$$
 
 The solution is still obtained as a sum of radial basis functions $\phi({\bf|r-r_i}|)$, whose weight $S_i$ now satisfies $M_\rho*S=F$, with the matrix 
 
-$$M_\rho=M+\rho I_{000}$$
+$$
+M_\rho=M+\rho I_{000}
+$$
 
 where $I_{000}$ is the NxN identity matrix extended by three columns of 0.^
 
@@ -102,9 +124,13 @@ Spatial derivatives of the interpolated quantity $f$ can be obtained by direct d
 For any function $\phi(r)$, with radial distance $r=|{\bf r-r_i}|$, $r^2=X^2+Y^2$, $\partial_X \phi=(d\phi/dr) \partial_X r$, and $\partial_X r=X/r$.
 This yields $\partial_X \phi=X (2 \log(r) +1)$, so that,
 
-$$\partial_x f({\bf r})=\sum S_i (2 \log|{\bf r-r_i}|+1)(x-x_i)+a_1$$
+$$
+\partial_x f({\bf r})=\sum S_i (2 \log|{\bf r-r_i}|+1)(x-x_i)+a_1
+$$
 
-$$\partial_y f({\bf r})=\sum S_i (2 \log|{\bf r-r_i}|+1)(y-y_i)+a_2$$
+$$
+\partial_y f({\bf r})=\sum S_i (2 \log|{\bf r-r_i}|+1)(y-y_i)+a_2
+$$
 
 
 ## Sub-domains
