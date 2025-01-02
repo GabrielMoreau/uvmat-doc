@@ -3,7 +3,7 @@ site_url: https://legi.gricad-pages.univ-grenoble-alpes.fr/soft/uvmat-doc/
 docs_dir: ../help
 site_dir: ./docs/help
 site_author: Joel Sommeria / LEGI
-copyright: Copyright (C) Joel Sommeria, 2008-2024, LEGI UMR 5519 / CNRS UGA Grenoble-INP / Grenoble, France (document generated on __DATE__)
+copyright: Copyright (C) Joel Sommeria, 2008-2025, LEGI UMR 5519 / CNRS UGA Grenoble-INP / Grenoble, France (document generated on __DATE__)
 
 nav:
   - README.md

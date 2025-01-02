@@ -50,7 +50,7 @@ Finally a on-line [wiki:Tutorial] is provided with test images and data files.
 
 ### 1.4 Copyright and licence
 
-Copyright (C) Joel Sommeria, 2008-2024, LEGI UMR 5519 / CNRS UGA Grenoble-INP / Grenoble, France - joel.sommeria(at)univ-grenoble-alpes.fr.
+Copyright (C) Joel Sommeria, 2008-2025, LEGI UMR 5519 / CNRS UGA Grenoble-INP / Grenoble, France - joel.sommeria(at)univ-grenoble-alpes.fr.
 
 The package UVMAT is free software; it can be redistributed and/or modified it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
