@@ -696,7 +696,7 @@ The following conventions are used:
 ### 6.1 Definition and editing with the UVMAT interface
 
 These are geometrical objects used to define cuts along lines or planes, to interpolate fields on a regular grid, to restrict the analysis or visualisation to field subregions.
-The projection of fields on objects is performed by the function _proj_field.m_, which can be used as well in data processing outside the GUI *UVMAT*, using for instance [#a10-Processingfieldseries series.fig].
+The projection of fields on objects is performed by the function _proj_field.m_, which can be used as well in data processing outside the GUI *UVMAT*, using for instance 	`series.fig` (see [section 10](#10-processing-field-series)).
 
 When a 2D or 3D field is opened by *uvmat.fig*, a default projection object called 'plane' is created, so that all field plots (in 2D and 3D) are considered as the result of a projection.
 New objects are created by the menu bar command *[Projection object]* in the GUI *uvmat*.
