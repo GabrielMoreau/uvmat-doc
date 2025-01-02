@@ -40,11 +40,11 @@ Features not yet implemented or tested (in particular 3D features) are marked by
 The document is accessible within Matlab by help buttons in the GUIs.
 
 A short comment about each GUI element, called _uicontrol_ (push buttons, edit boxes, menus..), as well as the _tag name_ of this _uicontrol_, is provided as a tool tip window by moving the mouse over it.
-In the present help document, a GUI element is quoted as *GUI*, its tags as *[tag]*, a file name in the package is enhanced as _fct name.m_, and commands on the Matlab workspace as '>> command’.
+In the present help document, a GUI element is quoted as *GUI*, its tags as *[tag]*, a file name in the package is enhanced as _fct name.m_, and commands on the Matlab workspace as `>> command`.
 The tag name can be also obtained by pressing the right hand mouse button on the element.
 
 Information is also provided as comments in each function.
-Type '>>help fct_name' to get it, or open it with an editor.
+Type `>> help fct_name` to get it, or open it with an editor.
 
 Finally a on-line [wiki:Tutorial] is provided with test images and data files.
 
@@ -62,8 +62,8 @@ See the GNU General Public License (file {COPYING.txt}) for more details.
 
 ### 2.1 Opening the GUI
 
-Type '>>uvmat' in the Matlab prompt to display the GUI.
-If the function is unknown by Matlab, add the appropriate path to the folder *UVMAT* where the toolbox has been installed (see the Matlab command '>>help path').
+Type `>> uvmat` in the Matlab prompt to display the GUI.
+If the function is unknown by Matlab, add the appropriate path to the folder *UVMAT* where the toolbox has been installed (see the Matlab command `>> help path`).
 When the GUI is opening, the date of last modfication is displayed in the central window.
 During opening, the program checks the Matlab path to all the functions of the package (using the function _check_functions.m_).
 If a function is missing, or if it is overridden by a function with the same name at another path location, a message is displayed in the central window at the opening of the GUI *uvmat*.
@@ -124,9 +124,9 @@ When available, the time of each frame or field is displayed in the edit box *[T
 In the case of image pairs, the time interval Dt is displayed between the edit boxes *[i1], [j1]* and *[i2], [j2]*.
 This timing information can be read directly in the input file, in the case of movies or NetCDF files, or can be defined in a XML documentation file, see [#a3.5Imagedocumentationfiles.xml section 3.5] (in case of conflict, the latter prevails).
 
-*Note*: the five last input file names, as well as other pieces of personal information, are stored for convenience in a file (_uvmat_perso.mat_) automatically created in the user preference directory of Matlab (indicated by the Matlab command '>>prefdir'.
+*Note*: the five last input file names, as well as other pieces of personal information, are stored for convenience in a file (_uvmat_perso.mat_) automatically created in the user preference directory of Matlab (indicated by the Matlab command `>> prefdir`.
 Browsers then read default input in this file.
-A corruption of this file _uvmat_perso.mat_ may lead to problems for opening UVMAT, type '>>reinit' on the Matlab prompt to delete it and reinitialise the configuration of UVMAT.
+A corruption of this file _uvmat_perso.mat_ may lead to problems for opening UVMAT, type `>> reinit` on the Matlab prompt to delete it and reinitialise the configuration of UVMAT.
 
 ### 2.4 General tools
 
@@ -150,7 +150,7 @@ A corruption of this file _uvmat_perso.mat_ may lead to problems for opening UVM
   A movie can be produced using the command *[Export/make movie avi]*.
 - *Extracting data* as Matlab arrays.
   Information stored in the GUI UVMAT (as _UserData_ in the figure) can be extracted in the Matlab work space by the menu bar command *[Export/field in workspace]* (or by pressing the right mouse button on the GUI).
-  Type '>>Data_uvmat.Field' to get the current input field as a Matlab structure.
+  Type `>> Data_uvmat.Field` to get the current input field as a Matlab structure.
   An image or scalar matrix is for instance obtained as Data_uvmat.Field.A.
 - *Extracting a movie*.
   You can create a movie reproducing the effect of the button ++> of uvmat: the content of each successive view is reproduced in an ancilary figure whose content is eventually saved as a movie with format .avi (no compression).
@@ -583,7 +583,7 @@ The value can be any Matlab object: number, array, character string or cell, or 
 Each element is denoted in the form _Data.tag=value_.
 
 Data are kept in memory in the GUI UVMAT as a Matlab structure, stored as _UserData_ in the GUI figure.
-This structure can be extracted by the menu bar command *[Export/field in work space]*, then typing the Matlab command '>>Data_uvmat'.
+This structure can be extracted by the menu bar command *[Export/field in work space]*, then typing the Matlab command `>> Data_uvmat`.
 It contains the current input field as a substructure _Data_uvmat.Field_.
 
 This field has a specific organisation, mirroring the structure of NetCDF files (see [#a7-Netcdffilesandget_field section 7]).
@@ -618,7 +618,7 @@ The following temporary information is added to manage projection and field subs
 
 Any other element can be added, but will not be taken into account if they are not listed in _ListGlobalAttribute_ or _ListVarName_.
 
-### 5.3 Conventions for attributes in field objects
+### 5.3 Conventions for attributes in field objects {#section-5-3}
 
 - *Global attributes active in UVMAT*: those are used for plot settings or data processing.
 - 'Conventions':
@@ -628,7 +628,7 @@ Any other element can be added, but will not be taken into account if they are n
   Calculated automatically from the data if not specified.
 - 'CoordUnit': character string representing the unit for space coordinates.
   It is used to distinguish image coordinates (CoordUnit='pixel') and physical (for instance CoordUnit='cm').
-  If 'CoordUnit' is defined, [projection ->#set_object] will be allowed only on objects with the same 'CoordUnit', and plots will be done by default with axis option 'equal' (same scale for both axis).
+  If 'CoordUnit' is defined, [projection->#set_object] will be allowed only on objects with the same 'CoordUnit', and plots will be done by default with axis option 'equal' (same scale for both axis).
 - 'Dt': time interval for CIV data.
   It is used for calibration, to transform displacement into velocity.
 - 'Time': real number indicating the time of the field, used to obtain time series from data sets.
@@ -641,7 +641,7 @@ Any other element can be added, but will not be taken into account if they are n
 - ObjectStyle: ='points', 'line', 'plane', denotes the style of geometric object on which the data have been 'projected'.
   For instance a profiler project a physical field along a line.
 - ObjectCoord: Coordinates defining a geometric object on which the data have been projected.
-- ObjectRangeX, ObjectRangeY, ObjectRangeZ : range of action of a projection object along each coordinate, see [#ProjMode: section 6].
+- ObjectRangeX, ObjectRangeY, ObjectRangeZ : range of action of a projection object along each coordinate, see [section 6](#section-6}.
 - 'long_name':(convention from [unidata-><http://www.unidata.ucar.edu:>]) a long descriptive name, could be used for labeling plots, for example.
   If a variable has no long_name attribute assigned, the variable name should be used as a default.
 - *Attributes of variables*:
@@ -691,7 +691,7 @@ The following conventions are used:
 - 'nb_subdomain' denotes the dimension for the subdomain index for tps coefficients.
 
 
-## 6 - Projection objects
+## 6 - Projection objects {#section-6}
 
 ### 6.1 Definition and editing with the UVMAT interface
 
