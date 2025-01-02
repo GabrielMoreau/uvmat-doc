@@ -618,7 +618,7 @@ The following temporary information is added to manage projection and field subs
 
 Any other element can be added, but will not be taken into account if they are not listed in _ListGlobalAttribute_ or _ListVarName_.
 
-### 5.3 Conventions for attributes in field objects {#section-5-3}
+### 5.3 Conventions for attributes in field objects
 
 - *Global attributes active in UVMAT*: those are used for plot settings or data processing.
 - 'Conventions':
@@ -641,7 +641,7 @@ Any other element can be added, but will not be taken into account if they are n
 - ObjectStyle: ='points', 'line', 'plane', denotes the style of geometric object on which the data have been 'projected'.
   For instance a profiler project a physical field along a line.
 - ObjectCoord: Coordinates defining a geometric object on which the data have been projected.
-- ObjectRangeX, ObjectRangeY, ObjectRangeZ : range of action of a projection object along each coordinate, see [section 6](#section-6}.
+- ObjectRangeX, ObjectRangeY, ObjectRangeZ : range of action of a projection object along each coordinate, see [section 6](#6-projection-objects}.
 - 'long_name':(convention from [unidata-><http://www.unidata.ucar.edu:>]) a long descriptive name, could be used for labeling plots, for example.
   If a variable has no long_name attribute assigned, the variable name should be used as a default.
 - *Attributes of variables*:
@@ -665,7 +665,7 @@ Any other element can be added, but will not be taken into account if they are n
 - 'vector_x', 'vector_y', 'vector_z' : represents the x, y or z component of a vector (covariant).
 - 'warnflag': provides a warning flag about the quality of data for the field variables within a field cell., default=0, no warning.
 
-### 5.4 Field cells:
+### 5.4 Field cells
 
 The variables of field structures can be grouped into _field cells_ representing data sharing the same coordinates.
 Differerent types of field cells are identified for processing and plotting.
@@ -691,7 +691,7 @@ The following conventions are used:
 - 'nb_subdomain' denotes the dimension for the subdomain index for tps coefficients.
 
 
-## 6 - Projection objects {#section-6}
+## 6 - Projection objects
 
 ### 6.1 Definition and editing with the UVMAT interface
 
@@ -734,7 +734,7 @@ The objects are defined by the following set of properties:
 - 'ellipse': defined by its center, half width, half height, and possibly angle of axis.
 - 'plane': plane with associated cartesian coordinates.
 - 'volume': volume with associated cartesian coordinates.
-- *ProjMode*: specifies the method of projection of coordinates and field, as described in [#a6.3Projectionmodes next sub-section].
+- *ProjMode*: specifies the method of projection of coordinates and field, as described in [next sub-section](#63-projection-modes).
 - *Angle*: three component rotation vector which defines the orientation of the object coordinate axis, for 'plane' and 'volume'.
   In 2D, this rotation vector has only one component along z, defining a rotation angle in the plane (expressed in degrees).
   This applies also to the main axis of 'ellipse' and 'rectangle'.
