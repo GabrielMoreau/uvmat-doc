@@ -55,7 +55,7 @@ Copyright (C) Joel Sommeria, 2008-2025, LEGI UMR 5519 / CNRS UGA Grenoble-INP / 
 The package UVMAT is free software; it can be redistributed and/or modified it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
 UVMAT is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-See the GNU General Public License (file {COPYING.txt}) for more details.
+See the GNU General Public License (file `COPYING.txt`) for more details.
 
 
 ## 2 - Overview of the GUI uvmat
@@ -273,7 +273,7 @@ Simple templates of XML files are also provided there.
 When a new file series is opened in UVMAT, the XML documentation file is automatically sought (by the function `find_imadoc.m`) in the folder containing the data series folder: the documentation of the file series `RootPath/SubDir/RootFile...` is sought in the file `RootPath/RootFile.xml`.
 As a second choice (corresponding to an earlier convention), the XML file will be sought inside the data series folder, as RootPath/SubDir/RootFile.xml (if this file does not exist, a text file with the same root name but extension .civ is sought as an obsolete option).
 The detection of the image documentation file is indicated by the visibility of the pushbutton *[view_xml]* on the upper right of the GUI **uvmat**.
-Press this button to see the content through an XML editor *editxml* (described in [section 10](#10-processing-field-series)).
+Press this button to see the content through an XML editor **editxml** (described in [section 10](#10-processing-field-series)).
 The XML file can be also opened directly by the UVMAT browser, or by any text editor.
 In UVMAT, it is read by the function `imadoc2struct.m`.
 
@@ -452,7 +452,7 @@ This color system is primarily designed for PIV data but can be used in other co
   The red values correspond to poor correlations, green to fair values, and blue to good ones.
   The value range covered by each of the three colors is set by the pair of sliders *[Slider1]* and *[Slider2]*, or equivalently by the edit boxes *[num_ColCode1]* and *[num_ColCode2]*.
   Other color representations can be specified.
-  *[ColorScalar]* sets the scalar used for color representation, for instance the vector norm 'norm_vec' or vorticity 'vort' (the list of available scalars is set by the function {calc_scal.m}).
+  *[ColorScalar]* sets the scalar used for color representation, for instance the vector norm 'norm_vec' or vorticity 'vort' (the list of available scalars is set by the function `calc_scal.m`).
 - *[ColorCode]* sets the kind of color representation:
 - 'rgb': color ranging from red, for the scalar value set by *[num_MinVec]*, to blue, for the scalar value set by *[num_MaxVec]*.
   The color thresholds from red to green and green to blue are set by *[ColCode1]* and *[ColCode2]* respectively, or the sliders *[Slider1]* and *[Slider2]*.
@@ -560,7 +560,7 @@ The corresponding field values are then represented as variables U(nb_point),V(n
 - *Thin plate shell (tps) interpolation*:
 
 This is a multi-dimensional generalisation of the spline interpolation/smoothing, an optimum way to interpolate data with minimal curvature of the interpolating function.
-The result at an interpolation position vector ${\bf r}$ is expressed in the form, (see ThinPlateShell).
+The result at an interpolation position vector ${\bf r}$ is expressed in the form, (see [ThinPlateShell](ThinPlateShell/)).
 
 $$
 \label{sol_gene} f({\bf r})=\sum S_i \phi({\bf|r-r_i}|)+a_0+a_1x+a_2y\;
@@ -594,7 +594,7 @@ A dimension has a specific value, which sets the common size of all arrays shari
 Field description furthermore involves optional _attributes_ to document the field data, for instance to specify the role of variables or to provide units.
 These attributes can be global, or can be attached to a specific variable.
 
-In summary, the _field structure_ is specified by the following elements:
+In summary, the `field structure` is specified by the following elements:
 
 - (optional) *ListGlobalAttribute* list (cell array of character strings) of the names of global attributes Att_1, Att_2...
 - (mandatory) *ListVarName* list of the variable names Var_1, Var_2....(cell array of character strings).
@@ -915,7 +915,7 @@ Selection of variable gives way to a list of variables, while selection of _dime
 
 In the case of a 3D input field, the fig is set to uvmat.
 A middle plane of cut is automatically selected.
-This can be moved then with the slider on the interface set_object (see section 5).
+This can be moved then with the slider on the interface set_object (see [section 5](#5-field-structures)).
 The default cuts are made at constant z coordiante, but any of the three initial coordinates can be used as z coordinate, using the menu coord_z.
 
 
@@ -1023,19 +1023,19 @@ When an image or PIV velocity field is opened by **uvmat**, the transform functi
   Detect points on this last image, but instead of storing them, apply the calibration with the option 3D_linear or 3D_quadr.
   A non-zero _z_ position of this grid can be introduced by a z translation performed with *[!Tools/Translate points]*.
   It is generally convenient to do all these calibrations in air.
-  Then transposition to water is done by the tool 'set_slice', see section 8.3.
+  Then transposition to water is done by the tool 'set_slice', see [section 8.3](#83-setting-the-reference-planes).
 
 - *Intrinsic parameters*: the previous procedure first determines the extrinsic parameters which characterize the camera optics (focal lengths and nonlinear deformation parameter).
   Then the extrinsic parameters, translation and rotation of the camera with respect to the reference grid, are determined on the last grid image.
   If the same optics is used in a new experiment, it is possible to skip the multiplane detection, importing the intrinsic parameters from a previous <ImaDoc> file by the menu bar tool *[Import.../Intrinsic parameters]*, then applying the calibration with the option '3D_extrinsic' with the reference grid image only.
 
 - *Import features*: by the menu bar tool *[Import...]*, you can choose to import different data from a previous <ImaDoc> file.
-- *Calibration points*: imports the calibration poins of a previous grid saved as a <ImaDoc> file, the points and their coordinates will then appear in **uvmat** and *geometry_calib*.
-- *Intrinsic parameters*: as explained above it imports the intrinsic parameters from a previous grid saved as a <ImaDoc> file.
-  The parameters will appear in *geometry_calib*.
-- *All*: imports the calibration points and the intrinsic parameters from a <ImaDoc> file.
-  We can see them in *geometry_calib*.
-- *Grid file*: imports the <ImaDoc> file in *Point Lists* in *geometry_calib* but none of the data appears in the coordinate table or the intrinsic parameter frame.
+- *Calibration points*: imports the calibration poins of a previous grid saved as a <ImaDoc> file, the points and their coordinates will then appear in **uvmat** and **geometry_calib**.
+- *Intrinsic parameters*: as explained above it imports the intrinsic parameters from a previous grid saved as a `ImaDoc` file.
+  The parameters will appear in **geometry_calib**.
+- *All*: imports the calibration points and the intrinsic parameters from a `ImaDoc` file.
+  We can see them in **geometry_calib**.
+- *Grid file*: imports the <ImaDoc> file in *Point Lists* in **geometry_calib** but none of the data appears in the coordinate table or the intrinsic parameter frame.
 - Recording calibration parameters*: Once the calibration option and the list of calibration points have been obtained, press *[APPLY]*.
   Calibration coefficients are recorded in the XML file <ImaDoc> associated with the image currently opened by UVMAT.
   If previous calibration data already exist, the previous XML file is updated, but the original one is preserved with the extension .xml~.
@@ -1236,7 +1236,7 @@ This is a good first test before starting a processing operation since all actio
 The option _aver_stat_ calculates a global average on the successive fields, while _time_series_ provides a time series.
 The option _merge_proj_ is used to project a whole series on a given grid, or to create a file series by concatenation of different fields.
 These processing functions are described with more details in next sub-sections.
-The option _civ_series_ gives access to the PIV processsing, see section [section 11](#11-piv-particle-imaging-velocimetry).
+The option _civ_series_ gives access to the PIV processsing, see [section 11](#11-piv-particle-imaging-velocimetry).
 Finally any additional function can be called and included in the menu by selecting the option _more_...
 The corresponding path is displayed in *[ActionPath]*.
 
@@ -1288,7 +1288,7 @@ A few functions are provided by default in the menu *[ActionName]*:
   In this case, it is generally useful to interpolate the fields on a single grid.
   For that purpose select a projection object of type 'plane' with projection mode 'interp_lin', or 'interp_tps' to get spatial derivative.
   Since the different views have their own calibration, it is important to use the option 'phys' (menu menu_coord), and to create the grid in phys coordinates.
-- _civ_series_: does PIV processing, see section [section 11](#11-piv-particle-imaging-velocimetry).
+- _civ_series_: does PIV processing, see [section 11](#11-piv-particle-imaging-velocimetry).
 
 ### 10.8 Other functions Action
 
@@ -1530,7 +1530,7 @@ To obtain the three velocity components in a plane with stereoscopic PIV, use th
 
 ### 11.7 Topography measurement by image correlation from stereoscopic views
 
-A displacement $z(x,y)$ can be obtained by comparing two stereoscopic views (at the same time), using the function `stereo_civ` activated by the GUI **series**.
+A displacement $(x,y,z)$ can be obtained by comparing two stereoscopic views (at the same time), using the function `stereo_civ` activated by the GUI **series**.
 This identifies corresponding points using image correlation, in the same way as `civ`.
 A transform of the image to physical coordinates is performed as a first step to minimize the image difference between the two views.
 The final result is expressed as a set of $(x,y,z)$ positions in physical coordinates (unlike PIV data which are expressed in image coordinates).
@@ -1544,7 +1544,7 @@ The file contains constants ('global attributes') and fields ('variables') whose
 Several fields, corresponding to the successive operations `civ1`, `fix1`, `patch1`, `civ2`, `fix2`, `patch2` are stored in the same `.nc` file.
 When a third or higher order civ iteration is performed, a new `.nc` file is created, containing the two last iterations as `civ1` and `civ2`.
 
-- *List of constants (global attributes):*,
+#### List of constants (global attributes)
 
 Conventions 'uvmat/civdata'.
 
@@ -1552,7 +1552,7 @@ Conventions 'uvmat/civdata'.
  |:----- |:--------- |
  | Conventions | sets the conventions |
  | Program | name of the processing program |
- | CivStage] | stage in the sequence civ1,fix1... |
+ | CivStage | stage in the sequence civ1,fix1... |
  | Civ1(2)_ImageA | path and name of input image A |
  | Civ1(2)_ImageB | path and name of input image B |
  | Civ1(2)_Time | mean time for the image pair |
@@ -1576,7 +1576,7 @@ Conventions 'uvmat/civdata'.
  | Civ2_CheckDecimal |# 1 if decimal shift option is used (reduced peaklocking)|
  | Civ2_CheckDeformation |# 1 if image deformation option is used|
 
-- *List of variables*:
+#### List of variables
 
 Conventions 'uvmat/civdata'.
 
@@ -1601,7 +1601,7 @@ Conventions 'uvmat/civdata'.
  | Civ1_V_tps | (nb_tps_1,nb_subdomain_1) | tps weights for y vel component |
  | Civ1_W_tps | (nb_tps_1,nb_subdomain_1) | tps weights for z vel component |
 
-*dimensions*:
+#### Dimensions
 
 - nb_vec_1= nbre of vectors measured by PIV
 - nb_coord=2 or 3 is the dimension of space
@@ -1632,12 +1632,15 @@ Conventions 'uvmat/civdata'.
 - patch2_nx: number of grid points in the x direction for the patch2 field.
 - patch2_ny: number of grid points in the y direction for the patch2 field.
 - ro2_patch: smoothing coefficient rho used for patch2.
-- *List of field variables (old CIVx conventions)*: a set of velocity vectors is defined by a 1D array of position coordinates x, y, and z for 3D civ, and a corresponding array for each of the velocity components u, v, and w for 3C civ.
-  The field is therefore defined on an arbitrary set of point, without restriction to a regular mesh.
-  Additional arrays are used to keep track of the quality of the PIV process leading to each vector.
-  The image correlation maximum is represented by vec_C (a real number between 0 and 1).
-  A flag vec_F represents a warning on the vector quality (see the list of values below).
-  Another flag FixFlag marks false vectors: FixFlag=0 for good vectors, and FixFlag is set to a non-zero value when it has been detected as false (using a 'fix' operation).
+
+#### List of field variables (old CIVx conventions)
+
+- A set of velocity vectors is defined by a 1D array of position coordinates $x$, $y$, and $z$ for 3D civ, and a corresponding array for each of the velocity components $u$, $v$, and $w$ for 3C civ.
+- The field is therefore defined on an arbitrary set of point, without restriction to a regular mesh.
+- Additional arrays are used to keep track of the quality of the PIV process leading to each vector.
+- The image correlation maximum is represented by `vec_C` (a real number between 0 and 1).
+- A flag `vec_F` represents a warning on the vector quality (see the list of values below).
+- Another flag `FixFlag` marks false vectors: `FixFlag=0` for good vectors, and `FixFlag` is set to a non-zero value when it has been detected as false (using a 'fix' operation).
 
 The names of the fields (variables) resulting from each operation are given in the following table.
 Each column corresponds to an operation.
@@ -1645,26 +1648,26 @@ Each column corresponds to an operation.
 The first line is the name of the constant representing the number of vectors (the dimension of the arrays).
 The next successive lines indicate the variable names for the position and velocity components, the image correlation 'c', the 'flag' about civ quality and 'fix' flag (only available for civ1 and civ2), and the spatial derivatives obtained from the patch operations.
 
-- *Names of field variables for civ1 and patch1*
+#### Names of field variables for civ1 and patch1
 
- |      | civ1 | *interp1* | *filter1* |
- |:---- |:----------- |:--------- |:-------------- |
- | dim. | nb_vectors | nb_vec_patch | nb_vec_patch |
- | x | vec_X | vec_patch_X | vec_patch_X |
- | y | vec_Y | vec_patch_Y | vec_patch_Y |
- | z | vec_Z | vec_patch_Z | vec_patch_Z |
- | u | vec_U | vec_patch0_U | vec_patch_U |
- | v | vec_V | vec_patch0_V | vec_patch_V |
- | w | vec_W | vec_patch0_W | vec_patch_W |
- | correlation | vec_C |
+ |      | civ1        | *interp1*    | *filter1*    |
+ |:---- |:----------- |:------------ |:------------ |
+ | dim. | nb_vectors  | nb_vec_patch | nb_vec_patch |
+ | x    | vec_X | vec_patch_X  | vec_patch_X |
+ | y    | vec_Y | vec_patch_Y  | vec_patch_Y |
+ | z    | vec_Z | vec_patch_Z  | vec_patch_Z |
+ | u    | vec_U | vec_patch0_U | vec_patch_U |
+ | v    | vec_V | vec_patch0_V | vec_patch_V |
+ | w    | vec_W | vec_patch0_W | vec_patch_W |
+ | correlation  | vec_C |
  | warning flag | vec_F |
- | false flag | vec_FixFlag |
+ | false flag   | vec_FixFlag |
  | du/dx || vec_patch0_DUDX | vec_patch_DUDX |
  | du/dy || vec_patch0_DUDY | vec_patch_DUDY |
  | dv/dx || vec_patch0_DVDX | vec_patch_DVDX |
  | dv/dy || vec_patch0_DVDY | vec_patch_DVDY |
 
-- *Names of field variables for civ2 and patch2*
+#### Names of field variables for civ2 and patch2
 
 same as previous, replacing 'vec' by 'vec2'.
 
@@ -1683,7 +1686,7 @@ Then the current plane index is indicated by the text box z_index and the total 
 This is performed by the GUI **civ_3D.fig**.
 The program requires input volume images *vol*.
 These are images in the PNG format, where npz slices are concatenated along the y direction, forming a composite image of dimension (npy x npz, npx) from the images (npy x npx).
-These volume images can be created by the function {ima2vol.m} in {/series}.
+These volume images can be created by the function `ima2vol.m` in `/series`.
 
 
 ## 13 - Editing XML files with the GUI editxml
@@ -1691,8 +1694,8 @@ These volume images can be created by the function {ima2vol.m} in {/series}.
 This GUI **editxml.fig** visualises and edits XML files.
 It is automatically called by the browser of **uvmat.fig** when a file with extension .xml is opened.
 
-When an input file is opened, editxml detects the title key, *e.g.* <ImaDoc>, and looks for the corresponding XML schema (*e.g.* {ImaDoc.xsd} ).
-This schema is sought in the directory defined by <SchemaPath> in the installation file {PARAM.xml} of UVMAT.
+When an input file is opened, editxml detects the title key, *e.g.* <ImaDoc>, and looks for the corresponding XML schema (*e.g.* `ImaDoc.xsd`).
+This schema is sought in the directory defined by <SchemaPath> in the installation file `PARAM.xml` of UVMAT.
 If the schema is found, the hierarchical structure and keys given by the schema are diplayed.
 Otherwise the keys of the XML file are displayed.
 
@@ -1767,7 +1770,7 @@ Note:these functions are listed in the function `check_files.m` launched when th
 - `activate`: emulate the mouse selection of a GUI element, for demo.
 - `calc_field_interp`: defines fields (velocity, vort, div...) from civ data and calculate them for projection with linear interpolation.
 - `calc_field_tps`: defines fields (velocity, vort, div...) from civ data and calculate them with tps interpolation.
-- calc_tps`: calculate the thin plate spline (tps) coefficients for interpolation.
+- `calc_tps`: calculate the thin plate spline (tps) coefficients for interpolation.
 - `check_files`: check the path, modification date and svn version for all the function in the toolbox UVMAT.
 - `close_fig`: function activated when a figure is closed.
 - `compile`: compile a Matlab function, create a binary in a subdirectory `/bin`.
@@ -1789,7 +1792,7 @@ Note:these functions are listed in the function `check_files.m` launched when th
 - `interp2_uvmat`: linearly interpolate an image or scalar defined on a regular grid.
 - `ListDir`: scan the structure of the directory tree (for `dataview.m`).
 - `mask_proj`: restrict input fields to a mask region, set to 0 outside.
-- `peaklock':
+- `peaklock`:
 - `phys_XYZ`: transform coordinates from pixels to phys.
 - `px_XYZ`: transform coordinates from phys to pixels.
 - `read_civxdata`: reads CIVx data from NetCDF files.
