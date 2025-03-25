@@ -12,6 +12,8 @@ It includes iterative CIV, taking into account pattern deformation by strain and
 
 UVMAT also contains a graphic user interface and compiled binaries of the older PIV software ​CIVx written in Fortran.
 
+The reference website for this documentation is https://legi.gricad-pages.univ-grenoble-alpes.fr/soft/uvmat-doc/.
+
 
 ## Prerequisit
 
@@ -48,7 +50,7 @@ UVMAT is under active development. New features are regularly included but these
 A set of test examples are described in these tutorials, as listed in the table of content.
 Follow the links to get the instructions on-line.
 
-The requested files are provided in set of archives UVMAT_DEMO... at [<http://servforge.legi.grenoble-inp.fr/pub/soft-uvmat>].
+The requested files are provided in set of archives [UVMAT_DEMO_FILES.zip](https://gricad-gitlab.univ-grenoble-alpes.fr/legi/soft/uvmat-doc/-/raw/master/data/UVMAT_DEMO_FILES.zip?ref_type=heads).
 
 These DEMO files can be alternatively read and processed online from the OpenDAP server <http://servdap.legi.grenoble-inp.fr/opendap/meige/18UVMAT_DEMO_SOURCES> (accessible in the upper bar menu Open of the GUI *uvmat*).
 
