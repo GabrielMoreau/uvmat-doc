@@ -1,6 +1,6 @@
 # Tutorial 04 / Processing Image Series
 
-Open an image in UVMAT_DEMO03_PIVchallenge_2005C, representing a jet seeded by particles (accessible on <http://servforge.legi.grenoble-inp.fr/pub/soft-uvmat/).>
+Open an image in UVMAT_DEMO03_PIVchallenge_2005C, representing a jet seeded by particles (see [UVMAT_DEMO_FILES.zip](https://legi.gricad-pages.univ-grenoble-alpes.fr/soft/uvmat-doc/data/UVMAT_DEMO_FILES.zip)).
 
 The series contains 99 image pairs, labelled by a number with 3 digits and a letter index a and b.
 The nomenclature type *[NomType]*, given as the first image index, is therefore '001a'.
