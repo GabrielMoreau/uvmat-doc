@@ -4,7 +4,7 @@
 
 ### 1.1 Aim
 
-The package UVMAT can be used to visualise, scan and analyse a wide variety of input data: all image and movie formats recognised by Matlab (see [section 3.1](#31-input-data-formats)) and NetCDF binary files (see [section 7](#7-netcdf-files-and-the-gui-get-field)).
+The package UVMAT can be used to visualise, scan and analyse a wide variety of input data: all image and movie formats recognised by Matlab (see [section 3.1](#31-input-data-formats)) and NetCDF binary files (see [section 7](#7-netcdf-files-and-the-gui-get_field)).
 It is however particularly designed for laboratory data obtained from imaging systems: the package includes a Particle Image Velocimetry software, as well as tools for geometric calibration, masks, grid generation and image pre-processing (*e.g.* background removal), and editing documentation files in the format XML.
 Stereoscopic PIV, PIV-LIF and 3D PIV in a volume (still under development) are handled.
 
@@ -177,7 +177,7 @@ It is an open source patent-free replacement of GIF.
 It can be read directly by all standard programs of image visualisation and processing.
 Compressing a raw binary image to its png form typically saves disk storage by a factor of 3.
 
-_UVMAT_ can also read data in the binary format NetCDF, as described in [section 7](#7-netcdf-files-and-the-gui-get-field).
+_UVMAT_ can also read data in the binary format NetCDF, as described in [section 7](#7-netcdf-files-and-the-gui-get_field).
 Velocity fields obtained by PIV and results of data processing are stored in this format.
 For 3D PIV, 'volume' images are also stored in this format.
 
@@ -586,7 +586,7 @@ Data are kept in memory in the GUI **uvmat** as a Matlab structure, stored as _U
 This structure can be extracted by the menu bar command *[Export/field in work space]*, then typing the Matlab command `>> Data_uvmat`.
 It contains the current input field as a substructure _Data_uvmat.Field_.
 
-This field has a specific organisation, mirroring the structure of NetCDF files (see [section 7](#7-netcdf-files-and-the-gui-get-field)).
+This field has a specific organisation, mirroring the structure of NetCDF files (see [section 7](#7-netcdf-files-and-the-gui-get_field)).
 The field is described by a set of (single or multidimensional) data arrays, called the _variables_.
 The _dimensions_ of these arrays have names, in order to identify correspondance between different arrays.
 For instance the arrays representing the velocity components U and V must have the same dimensions.
