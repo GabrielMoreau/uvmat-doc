@@ -1,6 +1,10 @@
 DATE:=$(shell date '+%Y-%m-%d')
 
-.PHONY: all clean docs env view
+# Host IP for WSL2 under Windows
+IP:=$(shell (echo 127.0.0.1 ; uname -a | grep -q 'microsoft' && hostname -I | cut -f 1 -d ' ') | tail -1)
+
+
+.PHONY: all clean docs env view serve-start serve-stop
 
 all: env docs
 	#d help; make
@@ -8,11 +12,6 @@ all: env docs
 
 clean:
 	@rm -rf ./tmp
-
-view:
-	firefox ./tmp/docs/help/index.html &
-	firefox ./tmp/docs/tutorial/index.html &
-	# evince ../tmp/help/docs/pdf/guide-resinfo-wapt.pdf &
 
 tmp/src/README.md: README.md Makefile
 	mkdir -p tmp/src
@@ -38,4 +37,10 @@ env:
 	. ./tmp/venv/bin/activate; pip install mkdocs-macros-plugin mkdocs-material mkdocs-material-extensions mkdocs-with-pdf # mkdocs-git-revision-date-localized-plugin
 
 view:
-	firefox ./tmp/docs/index.html &
+	firefox http://$(IP):8008 &
+
+serve-start:
+	. ./tmp/venv/bin/activate; mkdocs serve --dev-addr $(IP):8008 -f ./tmp/mkdocs.yml &
+
+serve-stop:
+	pgrep -f 'mkdocs serve --dev-addr $(IP):8008 ' | xargs -r kill
