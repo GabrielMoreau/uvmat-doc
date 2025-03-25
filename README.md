@@ -12,7 +12,7 @@ It includes iterative CIV, taking into account pattern deformation by strain and
 
 UVMAT also contains a graphic user interface and compiled binaries of the older PIV software ​CIVx written in Fortran.
 
-The reference website for this documentation is https://legi.gricad-pages.univ-grenoble-alpes.fr/soft/uvmat-doc/.
+The reference website for this documentation is <https://legi.gricad-pages.univ-grenoble-alpes.fr/soft/uvmat-doc/>.
 
 
 ## Prerequisit
