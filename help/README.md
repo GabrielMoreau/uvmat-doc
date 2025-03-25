@@ -73,7 +73,7 @@ The GUI contains an upper menu bar, a central graphic display window, a lower le
 
 Each of the graphic elements (_uicontrols_) is described by a _tag name_, which can be displayed by moving the mouse over it: a tool tip window appears with the tag name followed by a short help description.
 The element tag and content can be also displayed in a zoom window, and possibly edited there, by a right hand mouse selection on the element.
-As a rule, tag names for checkboxes begins by 'Check', while tags of elements with numerical content begins by _num__.
+As a rule, tag names for checkboxes begins by 'Check', while tags of elements with numerical content begins by _num_.
 
 The red pushbuttons command the main actions.
 The color of pushbuttons or other elements turns to yellow while their _callback function_ (the function launched by pressing the button) is active.
@@ -94,21 +94,21 @@ The menu bar at the top of the GUI contains the following buttons:
   file ordering by name or date can be chosen by the popupmenu above.
   A path can be directly entered by copy-paste in the upper edit window of the browser.
 - Previously opened files are memorised in the menu where they can be selected again.
-- *[Open campaign]* : scan the data organised as a project/campaign, see [section 3.7](#37-data-organisation-in-a-project).
+- *[Open campaign]*: scan the data organised as a project/campaign, see [section 3.7](#37-data-organisation-in-a-project).
 - Previously opened campaigns are memorised in the menu where they can be selected again.
-- *[Export]* : used to export the currently displayed data, either as array structure in the Matlab workspace, either as a figure or a movie (for a succession of views), or plotted on an existing figure (axes) for comparison with previous data.
-- *[Projection object]* : used to create projection objects (points, lines, patches, gridded planes) for data analysis and interpolation, see [section 6](#6-projection-objects).
+- *[Export]*: used to export the currently displayed data, either as array structure in the Matlab workspace, either as a figure or a movie (for a succession of views), or plotted on an existing figure (axes) for comparison with previous data.
+- *[Projection object]*: used to create projection objects (points, lines, patches, gridded planes) for data analysis and interpolation, see [section 6](#6-projection-objects).
 - *[Tools]*:
-- *[Geometric calibration]* for geometric calibration of images.
+- *[Geometric calibration]*: for geometric calibration of images.
 - *[LIF calibration]*: calibration of images for Laser Induced Fluorescence.
 - *[Make mask]*: for creating mask images (for PIV).
-- *[Make grid]:*: for making measurement grids for PIV.
+- *[Make grid]:* for making measurement grids for PIV.
 - *[ruler]*: displays a ruler to measure lengths and angles of any line.
-- *[Run]* :
+- *[Run]*:
 - *[field series]*: gives access to the GUI **[series](#10-processing-field-series)** for processing field series.
 - *[PIV]*: gives access to the PIV program under Matlab (using the GUI **series**).
 - *[CivX(Fortran)]*: gives access to the GUI **[civ](#11-piv-particle-imaging-velocimetry)** for Particle Imaging Velocimetry (CivX version in Fortran, not maintained anymore).
-- *[Help]* : displays this help file using the Matlab browser.
+- *[Help]*: displays this help file using the Matlab browser.
 
 ### 2.3 Displaying the input file name
 
@@ -398,7 +398,7 @@ They are displayed directly as color images.
 The greyscale images are described by a matrix A(npy,npx) of positive integers.
 The luminosity range depends on the camera dynamics (0 to 255 for 8 bit images, 0 to 65535 for 16 bit images).
 Luminosity represented with grey levels, according to the colorbar displayed on the right.
-The luminosity and contrast can be adjusted using the edit boxes *[num_MinA]* and *[num_MaxA]* : the luminosity level set by *[num_MinA]* (and levels below) is represented as black, and the luminosity level set by *[num_MaxA]* (or levels above) as white.
+The luminosity and contrast can be adjusted using the edit boxes *[num_MinA]* and *[num_MaxA]*: the luminosity level set by *[num_MinA]* (and levels below) is represented as black, and the luminosity level set by *[num_MaxA]* (or levels above) as white.
 When the check box *fix* ([CheckFixScalar]) is not selected, these bounds are set automatically to the image minimum and maximum respectively.
 Then the image may appear dark if a single point is very bright, in that case a lower value must be set by *[num_MaxA]*.
 Greyscale images can be displayed with false colors, from blue to red, by unselecting the check box *B/W* (*[CheckBW]*).
@@ -641,14 +641,14 @@ Any other element can be added, but will not be taken into account if they are n
 - ObjectStyle: ='points', 'line', 'plane', denotes the style of geometric object on which the data have been 'projected'.
   For instance a profiler project a physical field along a line.
 - ObjectCoord: Coordinates defining a geometric object on which the data have been projected.
-- ObjectRangeX, ObjectRangeY, ObjectRangeZ : range of action of a projection object along each coordinate, see [section 6](#6-projection-objects).
+- ObjectRangeX, ObjectRangeY, ObjectRangeZ: range of action of a projection object along each coordinate, see [section 6](#6-projection-objects).
 - 'long_name':(convention from [unidata](http://www.unidata.ucar.edu)) a long descriptive name, could be used for labeling plots, for example.
   If a variable has no long_name attribute assigned, the variable name should be used as a default.
 - *Attributes of variables*:
 - Mesh: suggested step value to discretize the values of the variable, used to define the bins for histograms.
 - Role: it specifies the role of the variable arrays for plotting or processing programs, see below.
   If Role is not defined variables are considered by default as 'scalar'.
-- Unit or 'units' (convention from [unidata](http://www.unidata.ucar.edu)) : char string giving the unit of a variable, used in plot axis labels (overset by global attributes 'CoordUnit' and 'TimeUnit' if defined).
+- Unit or 'units' (convention from [unidata](http://www.unidata.ucar.edu)): char string giving the unit of a variable, used in plot axis labels (overset by global attributes 'CoordUnit' and 'TimeUnit' if defined).
 - *The attribute 'Role'*: the following options are used for the attribute 'Role':
 - 'ancillary': information of secondary use, indicating for instance an error estimate of field variables within a field cell (omitted in plotting).
 - 'coord_x', 'coord_y', 'coord_z': represents a  sets of unstructured coordinates x, y and z for the field variables sharing the same dimension name.
@@ -662,7 +662,7 @@ Any other element can be added, but will not be taken into account if they are n
   The last dimension of the array corresponds to the three color components 'rgb'. -* 'scalar': (default) represents a scalar field.
 - 'tensor': represents a tensor field whose components correspond to the two last dimensions of the array.
 - vector: matrix whose last dimension states for the vector components.
-- 'vector_x', 'vector_y', 'vector_z' : represents the x, y or z component of a vector (covariant).
+- 'vector_x', 'vector_y', 'vector_z': represents the x, y or z component of a vector (covariant).
 - 'warnflag': provides a warning flag about the quality of data for the field variables within a field cell., default=0, no warning.
 
 ### 5.4 Field cells
@@ -685,7 +685,7 @@ The following conventions are used:
 - coord_1,_2,_3: dimension with the same name as a coordinate variable array (coordinate dimension).
 - 'nb_coord': denotes the space dimension for vector components.
 - 'nb_coord_j', 'nb_coord_i': denotes the space dimensions for the two tensor components.
-- 'rgb' : denotes the dimension of the color component in a true color image.
+- 'rgb': denotes the dimension of the color component in a true color image.
 - 'nb_point' or 'nb_vec' (for vectors) denotes the set of positions with unstructured coordinates.
 - 'nb_tps': dimension of the index for the tps centres.
 - 'nb_subdomain' denotes the dimension for the subdomain index for tps coefficients.
@@ -696,7 +696,7 @@ The following conventions are used:
 ### 6.1 Definition and editing with the UVMAT interface
 
 These are geometrical objects used to define cuts along lines or planes, to interpolate fields on a regular grid, to restrict the analysis or visualisation to field subregions.
-The projection of fields on objects is performed by the function `proj_field.m`, which can be used as well in data processing outside the GUI **uvmat**, using for instance 	**series.fig** (see [section 10](#10-processing-field-series)).
+The projection of fields on objects is performed by the function `proj_field.m`, which can be used as well in data processing outside the GUI **uvmat**, using for instance **series.fig** (see [section 10](#10-processing-field-series)).
 
 When a 2D or 3D field is opened by **uvmat.fig**, a default projection object called 'plane' is created, so that all field plots (in 2D and 3D) are considered as the result of a projection.
 New objects are created by the menu bar command *[Projection object]* in the GUI **uvmat**.
