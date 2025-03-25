@@ -2,7 +2,7 @@
 
 ## Simple scaling
 
-Open again a test image in 'UVMAT_DEMO01_pair' (see [UVMAT_DEMO_FILES.zip](https://legi.gricad-pages.univ-grenoble-alpes.fr/soft/uvmat-doc/data/UVMAT_DEMO_FILES.zip)).
+Open again a test image in 'UVMAT_DEMO01_pair' (see [UVMAT_DEMO_FILES.zip](https://gricad-gitlab.univ-grenoble-alpes.fr/legi/soft/uvmat-doc/-/raw/master/data/UVMAT_DEMO_FILES.zip?ref_type=heads)).
 
 We shall use the diameter of the half cylinder visible on the upper let of the image to set the calibration.
 Its physical diameter is 2cm.
@@ -62,7 +62,7 @@ Then in the new GUI *browse_data*, select the set of experiments and the corresp
 ## Calibration with reference points
 
 The more general method of calibration consists in using a set of reference points whose physical coordinates are known.
-Open with *uvmat* an image in 'UVMAT_DEMO06_PIVconvection/Dalsa1' (see [UVMAT_DEMO_FILES.zip](https://legi.gricad-pages.univ-grenoble-alpes.fr/soft/uvmat-doc/data/UVMAT_DEMO_FILES.zip)).
+Open with *uvmat* an image in 'UVMAT_DEMO06_PIVconvection/Dalsa1' (see [UVMAT_DEMO_FILES.zip](https://gricad-gitlab.univ-grenoble-alpes.fr/legi/soft/uvmat-doc/-/raw/master/data/UVMAT_DEMO_FILES.zip?ref_type=heads)).
 
 Select in the menu bar *[Tools/geometric calibration]*.
 Mark the four box corners of the box with the mouse (left hand button).
@@ -92,7 +92,7 @@ The previous xml file has been saved with a ~, ('Dalsa1.xml~') so it can be reve
 ## 3D calibration with a target grid
 
 Most precise and general calibration relies on the use of a target grid.
-As an example, open in uvmat the image img_10 in 'UVMAT_DEMO07_GeometryCalibration/multiple_planes/Dalsa1' (see [UVMAT_DEMO_FILES.zip](https://legi.gricad-pages.univ-grenoble-alpes.fr/soft/uvmat-doc/data/UVMAT_DEMO_FILES.zip)). Open the menu bar *[Tools/geometric calibration]* and pick four corner points ABCD with the mouse define the periphery of the phys grid selected for calibration.
+As an example, open in uvmat the image img_10 in 'UVMAT_DEMO07_GeometryCalibration/multiple_planes/Dalsa1' (see [UVMAT_DEMO_FILES.zip](https://gricad-gitlab.univ-grenoble-alpes.fr/legi/soft/uvmat-doc/-/raw/master/data/UVMAT_DEMO_FILES.zip?ref_type=heads)). Open the menu bar *[Tools/geometric calibration]* and pick four corner points ABCD with the mouse define the periphery of the phys grid selected for calibration.
 The first point A will define the phys axis origin while AB defines the x axis and AD the y axis.
 AB and DC should be parallel on the phys grid (see fig).
 Then select* [!Tools/Detect grid]* on the upper menu bar of* geometry_calib*: you get a new GUI *detect_grid* in which you define (in phys units) the grid mesh and the positions of the first and last points on each axis.

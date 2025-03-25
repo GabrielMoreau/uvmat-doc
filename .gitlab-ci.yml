@@ -11,7 +11,6 @@ pages:
     - mkdir -p public
     - make all
     - rsync -av ./tmp/docs/ public/
-    - rsync -av ./data/ public/data/
   artifacts:
     paths:
       - public

@@ -1,6 +1,6 @@
 # Tutorial 05 / Correlation Image Velocimetry: a simple example
 
-Open again the first example of image pair in UVMAT_DEMO01_pair (see [UVMAT_DEMO_FILES.zip](https://legi.gricad-pages.univ-grenoble-alpes.fr/soft/uvmat-doc/data/UVMAT_DEMO_FILES.zip)).
+Open again the first example of image pair in UVMAT_DEMO01_pair (see [UVMAT_DEMO_FILES.zip](https://gricad-gitlab.univ-grenoble-alpes.fr/legi/soft/uvmat-doc/-/raw/master/data/UVMAT_DEMO_FILES.zip?ref_type=heads)).
 
 ## Visual check of the image pair
 

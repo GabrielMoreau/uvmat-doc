@@ -14,7 +14,7 @@ The image should appear as in figure.
 
 ![](01-uvmat-image.jpg)
 
-Open the folder UVMAT_DEMO01_pair containing the demo files, either form the downloaded archive (see [UVMAT_DEMO_FILES.zip](https://legi.gricad-pages.univ-grenoble-alpes.fr/soft/uvmat-doc/data/UVMAT_DEMO_FILES.zip)), either online in the OpenDAP address !<http://servdap.legi.grenoble-inp.fr/opendap/meige/18UVMAT_DEMO_SOURCES/UVMA_DEMO001_pair> (directly accessible in the menu *[Open/Browse...]*).
+Open the folder UVMAT_DEMO01_pair containing the demo files, either form the downloaded archive (see [UVMAT_DEMO_FILES.zip](https://gricad-gitlab.univ-grenoble-alpes.fr/legi/soft/uvmat-doc/-/raw/master/data/UVMAT_DEMO_FILES.zip?ref_type=heads)), either online in the OpenDAP address !<http://servdap.legi.grenoble-inp.fr/opendap/meige/18UVMAT_DEMO_SOURCES/UVMA_DEMO001_pair> (directly accessible in the menu *[Open/Browse...]*).
 Then select the folder 'Images' and the image' frame_1.png'.
 
 The file name is displayed in the upper frame *[Input]*, split in path '.../UVMAT_DEMO01_pair' (in *[RootPath]*), subfolder '/images' (in *[SubDir]*), root file name '/frame' (in *[RootFile]*), index string '_1' (in *[Index]*) and file extension '.png' (in *[Ext]*).
