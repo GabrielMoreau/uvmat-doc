@@ -29,18 +29,18 @@ tmp/mkdocs.yml: ./mkdocs.yml Makefile
 
 docs: Makefile tmp/mkdocs.yml tmp/src/README.md
 	mkdir -p ../tmp/docs/help
-	. ./tmp/venv/bin/activate; cd tmp; mkdocs build -f ./mkdocs.yml
+	. ./tmp/cache/venv/bin/activate; cd tmp; mkdocs build -f ./mkdocs.yml
 
 env:
-	mkdir -p tmp
-	python3 -m venv ./tmp/venv
-	. ./tmp/venv/bin/activate; pip install mkdocs-macros-plugin mkdocs-material mkdocs-material-extensions mkdocs-with-pdf # mkdocs-git-revision-date-localized-plugin
+	mkdir -p tmp/cache
+	python3 -m venv ./tmp/cache/venv
+	. ./tmp/cache/venv/bin/activate; pip install mkdocs-macros-plugin mkdocs-material mkdocs-material-extensions mkdocs-with-pdf # mkdocs-git-revision-date-localized-plugin
 
 view:
 	firefox http://$(IP):8008 &
 
 serve-start:
-	. ./tmp/venv/bin/activate; mkdocs serve --dev-addr $(IP):8008 -f ./tmp/mkdocs.yml &
+	. ./tmp/cache/venv/bin/activate; mkdocs serve --dev-addr $(IP):8008 -f ./tmp/mkdocs.yml &
 
 serve-stop:
 	pgrep -f 'mkdocs serve --dev-addr $(IP):8008 ' | xargs -r kill

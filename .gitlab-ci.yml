@@ -1,9 +1,15 @@
 ---
-image: debian:latest
+image: amd64/debian:stable-slim
+
+cache:
+  key: package-cache-folder
+  paths:
+    - tmp/cache/
 
 before_script:
+  - mkdir -p tmp/cache/deb
   - apt-get update -yqq
-  - apt-get install -yqq make binutils findutils mkdocs pip python3-venv python3-gi libcogl-pango20 zip rsync
+  - apt-get -o dir::cache::archives=tmp/cache/deb install -yqq make binutils findutils mkdocs pip python3-venv python3-gi libcogl-pango20 zip rsync
 
 pages:
   stage: build
