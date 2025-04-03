@@ -65,7 +65,7 @@ See the GNU General Public License (file `COPYING.txt`) for more details.
 Type `>> uvmat` in the Matlab prompt to display the GUI.
 If the function is unknown by Matlab, add the appropriate path to the folder **uvmat** where the toolbox has been installed (see the Matlab command `>> help path`).
 When the GUI is opening, the date of last modfication is displayed in the central window.
-During opening, the program checks the Matlab path to all the functions of the package (using the function `check_functions.m`).
+During opening, the program checks the Matlab path to all the functions of the package (using the function `check_files.m`).
 If a function is missing, or if it is overridden by a function with the same name at another path location, a message is displayed in the central window at the opening of the GUI **uvmat**.
 Finally, if the svn server is accessible by line-command, the latest version number of the UVMAT package is indicated.
 
